@@ -1,0 +1,23 @@
+﻿<Window x:Class="DesignStudioCoursework.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DesignStudioCoursework"
+        Title="Coral Aster Design Studio"
+        Width="1170"
+        Height="650"
+        MinWidth="700"
+        MinHeight="600"
+        Left="20"
+        Top="20"
+        Icon="/DesignStudioCoursework;component/Resources/logo.png"
+        mc:Ignorable="d">
+    <Grid>
+        <Frame
+            IsTabStop="False"
+            Name="MainFrame"
+            DataContextChanged="MainFrame_DataContextChanged"
+            NavigationUIVisibility="Hidden"/>
+    </Grid>
+</Window>
