@@ -7,8 +7,325 @@
       mc:Ignorable="d" 
       d:DesignHeight="620" d:DesignWidth="1170"
       Title="NewProjectPage">
+    <Page.Resources>
+        <Style x:Key="BlueButtonStyle" TargetType="{x:Type Button}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border>
+                            <Border.Style>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="Background" Value="#99A2F1" />
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" Value="#8189cc" />
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Border.Style>
+                            <Grid Background="Transparent">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            </Grid>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
 
-    <Grid>
-        
+    <Grid Height="620" VerticalAlignment="Top">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25*" />
+            <RowDefinition Height="421*" />
+            <RowDefinition Height="100*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="333*" />
+            <ColumnDefinition Width="333*"/>
+        </Grid.ColumnDefinitions>
+        <Menu 
+            Grid.ColumnSpan="2"
+            Background="#99A2F1"
+            Foreground="White"
+            Grid.Row="0">
+            <MenuItem 
+                Header="Головна" 
+                FontSize="16"
+                Foreground="White">
+                <MenuItem 
+                    Background="#F2F2F2"
+                    Foreground="#99A2F1"
+                    Click="ExitClicked"
+                    Header="Вийти">
+                </MenuItem>
+            </MenuItem>
+            <MenuItem 
+                Header="Перегляд" 
+                FontSize="16" 
+                Foreground="White">
+                <MenuItem 
+                    Background="#F2F2F2"
+                    Foreground="#99A2F1"
+                    Header="Наші клієнти">
+                </MenuItem>
+                <MenuItem 
+                    Background="#F2F2F2"
+                    Foreground="#99A2F1"
+                    Header="Поточні замовлення">
+                </MenuItem>
+            </MenuItem>
+            <MenuItem 
+                Header="Управління" 
+                FontSize="16" 
+                Foreground="White">
+                <MenuItem 
+                    Background="#F2F2F2"
+                    Foreground="#99A2F1"
+                    Header="Управління проектами">
+                </MenuItem>
+                <MenuItem 
+                    Background="#F2F2F2"
+                    Foreground="#99A2F1"
+                    Header="Управління задачами">
+                </MenuItem>
+            </MenuItem>
+            <MenuItem 
+                Header="Адміністрація" 
+                FontSize="16" 
+                Foreground="White">
+                <MenuItem 
+                    Background="#F2F2F2"
+                    Foreground="#99A2F1"
+                    Header="Управління працівниками">
+                </MenuItem>
+            </MenuItem>
+        </Menu>
+        <Border 
+            Grid.Row="1"
+            Grid.ColumnSpan="2"
+            Grid.RowSpan="2"
+            Background="#BCC3FF" >
+        </Border>
+        <Button
+            Name="BackButton"
+            Height="38"
+            Cursor="Hand"
+            Margin="11,10,526,0"
+            VerticalAlignment="Top"
+            BorderThickness="0"
+            Style="{StaticResource BlueButtonStyle}"
+            Click="BackButton_Click"
+            Grid.Row="1" >
+            <Image HorizontalAlignment="Left" Source="/DesignStudioCoursework;component/Resources/back.png" Stretch="Uniform" Height="36" Width="34"/>
+        </Button>
+        <Label 
+            Grid.Row="1"
+            Grid.Column="0"
+            FontStyle ="Italic" 
+            Foreground="White" 
+            FontWeight="Bold"
+            Content="Відкриття проекту" 
+            HorizontalAlignment="Center" 
+            VerticalAlignment="Top"
+            FontSize="24"
+            Width="322" 
+            RenderTransformOrigin="0.507,0.441" Margin="153,10,110,0" Height="55"/>
+        <Label 
+            Grid.Row="1"
+            Grid.Column="0"
+            FontStyle ="Italic" 
+            Foreground="White" 
+            FontWeight="Bold"
+            Content="Назва проекту" 
+            HorizontalAlignment="Left" 
+            VerticalAlignment="Top"
+            FontSize="20"
+            Width="184" 
+            RenderTransformOrigin="0.5,0.516" Margin="11,70,0,0"/>
+        <TextBox 
+            Grid.Row="1"
+            Grid.Column="0"
+            Name="description"
+            FontStyle ="Italic" 
+            FontSize="20"
+            Foreground="#8787ed"
+            HorizontalAlignment="Center" 
+            TextWrapping="Wrap"
+            Text="" 
+            Width="336" Margin="226,70,23,371"/>
+        <Label 
+            Grid.Row="1"
+            Grid.Column="0"
+            FontStyle ="Italic" 
+            Foreground="White" 
+            FontWeight="Bold"
+            Content="Вартість проекту" 
+            HorizontalAlignment="Left" 
+            VerticalAlignment="Top"
+            FontSize="20"
+            Width="210" 
+            RenderTransformOrigin="0.5,0.516" Margin="11,122,0,0"/>
+        <Label 
+            Grid.Row="1"
+            Grid.Column="0"
+            FontStyle ="Italic" 
+            Foreground="White" 
+            FontWeight="Bold"
+            Content="Замовлення" 
+            HorizontalAlignment="Left" 
+            VerticalAlignment="Top"
+            FontSize="20"
+            Width="210" 
+            RenderTransformOrigin="0.5,0.516" Margin="11,173,0,0"/>
+        <Label 
+            Grid.Row="1"
+            Grid.Column="0"
+            FontStyle ="Italic" 
+            Foreground="White" 
+            FontWeight="Bold"
+            Content="Керівник проекту" 
+            HorizontalAlignment="Left" 
+            VerticalAlignment="Top"
+            FontSize="20"
+            Width="195" 
+            RenderTransformOrigin="0.5,0.516" Margin="10,225,0,0"/>
+        <TextBox 
+            Grid.Row="1"
+            Grid.Column="0"
+            Name="price"
+            FontStyle ="Italic" 
+            FontSize="20"
+            Foreground="#8787ed"
+            HorizontalAlignment="Center" 
+            TextWrapping="Wrap"
+            Text="" 
+            Width="336" Margin="226,122,23,319"/>
+        <Label 
+            Grid.Row="1"
+            Grid.Column="0"
+            FontStyle ="Italic" 
+            Foreground="White" 
+            FontWeight="Bold"
+            Content="Тип інтер'єру" 
+            HorizontalAlignment="Left" 
+            VerticalAlignment="Top"
+            FontSize="20"
+            Width="156" 
+            RenderTransformOrigin="0.5,0.516" Margin="11,280,0,0"/>
+        <ComboBox 
+            Grid.Row="1"
+            Grid.Column="0"
+            Name="customer" 
+            Height="37" 
+            HorizontalAlignment="Center"
+            Margin="226,173,23,268" 
+            Width="336">
+        </ComboBox>
+        <ComboBox 
+            Grid.Row="1"
+            Grid.Column="0"
+            Name="employee" 
+            Height="37" 
+            HorizontalAlignment="Center"
+            Margin="226,225,23,216" 
+            Width="336">
+        </ComboBox>
+        <TextBox 
+            Grid.Row="1"
+            Grid.Column="0"
+            Name="interior"
+            FontStyle ="Italic" 
+            FontSize="20"
+            Foreground="#8787ed"
+            HorizontalAlignment="Center" 
+            TextWrapping="Wrap"
+            Text="" 
+            Width="336" Margin="226,280,23,161"/>
+        <Button
+            Name="AddCustomerButton"
+            Height="56"
+            Cursor="Hand"
+            Margin="174,29,167,0"
+            VerticalAlignment="Top"
+            HorizontalAlignment="Center"
+            BorderThickness="0"
+            Style="{StaticResource BlueButtonStyle}"
+            Grid.Row="2" 
+            FontSize="24"
+            FontStyle="Italic"
+            Foreground="White"
+            Content="Створити" Width="244">
+        </Button>
+        <Image 
+            Grid.Row="1"
+            Grid.Column="1"
+            HorizontalAlignment="Left" 
+            Source="/DesignStudioCoursework;component/Resources/newProject.png" 
+            Stretch="Uniform"
+            Width="468" Margin="60,10,0,56" 
+            Grid.RowSpan="2"/>
+        <Label 
+            Grid.Row="1"
+            Grid.Column="0"
+            FontStyle ="Italic" 
+            Foreground="White" 
+            FontWeight="Bold"
+            Content="Стиль виконання" 
+            HorizontalAlignment="Left" 
+            VerticalAlignment="Top"
+            FontSize="20"
+            Width="195" 
+            RenderTransformOrigin="0.5,0.516" Margin="10,330,0,0"/>
+        <Label 
+            Grid.Row="1"
+            Grid.Column="0"
+            FontStyle ="Italic" 
+            Foreground="White" 
+            FontWeight="Bold"
+            Content="Статус виконання" 
+            HorizontalAlignment="Left" 
+            VerticalAlignment="Top"
+            FontSize="20"
+            Width="211" 
+            RenderTransformOrigin="0.5,0.516" Margin="10,380,0,0"/>
+        <ComboBox 
+            Grid.Row="1"
+            Grid.Column="0"
+            Name="style" 
+            Height="37" 
+            HorizontalAlignment="Center"
+            Margin="226,330,23,111" 
+            Width="336"/>
+        <ComboBox 
+            Grid.Row="1"
+            Grid.Column="0"
+            x:Name="status" 
+            Height="37" 
+            HorizontalAlignment="Center"
+            Margin="226,380,23,61" 
+            Width="336"/>
+        <Label 
+            Grid.Row="1"
+            Grid.Column="0"
+            FontStyle ="Italic" 
+            Foreground="White" 
+            FontWeight="Bold"
+            Content="Макет" 
+            HorizontalAlignment="Left" 
+            VerticalAlignment="Top"
+            FontSize="20"
+            Width="211" 
+            RenderTransformOrigin="0.5,0.516" Margin="11,431,0,0"/>
+        <TextBox 
+            Grid.Row="1"
+            Grid.Column="0"
+            x:Name="attachment"
+            FontStyle ="Italic" 
+            FontSize="20"
+            Foreground="#8787ed"
+            HorizontalAlignment="Center" 
+            TextWrapping="Wrap"
+            Text="" 
+            Width="336" Margin="226,431,23,10"/>
     </Grid>
-</Page>
+</Page>   

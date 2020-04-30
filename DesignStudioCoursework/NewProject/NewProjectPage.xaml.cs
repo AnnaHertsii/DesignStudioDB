@@ -24,5 +24,15 @@ namespace DesignStudioCoursework
             this.goBack = goBack;
             InitializeComponent();
         }
+
+        private void ExitClicked(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            goBack();
+        }
     }
 }
