@@ -260,6 +260,7 @@
         <Image 
             Grid.Row="1"
             Grid.Column="1"
+            Name="projectImage"
             HorizontalAlignment="Left" 
             Source="/DesignStudioCoursework;component/Resources/newProject.png" 
             Stretch="Uniform"

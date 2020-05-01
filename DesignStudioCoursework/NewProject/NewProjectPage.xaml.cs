@@ -1,4 +1,4 @@
-﻿using DesignStudioCoursework.NewProject;
+﻿using DesignStudioCoursework;
 using System;
 using System.Collections.Generic;
 using System.Linq;

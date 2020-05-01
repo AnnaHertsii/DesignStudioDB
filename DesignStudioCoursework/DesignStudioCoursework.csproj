@@ -87,11 +87,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="NewProject\InteriorTypeWindow.xaml">
+    <Page Include="NewProject\NewProjectPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="NewProject\NewProjectPage.xaml">
+    <Page Include="NewProject\InteriorTypeWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -106,11 +106,11 @@
     <Compile Include="NewOrder\NewOrderPage.xaml.cs">
       <DependentUpon>NewOrderPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="NewProject\InteriorTypeWindow.xaml.cs">
-      <DependentUpon>InteriorTypeWindow.xaml</DependentUpon>
-    </Compile>
     <Compile Include="NewProject\NewProjectPage.xaml.cs">
       <DependentUpon>NewProjectPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NewProject\InteriorTypeWindow.xaml.cs">
+      <DependentUpon>InteriorTypeWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -172,6 +172,18 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\toilet.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\corridor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\wardrobe.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\client2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\order2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

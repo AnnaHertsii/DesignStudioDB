@@ -1,12 +1,17 @@
-﻿<Window x:Class="DesignStudioCoursework.NewProject.InteriorTypeWindow"
-      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:DesignStudioCoursework.NewProject"
-      mc:Ignorable="d" 
-      d:DesignHeight="620" d:DesignWidth="1170"
-      Title="Тип інтер'єру">
+﻿<Window x:Class="DesignStudioCoursework.InteriorTypeWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DesignStudioCoursework"
+        mc:Ignorable="d"
+        Title="InteriorTypeWindow"
+        Width="1190"
+        Height="650"
+        MinWidth="700"
+        MinHeight="600"
+        Left="20"
+        Top="20">
     <Window.Resources>
         <Style x:Key="RoundButton" TargetType="Button">
             <Setter Property="Foreground" Value="White"/>
@@ -69,7 +74,7 @@
         <Label 
             FontStyle ="Italic"
             FontWeight="Bold"
-            Content="Тип приміщення"
+            Content="Тип інтер'єру"
             FontSize="30"
             HorizontalAlignment="Center"
             Foreground="White"
@@ -83,9 +88,9 @@
                 Margin="56,71,43,63" 
                 Width="194" 
                 Grid.Row="0"
-                Grid.Column="1">
+                Grid.Column="1" Click="bedroom_Click">
             <Button.Content>
-                <Ellipse Height="182" Width="184">
+                <Ellipse Height="189" Width="189">
                     <Ellipse.Fill>
                         <ImageBrush ImageSource="/DesignStudioCoursework;component/Resources/bed2.png"/>
                     </Ellipse.Fill>
@@ -143,8 +148,8 @@
             Margin="48,71,50,63" 
             Width="194" 
             Grid.Row="0"
-            Grid.Column="0">
-            <Ellipse Height="184" Width="184">
+            Grid.Column="0" Click="kitchen_Click">
+            <Ellipse Height="189" Width="189">
                 <Ellipse.Fill>
                     <ImageBrush ImageSource="/DesignStudioCoursework;component/Resources/kitchen.jpg"/>
                 </Ellipse.Fill>
@@ -158,8 +163,8 @@
             Margin="52,71,46,63" 
             Width="194" 
             Grid.Row="0"
-            Grid.Column="2">
-            <Ellipse Height="182" Width="184">
+            Grid.Column="2" Click="livingroom_Click">
+            <Ellipse Height="190" Width="189">
                 <Ellipse.Fill>
                     <ImageBrush ImageSource="/DesignStudioCoursework;component/Resources/living.jpg"/>
                 </Ellipse.Fill>
@@ -173,8 +178,8 @@
             Margin="58,71,41,63" 
             Width="194" 
             Grid.Row="0"
-            Grid.Column="3">
-            <Ellipse Height="182" Width="184">
+            Grid.Column="3" Click="bathroom_Click">
+            <Ellipse Height="189" Width="189">
                 <Ellipse.Fill>
                     <ImageBrush ImageSource="/DesignStudioCoursework;component/Resources/toilet.jpg"/>
                 </Ellipse.Fill>
@@ -184,12 +189,12 @@
             Style="{StaticResource RoundButton}"
             Cursor="Hand"
             HorizontalAlignment="Center"
-            Name="office"               
+            Name="workplace"               
             Margin="48,19,50,79" 
             Width="194" 
             Grid.Row="1"
-            Grid.Column="0">
-            <Ellipse Height="182" Width="184">
+            Grid.Column="0" Click="workplace_Click">
+            <Ellipse Height="188" Width="188">
                 <Ellipse.Fill>
                     <ImageBrush ImageSource="/DesignStudioCoursework;component/Resources/work.jpg"/>
                 </Ellipse.Fill>
@@ -203,8 +208,8 @@
             Margin="56,19,43,79" 
             Width="194" 
             Grid.Row="1"
-            Grid.Column="1">
-            <Ellipse Height="182" Width="184">
+            Grid.Column="1" Click="childroom_Click">
+            <Ellipse Height="188" Width="188">
                 <Ellipse.Fill>
                     <ImageBrush ImageSource="/DesignStudioCoursework;component/Resources/child.jpg"/>
                 </Ellipse.Fill>
@@ -218,10 +223,10 @@
             Margin="52,19,46,79" 
             Width="194" 
             Grid.Row="1"
-            Grid.Column="2">
-            <Ellipse Height="182" Width="184">
+            Grid.Column="2" Click="wardrobe_Click">
+            <Ellipse Height="188" Width="190">
                 <Ellipse.Fill>
-                    <ImageBrush ImageSource="/DesignStudioCoursework;component/Resources/living.jpg"/>
+                    <ImageBrush ImageSource="/DesignStudioCoursework;component/Resources/wardrobe.jpg"/>
                 </Ellipse.Fill>
             </Ellipse>
         </Button>
@@ -233,10 +238,10 @@
             Margin="58,19,41,79" 
             Width="194" 
             Grid.Row="1"
-            Grid.Column="3">
-            <Ellipse Height="182" Width="184">
+            Grid.Column="3" Click="corridor_Click">
+            <Ellipse Height="188" Width="189">
                 <Ellipse.Fill>
-                    <ImageBrush ImageSource="/DesignStudioCoursework;component/Resources/living.jpg"/>
+                    <ImageBrush ImageSource="/DesignStudioCoursework;component/Resources/corridor.png"/>
                 </Ellipse.Fill>
             </Ellipse>
         </Button>
@@ -256,4 +261,3 @@
             Margin="84,218,68,0" Width="139" Grid.Row="1" Grid.Column="3"/>
     </Grid>
 </Window>
-
