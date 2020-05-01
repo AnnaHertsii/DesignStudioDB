@@ -319,10 +319,9 @@
             Grid.Row="1"
             Grid.Column="1"
             HorizontalAlignment="Left" 
-            Source="/DesignStudioCoursework;component/Resources/client.png" 
+            Source="/DesignStudioCoursework;component/Resources/worker.png" 
             Stretch="Uniform"
-            Width="422" Margin="90,43,0,56" 
-            Grid.RowSpan="2"/>
+            Width="334" Margin="148,43,0,19"/>
         <Label 
             Grid.Row="1"
             Grid.Column="0"

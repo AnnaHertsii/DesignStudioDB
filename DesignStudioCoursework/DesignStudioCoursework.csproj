@@ -185,5 +185,26 @@
   <ItemGroup>
     <Resource Include="Resources\order2.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\worker.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\worker2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\designer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\manager.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\painter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\projecter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\secreter.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
