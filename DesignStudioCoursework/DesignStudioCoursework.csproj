@@ -100,7 +100,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="NewEmployee\NewEmployeePage.xaml">
+    <Page Include="Administration\NewEmployee\NewEmployeePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -125,7 +125,7 @@
     <Compile Include="NewClient\NewClientPage.xaml.cs">
       <DependentUpon>NewClientPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="NewEmployee\NewEmployeePage.xaml.cs">
+    <Compile Include="Administration\NewEmployee\NewEmployeePage.xaml.cs">
       <DependentUpon>NewEmployeePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="NewOrder\NewOrderPage.xaml.cs">
@@ -234,6 +234,11 @@
   <ItemGroup>
     <Resource Include="Resources\secreter.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Management\ProjectManagement\" />
+    <Folder Include="Management\TaskManagement\" />
+    <Folder Include="Review\ClientsReview\" />
+    <Folder Include="Review\OrdersReview\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
