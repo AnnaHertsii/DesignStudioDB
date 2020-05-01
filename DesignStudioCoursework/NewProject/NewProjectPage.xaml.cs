@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DesignStudioCoursework.NewProject;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -33,6 +34,12 @@ namespace DesignStudioCoursework
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
             goBack();
+        }
+
+        private void interior_Click(object sender, RoutedEventArgs e)
+        {
+            InteriorTypeWindow interior = new InteriorTypeWindow();
+            interior.Show();
         }
     }
 }

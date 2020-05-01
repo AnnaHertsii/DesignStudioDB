@@ -240,7 +240,8 @@
             HorizontalAlignment="Center" 
             TextWrapping="Wrap"
             Text="" 
-            Width="336" Margin="226,280,23,161"/>
+            Width="336" Margin="226,280,23,161" 
+            MouseDoubleClick="interior_Click"/>
         <Button
             Name="AddCustomerButton"
             Height="56"
