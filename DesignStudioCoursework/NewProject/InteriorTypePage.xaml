@@ -1,0 +1,258 @@
+﻿<Page x:Class="DesignStudioCoursework.NewProject.InteriorTypePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:DesignStudioCoursework.NewProject"
+      mc:Ignorable="d" 
+      d:DesignHeight="650" d:DesignWidth="1170"
+      Title="InteriorTypePage">
+    <Page.Resources>
+        <Style x:Key="RoundButton" TargetType="Button">
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Background" Value="DodgerBlue"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType = "Button">
+                        <Grid>
+                            <Ellipse 
+                                Stroke="White" 
+                                StrokeThickness="2">
+                                <Ellipse.Fill>
+                                    <RadialGradientBrush GradientOrigin="0.496,1.052">
+                                        <RadialGradientBrush.RelativeTransform>
+                                            <TransformGroup>
+                                                <ScaleTransform CenterX="0.5" CenterY="0.5" 
+                                                        ScaleX="1.5" ScaleY="1.5"/>
+                                                <TranslateTransform X="0.02" Y="0.3"/>
+                                            </TransformGroup>
+                                        </RadialGradientBrush.RelativeTransform>
+                                        <GradientStop Offset="1" Color="#d796ff"/>
+                                        <GradientStop Offset="0.3" Color="#FFFFFFFF"/>
+                                    </RadialGradientBrush>
+                                </Ellipse.Fill>
+                            </Ellipse>
+                            <ContentPresenter 
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="RenderTransformOrigin" Value="0.5, 0.5"/>
+                    <Setter Property="RenderTransform">
+                        <Setter.Value>
+                            <ScaleTransform ScaleX="1.1" ScaleY="1.1"/>
+                        </Setter.Value>
+                    </Setter>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Page.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="330*" />
+            <RowDefinition Height="293*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="270*" />
+            <ColumnDefinition Width="270*"/>
+            <ColumnDefinition Width="270*"/>
+            <ColumnDefinition Width="270*"/>
+        </Grid.ColumnDefinitions>
+        <Border           
+            Grid.ColumnSpan="4" 
+            Background="#BCC3FF" 
+            RenderTransformOrigin="0.496,0.426" Grid.RowSpan="2"/>
+        <Label 
+            FontStyle ="Italic"
+            FontWeight="Bold"
+            Content="Тип інтер'єру"
+            FontSize="30"
+            HorizontalAlignment="Center"
+            Foreground="White"
+            Margin="168,0,159,260"
+            Grid.Row="0" Width="254" Grid.Column="1" Grid.ColumnSpan="2"/>
+        <Button 
+                Style="{StaticResource RoundButton}"
+                Cursor="Hand"
+                HorizontalAlignment="Center"
+                Name="bedroom"               
+                Margin="56,71,43,63" 
+                Width="194" 
+                Grid.Row="0"
+                Grid.Column="1" Click="bedroom_Click">
+            <Button.Content>
+                <Ellipse Height="189" Width="189">
+                    <Ellipse.Fill>
+                        <ImageBrush ImageSource="/DesignStudioCoursework;component/Resources/bed2.png"/>
+                    </Ellipse.Fill>
+                </Ellipse>
+            </Button.Content>
+        </Button>
+        <Label 
+            FontStyle ="Italic"
+            Content="Вітальня"
+            FontSize="30"
+            HorizontalAlignment="Center"
+            Foreground="White"
+            
+            Margin="75,260,56,10" Width="161" Grid.Column="2"/>
+        <Label 
+            FontStyle ="Italic"
+            Content="Кухня"
+            FontSize="30"
+            HorizontalAlignment="Center"
+            Foreground="White"
+            Margin="94,260,93,0" Width="103"/>
+        <Label 
+            FontStyle ="Italic"
+            Content="Спальня"
+            FontSize="30"
+            HorizontalAlignment="Center"
+            Foreground="White"
+            Margin="79,260,70,10" Width="144" Grid.Column="1"/>
+        <Label 
+            FontStyle ="Italic"
+            Content="Робочий кабінет"
+            FontSize="30"
+            HorizontalAlignment="Center"
+            Foreground="White"
+            Margin="30,218,10,15" Width="252" Grid.Row="1"/>
+        <Label 
+            FontStyle ="Italic"
+            Content="Дитяча"
+            FontSize="30"
+            HorizontalAlignment="Center"
+            Foreground="White"
+            Margin="93,218,69,10" Width="129" Grid.Row="1" Grid.Column="1"/>
+        <Label 
+            FontStyle ="Italic"
+            Content="Санвузол"
+            FontSize="30"
+            HorizontalAlignment="Center"
+            Foreground="White"
+            Margin="84,260,63,0" Width="144" Grid.Column="3"/>
+        <Button 
+            Style="{StaticResource RoundButton}"
+            Cursor="Hand"
+            HorizontalAlignment="Center"
+            Name="kitchen"               
+            Margin="48,71,50,63" 
+            Width="194" 
+            Grid.Row="0"
+            Grid.Column="0" Click="kitchen_Click">
+            <Ellipse Height="189" Width="189">
+                <Ellipse.Fill>
+                    <ImageBrush ImageSource="/DesignStudioCoursework;component/Resources/kitchen.jpg"/>
+                </Ellipse.Fill>
+            </Ellipse>
+        </Button>
+        <Button 
+            Style="{StaticResource RoundButton}"
+            Cursor="Hand"
+            HorizontalAlignment="Center"
+            Name="livingroom"               
+            Margin="52,71,46,63" 
+            Width="194" 
+            Grid.Row="0"
+            Grid.Column="2" Click="livingroom_Click">
+            <Ellipse Height="190" Width="189">
+                <Ellipse.Fill>
+                    <ImageBrush ImageSource="/DesignStudioCoursework;component/Resources/living.jpg"/>
+                </Ellipse.Fill>
+            </Ellipse>
+        </Button>
+        <Button 
+            Style="{StaticResource RoundButton}"
+            Cursor="Hand"
+            HorizontalAlignment="Center"
+            Name="bathroom"               
+            Margin="58,71,41,63" 
+            Width="194" 
+            Grid.Row="0"
+            Grid.Column="3" Click="bathroom_Click">
+            <Ellipse Height="189" Width="189">
+                <Ellipse.Fill>
+                    <ImageBrush ImageSource="/DesignStudioCoursework;component/Resources/toilet.jpg"/>
+                </Ellipse.Fill>
+            </Ellipse>
+        </Button>
+        <Button 
+            Style="{StaticResource RoundButton}"
+            Cursor="Hand"
+            HorizontalAlignment="Center"
+            Name="workplace"               
+            Margin="48,19,50,79" 
+            Width="194" 
+            Grid.Row="1"
+            Grid.Column="0" Click="workplace_Click">
+            <Ellipse Height="188" Width="188">
+                <Ellipse.Fill>
+                    <ImageBrush ImageSource="/DesignStudioCoursework;component/Resources/work.jpg"/>
+                </Ellipse.Fill>
+            </Ellipse>
+        </Button>
+        <Button 
+            Style="{StaticResource RoundButton}"
+            Cursor="Hand"
+            HorizontalAlignment="Center"
+            Name="childroom"               
+            Margin="56,19,43,79" 
+            Width="194" 
+            Grid.Row="1"
+            Grid.Column="1" Click="childroom_Click">
+            <Ellipse Height="188" Width="188">
+                <Ellipse.Fill>
+                    <ImageBrush ImageSource="/DesignStudioCoursework;component/Resources/child.jpg"/>
+                </Ellipse.Fill>
+            </Ellipse>
+        </Button>
+        <Button 
+            Style="{StaticResource RoundButton}"
+            Cursor="Hand"
+            HorizontalAlignment="Center"
+            Name="wardrobe"               
+            Margin="52,19,46,79" 
+            Width="194" 
+            Grid.Row="1"
+            Grid.Column="2" Click="wardrobe_Click">
+            <Ellipse Height="188" Width="190">
+                <Ellipse.Fill>
+                    <ImageBrush ImageSource="/DesignStudioCoursework;component/Resources/wardrobe.jpg"/>
+                </Ellipse.Fill>
+            </Ellipse>
+        </Button>
+        <Button 
+            Style="{StaticResource RoundButton}"
+            Cursor="Hand"
+            HorizontalAlignment="Center"
+            Name="corridor"               
+            Margin="58,19,41,79" 
+            Width="194" 
+            Grid.Row="1"
+            Grid.Column="3" Click="corridor_Click">
+            <Ellipse Height="188" Width="189">
+                <Ellipse.Fill>
+                    <ImageBrush ImageSource="/DesignStudioCoursework;component/Resources/corridor.png"/>
+                </Ellipse.Fill>
+            </Ellipse>
+        </Button>
+        <Label 
+            FontStyle ="Italic"
+            Content="Гардероб"
+            FontSize="30"
+            HorizontalAlignment="Center"
+            Foreground="White"
+            Margin="74,218,77,0" Width="139" Grid.Row="1" Grid.Column="2"/>
+        <Label 
+            FontStyle ="Italic"
+            Content="Коридор"
+            FontSize="30"
+            HorizontalAlignment="Center"
+            Foreground="White"
+            Margin="84,218,68,0" Width="139" Grid.Row="1" Grid.Column="3"/>
+    </Grid>
+</Page>

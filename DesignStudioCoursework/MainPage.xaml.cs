@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DesignStudioCoursework.About;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,6 +19,7 @@ namespace DesignStudioCoursework
     public partial class MainPage : Page
     {
         private Action<int> pageChanged;
+
         public MainPage(Action<int> pageChanged)
         {
             this.pageChanged = pageChanged;
@@ -47,6 +49,12 @@ namespace DesignStudioCoursework
         private void AddNewEmployee_Click(object sender, RoutedEventArgs e)
         {
             pageChanged(3);
+        }
+
+        private void About_Click(object sender, RoutedEventArgs e)
+        {
+            AboutWindow aboutUs = new AboutWindow();
+            aboutUs.Show();
         }
     }
 }

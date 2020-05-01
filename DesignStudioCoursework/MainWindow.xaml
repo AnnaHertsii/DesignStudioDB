@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DesignStudioCoursework"
-        Title="Coral Aster Design Studio"
+        Title="Дизайн студія Coral Aster"
         Width="1170"
         Height="650"
         MinWidth="700"

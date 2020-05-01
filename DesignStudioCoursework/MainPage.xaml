@@ -171,6 +171,11 @@
                     </MenuItem>
                 </MenuItem>
             </MenuItem>
+            <MenuItem 
+                Name="About"
+                Header="Про нас" 
+                FontSize="16" 
+                Foreground="White" Click="About_Click"/>
         </Menu>
 
         <Border           

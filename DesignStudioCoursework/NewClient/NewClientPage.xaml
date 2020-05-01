@@ -142,6 +142,7 @@
             Width="138" 
             RenderTransformOrigin="0.5,0.516" Margin="11,87,0,0"/>
         <TextBox 
+            Padding="10,0,0,0"
             Grid.Row="1"
             Grid.Column="0"
             Name="name"
@@ -165,6 +166,7 @@
             Width="185" 
             RenderTransformOrigin="0.5,0.516" Margin="11,153,0,0"/>
         <TextBox 
+            Padding="10,0,0,0"
             Grid.Row="1"
             Grid.Column="0"
             Name="phone"
@@ -188,6 +190,7 @@
             Width="185" 
             RenderTransformOrigin="0.5,0.516" Margin="11,217,0,0"/>
         <TextBox 
+            Padding="10,0,0,0"
             Grid.Row="1"
             Grid.Column="0"
             Name="adress"
@@ -211,6 +214,7 @@
             Width="185" 
             RenderTransformOrigin="0.5,0.516" Margin="10,282,0,0"/>
         <TextBox 
+            Padding="10,0,0,0"
             Grid.Row="1"
             Grid.Column="0"
             Name="mail_adress"

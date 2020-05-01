@@ -1,0 +1,66 @@
+﻿<Page x:Class="DesignStudioCoursework.About.AboutPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:DesignStudioCoursework.About"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="500"
+      Title="AboutPage">
+    <Grid>
+        <Grid>
+            <ScrollViewer>
+                <StackPanel Margin="10,0,10,0">
+                    <Label 
+                FontStyle ="Italic" 
+                Foreground="#99A2F1" 
+                FontWeight="Bold"
+                Content="Coral Aster" 
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Top"
+                FontSize="18"
+                Width="107" 
+                RenderTransformOrigin="0.5,0.516"/>
+                    <TextBlock
+                    Foreground="Black"
+                    FontSize="16"
+                    TextWrapping="Wrap"
+                    TextAlignment="Justify">
+                        <Run FontStyle ="Italic" Foreground="#99A2F1" FontWeight="Bold" Text="Досвід"/><LineBreak/>
+                        <Run Text="За 15 років діяльності дизайнерської студії нам вдалось втілити в життя безліч вдалих проектів, які сьогодні не просто милують око своїх господарів, а й неабияк допомагають у побуті та бізнесі. Ми пропонуємо великий спектр послуг: від початкових креслень та створення ескізу майбутнього помешкання, до найменших деталей декору. Відтак, нам вдасться створити той бажаний затишок, про який ви так давно мріяли!"/>
+                    </TextBlock>
+                    <TextBlock
+                    Foreground="Black"
+                    FontSize="16"
+                    TextWrapping="Wrap"
+                    TextAlignment="Justify">
+                        <Run FontStyle ="Italic" Foreground="#99A2F1" FontWeight="Bold" Text="Команда"/><LineBreak/>
+                        <Run Text="Coral Aster – професіонали своєї справи, які з відповідальністю ставляться до кожного замовлення. Це креативні люди, досвід яких свідчить про знання різних стилів, технік та найновіших тенденцій у сфері будівництва й дизайну інтер'єрів. Вони знають про найменші, але дуже важливі нюанси ремонтного процесу, що допоможе досягнути бажаного якісного результату."/>
+                    </TextBlock>
+                    <TextBlock
+                    Foreground="Black"
+                    FontSize="16"
+                    TextWrapping="Wrap"
+                    TextAlignment="Justify">
+                        <Run FontStyle ="Italic" Foreground="#99A2F1" FontWeight="Bold" Text="Замовники"/><LineBreak/>
+                        <Run Text="– Бізнесмени та ділові люди, які працюють над розвитком власної справи."/><LineBreak/>
+                        <Run Text="– Приватні особи, що цінують комфорт, затишок та особистий простір. Це ті, хто не боїться бути собою, виражаючи свою індивідуальність і в інтер'єрі."></Run>
+                    </TextBlock>
+                    <TextBlock
+                    Foreground="Black"
+                    FontSize="16"
+                    TextWrapping="Wrap"
+                    TextAlignment="Justify">
+                        <Run FontStyle ="Italic" Foreground="#99A2F1" FontWeight="Bold" Text="Гарантії"/><LineBreak/>
+                        <Run Text="– Створення цікавого та неординарного дизайну будинку, квартири, будь-якого комерційного приміщення згідно найвищих стандартів з урахуванням усіх побажань клієнта;"></Run><LineBreak/>
+                        <Run Text="– Правильне, функціональне планування житлових і нежитлових приміщень різних форматів та призначень;"></Run><LineBreak/>
+                        <Run Text="– Індивідуальний підхід до кожного замовлення;"></Run><LineBreak/>
+                        <Run Text="– Комплексне оформлення будинку від А до Я з авторським наглядом, що передбачає не тільки створення дизайн проекту, а й цілковиту його реалізацію."></Run><LineBreak/>
+                        <Run Text="– Злагоджену роботу всього колективу – від креативних дизайнерів до вправних майстрів;"></Run><LineBreak/>
+                        <Run Text="– Вчасне виконання домовлених робіт;"></Run><LineBreak/>
+                    </TextBlock>
+                </StackPanel>
+            </ScrollViewer>
+        </Grid>
+    </Grid>
+</Page>

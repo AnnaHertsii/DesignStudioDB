@@ -143,6 +143,7 @@
             Width="184" 
             RenderTransformOrigin="0.5,0.516" Margin="11,70,0,0"/>
         <TextBox 
+            Padding="10,0,0,0"
             Grid.Row="1"
             Grid.Column="0"
             Name="description"
@@ -190,6 +191,7 @@
             Width="195" 
             RenderTransformOrigin="0.5,0.516" Margin="10,225,0,0"/>
         <TextBox 
+            Padding="10,0,0,0"
             Grid.Row="1"
             Grid.Column="0"
             Name="price"
@@ -231,7 +233,8 @@
             Width="336">
         </ComboBox>
         <TextBox 
-            Grid.Row="1"
+            Padding="10,0,0,0"
+            Grid.Row="1"           
             Grid.Column="0"
             Name="interior"
             FontStyle ="Italic" 
@@ -319,6 +322,7 @@
             Width="211" 
             RenderTransformOrigin="0.5,0.516" Margin="11,431,0,0"/>
         <TextBox 
+            Padding="10,0,0,0"
             Grid.Row="1"
             Grid.Column="0"
             x:Name="attachment"

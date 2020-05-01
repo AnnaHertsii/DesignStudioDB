@@ -1,4 +1,5 @@
 ﻿using DesignStudioCoursework.NewEmployee;
+using DesignStudioCoursework.NewProject;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,6 +24,8 @@ namespace DesignStudioCoursework
         NewOrderPage newOrderPage;
         NewProjectPage newProjectPage;
         NewEmployeePage newEmployeePage;
+        InteriorTypePage interiorTypePage;
+
         public MainWindow()
         {
             InitializeComponent();
