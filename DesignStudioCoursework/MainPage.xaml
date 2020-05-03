@@ -120,14 +120,16 @@
                 FontSize="16" 
                 Foreground="White">
                 <MenuItem 
+                    Name="Clients"
                     Background="#F2F2F2"
                     Foreground="#99A2F1"
-                    Header="Наші клієнти">
+                    Header="Наші клієнти" Click="Clients_Click">
                 </MenuItem>
                 <MenuItem 
+                    Name="Orders"
                     Background="#F2F2F2"
                     Foreground="#99A2F1"
-                    Header="Поточні замовлення">
+                    Header="Поточні замовлення" Click="Orders_Click">
                 </MenuItem>
             </MenuItem>
             <MenuItem 
@@ -135,11 +137,13 @@
                 FontSize="16" 
                 Foreground="White">
                 <MenuItem 
+                    Name="Projects"
                     Background="#F2F2F2"
                     Foreground="#99A2F1"
                     Header="Управління проектами">
                 </MenuItem>
                 <MenuItem 
+                    Name="Tasks"
                     Background="#F2F2F2"
                     Foreground="#99A2F1"
                     Header="Управління задачами">

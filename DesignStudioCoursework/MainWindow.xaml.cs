@@ -1,5 +1,7 @@
 ﻿using DesignStudioCoursework.NewEmployee;
 using DesignStudioCoursework.NewProject;
+using DesignStudioCoursework.Review.ClientsReview;
+using DesignStudioCoursework.Review.OrdersReview;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,6 +26,8 @@ namespace DesignStudioCoursework
         NewOrderPage newOrderPage;
         NewProjectPage newProjectPage;
         NewEmployeePage newEmployeePage;
+        ClientsPage clientsPage;
+        OrdersPage ordersPage;
 
         public MainWindow()
         {
@@ -53,6 +57,14 @@ namespace DesignStudioCoursework
                 case 3:
                     newEmployeePage = new NewEmployeePage(CloseFrame);
                     MainFrame.Content = newEmployeePage;
+                    break;
+                case 4:
+                    clientsPage = new ClientsPage(CloseFrame);
+                    MainFrame.Content = clientsPage;
+                    break;
+                case 5:
+                    ordersPage = new OrdersPage(CloseFrame);
+                    MainFrame.Content = ordersPage;
                     break;
             }
         }

@@ -13,13 +13,13 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace DesignStudioCoursework.Review.ClientsReview
+namespace DesignStudioCoursework.Review.OrdersReview
 {
-    public partial class ClientsPage : Page
+    public partial class OrdersPage : Page
     {
         private Action goBack;
 
-        public ClientsPage(Action goBack)
+        public OrdersPage(Action goBack)
         {
             this.goBack = goBack;
             InitializeComponent();

@@ -56,5 +56,15 @@ namespace DesignStudioCoursework
             AboutWindow aboutUs = new AboutWindow();
             aboutUs.Show();
         }
+
+        private void Clients_Click(object sender, RoutedEventArgs e)
+        {
+            pageChanged(4);
+        }
+
+        private void Orders_Click(object sender, RoutedEventArgs e)
+        {
+            pageChanged(5);
+        }
     }
 }

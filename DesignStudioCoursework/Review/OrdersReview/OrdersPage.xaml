@@ -1,12 +1,12 @@
-﻿<Page x:Class="DesignStudioCoursework.Review.ClientsReview.ClientsPage"
+﻿<Page x:Class="DesignStudioCoursework.Review.OrdersReview.OrdersPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:DesignStudioCoursework.Review.ClientsReview"
+      xmlns:local="clr-namespace:DesignStudioCoursework.Review.OrdersReview"
       mc:Ignorable="d" 
       d:DesignHeight="620" d:DesignWidth="1170"
-      Title="ClientsPage">
+      Title="OrdersPage">
     <Page.Resources>
         <Style x:Key="BlueButtonStyle" TargetType="{x:Type Button}">
             <Setter Property="Template">
