@@ -100,6 +100,7 @@
         </Grid.ColumnDefinitions>
 
         <Menu 
+            Cursor="Hand"
             Grid.ColumnSpan="3"
             Background="#99A2F1"
             Foreground="White"

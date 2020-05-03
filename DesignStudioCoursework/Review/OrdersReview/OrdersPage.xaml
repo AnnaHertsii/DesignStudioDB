@@ -35,18 +35,16 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="25*" />
-            <RowDefinition Height="421*" />
-            <RowDefinition Height="173*" />
+            <RowDefinition Height="593*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="333*" />
-            <ColumnDefinition Width="333*"/>
+            <ColumnDefinition />
+            <ColumnDefinition Width="Auto" />
         </Grid.ColumnDefinitions>
-        <Menu 
-            Grid.ColumnSpan="2"
+        <Menu
             Background="#99A2F1"
             Foreground="White"
-            Grid.Row="0">
+            Grid.Row="0" Grid.ColumnSpan="2">
             <MenuItem 
                 Header="Головна" 
                 FontSize="16"
@@ -101,20 +99,45 @@
         </Menu>
         <Border 
             Grid.Row="1"
-            Grid.ColumnSpan="2"
-            Grid.RowSpan="2"
-            Background="#BCC3FF" />
+            Background="#BCC3FF" Grid.ColumnSpan="2" >
+            <DataGrid 
+                FontSize="20" 
+                FontStyle ="Italic"
+                Foreground="#7373E5"
+                Name="DataGridCustomer"
+                AutoGenerateColumns="True"
+                HorizontalAlignment="Left" 
+                Height="472"
+                Margin="100,74,0,0"
+                VerticalAlignment="Top" 
+                Width="992"/>
+        </Border>
         <Button
             Name="BackButton"
-            Height="38"
+            Height="36"
             Cursor="Hand"
-            Margin="11,10,526,0"
+            Margin="10,10,57,0"
             VerticalAlignment="Top"
             BorderThickness="0"
             Style="{StaticResource BlueButtonStyle}"
             Click="BackButton_Click"
-            Grid.Row="1" >
+            Grid.Row="1" 
+            Grid.Column="0">
             <Image HorizontalAlignment="Left" Source="/DesignStudioCoursework;component/Resources/back.png" Stretch="Uniform" Height="36" Width="34"/>
         </Button>
+        <Label 
+            Grid.Row="1"
+            Grid.Column="1"
+            FontStyle ="Italic" 
+            Foreground="White" 
+            FontWeight="Bold"
+            Content="Поточні замовлення" 
+            HorizontalAlignment="Center" 
+            VerticalAlignment="Top"
+            FontSize="24"
+            Width="274" 
+            RenderTransformOrigin="0.507,0.441" Margin="330,10,442,0" Height="36"/>
+
     </Grid>
 </Page>
+

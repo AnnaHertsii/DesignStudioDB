@@ -23,6 +23,8 @@ namespace DesignStudioCoursework.Review.ClientsReview
         {
             this.goBack = goBack;
             InitializeComponent();
+            var designStudioEntities = new DesignStudioEntities();
+            DataGridCustomer.ItemsSource = designStudioEntities.Customer.ToList().Select(c => new { c.Customer_ID, c.Name, c.Phone, c.Adress, c.Mail_adress});
         }
 
         private void ExitClicked(object sender, RoutedEventArgs e)
