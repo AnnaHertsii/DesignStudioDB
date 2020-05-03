@@ -1,0 +1,1195 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище DesignStudioModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Attachment">
+          <Key>
+            <PropertyRef Name="Attachment_ID" />
+          </Key>
+          <Property Name="Attachment_ID" Type="int" Nullable="false" />
+          <Property Name="Attachment_path" Type="varchar" MaxLength="200" />
+          <Property Name="Project_Ref" Type="int" />
+        </EntityType>
+        <EntityType Name="Color">
+          <Key>
+            <PropertyRef Name="Color_ID" />
+          </Key>
+          <Property Name="Color_ID" Type="int" Nullable="false" />
+          <Property Name="Color" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="Customer_ID" />
+          </Key>
+          <Property Name="Customer_ID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="150" />
+          <Property Name="Phone" Type="varchar" MaxLength="15" />
+          <Property Name="Adress" Type="varchar" MaxLength="50" />
+          <Property Name="Mail_adress" Type="varchar" MaxLength="50" />
+          <Property Name="Customer_type_Ref" Type="int" />
+        </EntityType>
+        <EntityType Name="Customer Type">
+          <Key>
+            <PropertyRef Name="Customer_type_ID" />
+          </Key>
+          <Property Name="Customer_type_ID" Type="int" Nullable="false" />
+          <Property Name="Customer_type" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Design Project">
+          <Key>
+            <PropertyRef Name="Project_ID" />
+          </Key>
+          <Property Name="Project_ID" Type="int" Nullable="false" />
+          <Property Name="Project_name" Type="varchar" MaxLength="50" />
+          <Property Name="Project_price" Type="money" />
+          <Property Name="Employee_Ref" Type="int" />
+          <Property Name="Order_Ref" Type="int" />
+          <Property Name="Interior_type_Ref" Type="int" />
+          <Property Name="Style_Ref" Type="int" />
+          <Property Name="Project_status_Ref" Type="int" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="Employee_ID" />
+          </Key>
+          <Property Name="Employee_ID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="150" />
+          <Property Name="Birth_date" Type="date" />
+          <Property Name="Residence_place" Type="varchar" MaxLength="50" />
+          <Property Name="Phone" Type="varchar" MaxLength="15" />
+          <Property Name="Passport_number" Type="varchar" MaxLength="50" />
+          <Property Name="Position_Ref" Type="int" />
+        </EntityType>
+        <EntityType Name="Interior Type">
+          <Key>
+            <PropertyRef Name="Interior_type_ID" />
+          </Key>
+          <Property Name="Interior_type_ID" Type="int" Nullable="false" />
+          <Property Name="Interior_type" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Item">
+          <Key>
+            <PropertyRef Name="Item_ID" />
+          </Key>
+          <Property Name="Item_ID" Type="int" Nullable="false" />
+          <Property Name="Item_name" Type="varchar" MaxLength="50" />
+          <Property Name="Size" Type="nchar" MaxLength="10" />
+          <Property Name="Item_type_Ref" Type="int" />
+        </EntityType>
+        <EntityType Name="Item Color">
+          <Key>
+            <PropertyRef Name="Item_Ref" />
+            <PropertyRef Name="Color_Ref" />
+          </Key>
+          <Property Name="Item_Ref" Type="int" Nullable="false" />
+          <Property Name="Color_Ref" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Item Type">
+          <Key>
+            <PropertyRef Name="Item_type_ID" />
+          </Key>
+          <Property Name="Item_type_ID" Type="int" Nullable="false" />
+          <Property Name="Item_type" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Order">
+          <Key>
+            <PropertyRef Name="Order_ID" />
+          </Key>
+          <Property Name="Order_ID" Type="int" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="150" />
+          <Property Name="Start_date" Type="date" />
+          <Property Name="End_date" Type="date" />
+          <Property Name="Total_price" Type="money" />
+          <Property Name="Customer_Ref" Type="int" />
+          <Property Name="Employee_Ref" Type="int" />
+        </EntityType>
+        <EntityType Name="Position">
+          <Key>
+            <PropertyRef Name="Position_ID" />
+          </Key>
+          <Property Name="Position_ID" Type="int" Nullable="false" />
+          <Property Name="Position_name" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Status">
+          <Key>
+            <PropertyRef Name="Status_ID" />
+          </Key>
+          <Property Name="Status_ID" Type="int" Nullable="false" />
+          <Property Name="Status" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Style">
+          <Key>
+            <PropertyRef Name="Style_ID" />
+          </Key>
+          <Property Name="Style_ID" Type="int" Nullable="false" />
+          <Property Name="Style_name" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Task">
+          <Key>
+            <PropertyRef Name="Task_ID" />
+          </Key>
+          <Property Name="Task_ID" Type="int" Nullable="false" />
+          <Property Name="Task_name" Type="varchar" MaxLength="50" />
+          <Property Name="Description" Type="varchar" MaxLength="100" />
+          <Property Name="Start_date" Type="date" />
+          <Property Name="End_date" Type="date" />
+          <Property Name="Employee_Ref" Type="int" />
+          <Property Name="Project_Ref" Type="int" />
+          <Property Name="Task_status_Ref" Type="int" />
+        </EntityType>
+        <EntityType Name="Task Item">
+          <Key>
+            <PropertyRef Name="Task_Ref" />
+            <PropertyRef Name="Item_Ref" />
+          </Key>
+          <Property Name="Task_Ref" Type="int" Nullable="false" />
+          <Property Name="Item_Ref" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Attachment_Design Project">
+          <End Role="Design Project" Type="Self.Design Project" Multiplicity="0..1" />
+          <End Role="Attachment" Type="Self.Attachment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Design Project">
+              <PropertyRef Name="Project_ID" />
+            </Principal>
+            <Dependent Role="Attachment">
+              <PropertyRef Name="Project_Ref" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Customer_Customer Type">
+          <End Role="Customer Type" Type="Self.Customer Type" Multiplicity="0..1" />
+          <End Role="Customer" Type="Self.Customer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer Type">
+              <PropertyRef Name="Customer_type_ID" />
+            </Principal>
+            <Dependent Role="Customer">
+              <PropertyRef Name="Customer_type_Ref" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Design Project_Employee">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+          <End Role="Design Project" Type="Self.Design Project" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="Employee_ID" />
+            </Principal>
+            <Dependent Role="Design Project">
+              <PropertyRef Name="Employee_Ref" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Design Project_Interior Type">
+          <End Role="Interior Type" Type="Self.Interior Type" Multiplicity="0..1" />
+          <End Role="Design Project" Type="Self.Design Project" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Interior Type">
+              <PropertyRef Name="Interior_type_ID" />
+            </Principal>
+            <Dependent Role="Design Project">
+              <PropertyRef Name="Interior_type_Ref" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Design Project_Order">
+          <End Role="Order" Type="Self.Order" Multiplicity="0..1" />
+          <End Role="Design Project" Type="Self.Design Project" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Order">
+              <PropertyRef Name="Order_ID" />
+            </Principal>
+            <Dependent Role="Design Project">
+              <PropertyRef Name="Order_Ref" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Design Project_Status">
+          <End Role="Status" Type="Self.Status" Multiplicity="0..1" />
+          <End Role="Design Project" Type="Self.Design Project" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Status">
+              <PropertyRef Name="Status_ID" />
+            </Principal>
+            <Dependent Role="Design Project">
+              <PropertyRef Name="Project_status_Ref" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Design Project_Style">
+          <End Role="Style" Type="Self.Style" Multiplicity="0..1" />
+          <End Role="Design Project" Type="Self.Design Project" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Style">
+              <PropertyRef Name="Style_ID" />
+            </Principal>
+            <Dependent Role="Design Project">
+              <PropertyRef Name="Style_Ref" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Employee_Position1">
+          <End Role="Position" Type="Self.Position" Multiplicity="0..1" />
+          <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Position">
+              <PropertyRef Name="Position_ID" />
+            </Principal>
+            <Dependent Role="Employee">
+              <PropertyRef Name="Position_Ref" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Item Color_Color">
+          <End Role="Color" Type="Self.Color" Multiplicity="1" />
+          <End Role="Item Color" Type="Self.Item Color" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Color">
+              <PropertyRef Name="Color_ID" />
+            </Principal>
+            <Dependent Role="Item Color">
+              <PropertyRef Name="Color_Ref" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Item Color_Item">
+          <End Role="Item" Type="Self.Item" Multiplicity="1" />
+          <End Role="Item Color" Type="Self.Item Color" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Item">
+              <PropertyRef Name="Item_ID" />
+            </Principal>
+            <Dependent Role="Item Color">
+              <PropertyRef Name="Item_Ref" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Material_Material Type">
+          <End Role="Item Type" Type="Self.Item Type" Multiplicity="0..1" />
+          <End Role="Item" Type="Self.Item" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Item Type">
+              <PropertyRef Name="Item_type_ID" />
+            </Principal>
+            <Dependent Role="Item">
+              <PropertyRef Name="Item_type_Ref" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order_Customer">
+          <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
+          <End Role="Order" Type="Self.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="Customer_ID" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="Customer_Ref" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order_Employee">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+          <End Role="Order" Type="Self.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="Employee_ID" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="Employee_Ref" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Task Item_Item">
+          <End Role="Item" Type="Self.Item" Multiplicity="1" />
+          <End Role="Task Item" Type="Self.Task Item" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Item">
+              <PropertyRef Name="Item_ID" />
+            </Principal>
+            <Dependent Role="Task Item">
+              <PropertyRef Name="Item_Ref" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Task Item_Task">
+          <End Role="Task" Type="Self.Task" Multiplicity="1" />
+          <End Role="Task Item" Type="Self.Task Item" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Task">
+              <PropertyRef Name="Task_ID" />
+            </Principal>
+            <Dependent Role="Task Item">
+              <PropertyRef Name="Task_Ref" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Task_Design Project">
+          <End Role="Design Project" Type="Self.Design Project" Multiplicity="0..1" />
+          <End Role="Task" Type="Self.Task" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Design Project">
+              <PropertyRef Name="Project_ID" />
+            </Principal>
+            <Dependent Role="Task">
+              <PropertyRef Name="Project_Ref" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Task_Employee">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+          <End Role="Task" Type="Self.Task" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="Employee_ID" />
+            </Principal>
+            <Dependent Role="Task">
+              <PropertyRef Name="Employee_Ref" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Task_Task Status">
+          <End Role="Status" Type="Self.Status" Multiplicity="0..1" />
+          <End Role="Task" Type="Self.Task" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Status">
+              <PropertyRef Name="Status_ID" />
+            </Principal>
+            <Dependent Role="Task">
+              <PropertyRef Name="Task_status_Ref" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+        <Function Name="getTaskAmount" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int">
+          <Parameter Name="ProjectID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <EntityContainer Name="Хранилище DesignStudioModelContainer">
+          <EntitySet Name="Attachment" EntityType="Self.Attachment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Color" EntityType="Self.Color" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Customer Type" EntityType="Self.Customer Type" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Design Project" EntityType="Self.Design Project" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Interior Type" EntityType="Self.Interior Type" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Item" EntityType="Self.Item" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Item Color" EntityType="Self.Item Color" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Item Type" EntityType="Self.Item Type" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Order" EntityType="Self.Order" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Position" EntityType="Self.Position" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Status" EntityType="Self.Status" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Style" EntityType="Self.Style" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Task" EntityType="Self.Task" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Task Item" EntityType="Self.Task Item" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Attachment_Design Project" Association="Self.FK_Attachment_Design Project">
+            <End Role="Design Project" EntitySet="Design Project" />
+            <End Role="Attachment" EntitySet="Attachment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Customer_Customer Type" Association="Self.FK_Customer_Customer Type">
+            <End Role="Customer Type" EntitySet="Customer Type" />
+            <End Role="Customer" EntitySet="Customer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Design Project_Employee" Association="Self.FK_Design Project_Employee">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="Design Project" EntitySet="Design Project" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Design Project_Interior Type" Association="Self.FK_Design Project_Interior Type">
+            <End Role="Interior Type" EntitySet="Interior Type" />
+            <End Role="Design Project" EntitySet="Design Project" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Design Project_Order" Association="Self.FK_Design Project_Order">
+            <End Role="Order" EntitySet="Order" />
+            <End Role="Design Project" EntitySet="Design Project" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Design Project_Status" Association="Self.FK_Design Project_Status">
+            <End Role="Status" EntitySet="Status" />
+            <End Role="Design Project" EntitySet="Design Project" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Design Project_Style" Association="Self.FK_Design Project_Style">
+            <End Role="Style" EntitySet="Style" />
+            <End Role="Design Project" EntitySet="Design Project" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Employee_Position1" Association="Self.FK_Employee_Position1">
+            <End Role="Position" EntitySet="Position" />
+            <End Role="Employee" EntitySet="Employee" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Item Color_Color" Association="Self.FK_Item Color_Color">
+            <End Role="Color" EntitySet="Color" />
+            <End Role="Item Color" EntitySet="Item Color" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Item Color_Item" Association="Self.FK_Item Color_Item">
+            <End Role="Item" EntitySet="Item" />
+            <End Role="Item Color" EntitySet="Item Color" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Material_Material Type" Association="Self.FK_Material_Material Type">
+            <End Role="Item Type" EntitySet="Item Type" />
+            <End Role="Item" EntitySet="Item" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order_Customer" Association="Self.FK_Order_Customer">
+            <End Role="Customer" EntitySet="Customer" />
+            <End Role="Order" EntitySet="Order" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order_Employee" Association="Self.FK_Order_Employee">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="Order" EntitySet="Order" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Task Item_Item" Association="Self.FK_Task Item_Item">
+            <End Role="Item" EntitySet="Item" />
+            <End Role="Task Item" EntitySet="Task Item" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Task Item_Task" Association="Self.FK_Task Item_Task">
+            <End Role="Task" EntitySet="Task" />
+            <End Role="Task Item" EntitySet="Task Item" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Task_Design Project" Association="Self.FK_Task_Design Project">
+            <End Role="Design Project" EntitySet="Design Project" />
+            <End Role="Task" EntitySet="Task" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Task_Employee" Association="Self.FK_Task_Employee">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="Task" EntitySet="Task" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Task_Task Status" Association="Self.FK_Task_Task Status">
+            <End Role="Status" EntitySet="Status" />
+            <End Role="Task" EntitySet="Task" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DesignStudioModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Attachment">
+          <Key>
+            <PropertyRef Name="Attachment_ID" />
+          </Key>
+          <Property Name="Attachment_ID" Type="Int32" Nullable="false" />
+          <Property Name="Attachment_path" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Project_Ref" Type="Int32" />
+          <NavigationProperty Name="Design_Project" Relationship="Self.FK_Attachment_Design_Project" FromRole="Attachment" ToRole="Design_Project" />
+        </EntityType>
+        <EntityType Name="Color">
+          <Key>
+            <PropertyRef Name="Color_ID" />
+          </Key>
+          <Property Name="Color_ID" Type="Int32" Nullable="false" />
+          <Property Name="Color1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Item" Relationship="Self.Item_Color" FromRole="Color" ToRole="Item" />
+        </EntityType>
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="Customer_ID" />
+          </Key>
+          <Property Name="Customer_ID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Phone" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="Adress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Mail_adress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Customer_type_Ref" Type="Int32" />
+          <NavigationProperty Name="Customer_Type" Relationship="Self.FK_Customer_Customer_Type" FromRole="Customer" ToRole="Customer_Type" />
+          <NavigationProperty Name="Order" Relationship="Self.FK_Order_Customer" FromRole="Customer" ToRole="Order" />
+        </EntityType>
+        <EntityType Name="Customer_Type">
+          <Key>
+            <PropertyRef Name="Customer_type_ID" />
+          </Key>
+          <Property Name="Customer_type_ID" Type="Int32" Nullable="false" />
+          <Property Name="Customer_type1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Customer" Relationship="Self.FK_Customer_Customer_Type" FromRole="Customer_Type" ToRole="Customer" />
+        </EntityType>
+        <EntityType Name="Design_Project">
+          <Key>
+            <PropertyRef Name="Project_ID" />
+          </Key>
+          <Property Name="Project_ID" Type="Int32" Nullable="false" />
+          <Property Name="Project_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Project_price" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Employee_Ref" Type="Int32" />
+          <Property Name="Order_Ref" Type="Int32" />
+          <Property Name="Interior_type_Ref" Type="Int32" />
+          <Property Name="Style_Ref" Type="Int32" />
+          <Property Name="Project_status_Ref" Type="Int32" />
+          <NavigationProperty Name="Attachment" Relationship="Self.FK_Attachment_Design_Project" FromRole="Design_Project" ToRole="Attachment" />
+          <NavigationProperty Name="Employee" Relationship="Self.FK_Design_Project_Employee" FromRole="Design_Project" ToRole="Employee" />
+          <NavigationProperty Name="Interior_Type" Relationship="Self.FK_Design_Project_Interior_Type" FromRole="Design_Project" ToRole="Interior_Type" />
+          <NavigationProperty Name="Order" Relationship="Self.FK_Design_Project_Order" FromRole="Design_Project" ToRole="Order" />
+          <NavigationProperty Name="Status" Relationship="Self.FK_Design_Project_Status" FromRole="Design_Project" ToRole="Status" />
+          <NavigationProperty Name="Style" Relationship="Self.FK_Design_Project_Style" FromRole="Design_Project" ToRole="Style" />
+          <NavigationProperty Name="Task" Relationship="Self.FK_Task_Design_Project" FromRole="Design_Project" ToRole="Task" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="Employee_ID" />
+          </Key>
+          <Property Name="Employee_ID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Birth_date" Type="DateTime" Precision="0" />
+          <Property Name="Residence_place" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Phone" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="Passport_number" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Position_Ref" Type="Int32" />
+          <NavigationProperty Name="Design_Project" Relationship="Self.FK_Design_Project_Employee" FromRole="Employee" ToRole="Design_Project" />
+          <NavigationProperty Name="Position" Relationship="Self.FK_Employee_Position1" FromRole="Employee" ToRole="Position" />
+          <NavigationProperty Name="Order" Relationship="Self.FK_Order_Employee" FromRole="Employee" ToRole="Order" />
+          <NavigationProperty Name="Task" Relationship="Self.FK_Task_Employee" FromRole="Employee" ToRole="Task" />
+        </EntityType>
+        <EntityType Name="Interior_Type">
+          <Key>
+            <PropertyRef Name="Interior_type_ID" />
+          </Key>
+          <Property Name="Interior_type_ID" Type="Int32" Nullable="false" />
+          <Property Name="Interior_type1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Design_Project" Relationship="Self.FK_Design_Project_Interior_Type" FromRole="Interior_Type" ToRole="Design_Project" />
+        </EntityType>
+        <EntityType Name="Item">
+          <Key>
+            <PropertyRef Name="Item_ID" />
+          </Key>
+          <Property Name="Item_ID" Type="Int32" Nullable="false" />
+          <Property Name="Item_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Size" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Item_type_Ref" Type="Int32" />
+          <NavigationProperty Name="Item_Type" Relationship="Self.FK_Material_Material_Type" FromRole="Item" ToRole="Item_Type" />
+          <NavigationProperty Name="Color" Relationship="Self.Item_Color" FromRole="Item" ToRole="Color" />
+          <NavigationProperty Name="Task" Relationship="Self.Task_Item" FromRole="Item" ToRole="Task" />
+        </EntityType>
+        <EntityType Name="Item_Type">
+          <Key>
+            <PropertyRef Name="Item_type_ID" />
+          </Key>
+          <Property Name="Item_type_ID" Type="Int32" Nullable="false" />
+          <Property Name="Item_type1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Item" Relationship="Self.FK_Material_Material_Type" FromRole="Item_Type" ToRole="Item" />
+        </EntityType>
+        <EntityType Name="Order">
+          <Key>
+            <PropertyRef Name="Order_ID" />
+          </Key>
+          <Property Name="Order_ID" Type="Int32" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Start_date" Type="DateTime" Precision="0" />
+          <Property Name="End_date" Type="DateTime" Precision="0" />
+          <Property Name="Total_price" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Customer_Ref" Type="Int32" />
+          <Property Name="Employee_Ref" Type="Int32" />
+          <NavigationProperty Name="Customer" Relationship="Self.FK_Order_Customer" FromRole="Order" ToRole="Customer" />
+          <NavigationProperty Name="Design_Project" Relationship="Self.FK_Design_Project_Order" FromRole="Order" ToRole="Design_Project" />
+          <NavigationProperty Name="Employee" Relationship="Self.FK_Order_Employee" FromRole="Order" ToRole="Employee" />
+        </EntityType>
+        <EntityType Name="Position">
+          <Key>
+            <PropertyRef Name="Position_ID" />
+          </Key>
+          <Property Name="Position_ID" Type="Int32" Nullable="false" />
+          <Property Name="Position_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Employee" Relationship="Self.FK_Employee_Position1" FromRole="Position" ToRole="Employee" />
+        </EntityType>
+        <EntityType Name="Status">
+          <Key>
+            <PropertyRef Name="Status_ID" />
+          </Key>
+          <Property Name="Status_ID" Type="Int32" Nullable="false" />
+          <Property Name="Status1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Design_Project" Relationship="Self.FK_Design_Project_Status" FromRole="Status" ToRole="Design_Project" />
+          <NavigationProperty Name="Task" Relationship="Self.FK_Task_Task_Status" FromRole="Status" ToRole="Task" />
+        </EntityType>
+        <EntityType Name="Style">
+          <Key>
+            <PropertyRef Name="Style_ID" />
+          </Key>
+          <Property Name="Style_ID" Type="Int32" Nullable="false" />
+          <Property Name="Style_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Design_Project" Relationship="Self.FK_Design_Project_Style" FromRole="Style" ToRole="Design_Project" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Task">
+          <Key>
+            <PropertyRef Name="Task_ID" />
+          </Key>
+          <Property Name="Task_ID" Type="Int32" Nullable="false" />
+          <Property Name="Task_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Start_date" Type="DateTime" Precision="0" />
+          <Property Name="End_date" Type="DateTime" Precision="0" />
+          <Property Name="Employee_Ref" Type="Int32" />
+          <Property Name="Project_Ref" Type="Int32" />
+          <Property Name="Task_status_Ref" Type="Int32" />
+          <NavigationProperty Name="Design_Project" Relationship="Self.FK_Task_Design_Project" FromRole="Task" ToRole="Design_Project" />
+          <NavigationProperty Name="Employee" Relationship="Self.FK_Task_Employee" FromRole="Task" ToRole="Employee" />
+          <NavigationProperty Name="Status" Relationship="Self.FK_Task_Task_Status" FromRole="Task" ToRole="Status" />
+          <NavigationProperty Name="Item" Relationship="Self.Task_Item" FromRole="Task" ToRole="Item" />
+        </EntityType>
+        <Association Name="FK_Attachment_Design_Project">
+          <End Role="Design_Project" Type="Self.Design_Project" Multiplicity="0..1" />
+          <End Role="Attachment" Type="Self.Attachment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Design_Project">
+              <PropertyRef Name="Project_ID" />
+            </Principal>
+            <Dependent Role="Attachment">
+              <PropertyRef Name="Project_Ref" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Customer_Customer_Type">
+          <End Role="Customer_Type" Type="Self.Customer_Type" Multiplicity="0..1" />
+          <End Role="Customer" Type="Self.Customer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer_Type">
+              <PropertyRef Name="Customer_type_ID" />
+            </Principal>
+            <Dependent Role="Customer">
+              <PropertyRef Name="Customer_type_Ref" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order_Customer">
+          <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
+          <End Role="Order" Type="Self.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="Customer_ID" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="Customer_Ref" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Design_Project_Employee">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+          <End Role="Design_Project" Type="Self.Design_Project" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="Employee_ID" />
+            </Principal>
+            <Dependent Role="Design_Project">
+              <PropertyRef Name="Employee_Ref" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Design_Project_Interior_Type">
+          <End Role="Interior_Type" Type="Self.Interior_Type" Multiplicity="0..1" />
+          <End Role="Design_Project" Type="Self.Design_Project" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Interior_Type">
+              <PropertyRef Name="Interior_type_ID" />
+            </Principal>
+            <Dependent Role="Design_Project">
+              <PropertyRef Name="Interior_type_Ref" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Design_Project_Order">
+          <End Role="Order" Type="Self.Order" Multiplicity="0..1" />
+          <End Role="Design_Project" Type="Self.Design_Project" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Order">
+              <PropertyRef Name="Order_ID" />
+            </Principal>
+            <Dependent Role="Design_Project">
+              <PropertyRef Name="Order_Ref" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Design_Project_Status">
+          <End Role="Status" Type="Self.Status" Multiplicity="0..1" />
+          <End Role="Design_Project" Type="Self.Design_Project" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Status">
+              <PropertyRef Name="Status_ID" />
+            </Principal>
+            <Dependent Role="Design_Project">
+              <PropertyRef Name="Project_status_Ref" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Design_Project_Style">
+          <End Role="Style" Type="Self.Style" Multiplicity="0..1" />
+          <End Role="Design_Project" Type="Self.Design_Project" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Style">
+              <PropertyRef Name="Style_ID" />
+            </Principal>
+            <Dependent Role="Design_Project">
+              <PropertyRef Name="Style_Ref" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Task_Design_Project">
+          <End Role="Design_Project" Type="Self.Design_Project" Multiplicity="0..1" />
+          <End Role="Task" Type="Self.Task" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Design_Project">
+              <PropertyRef Name="Project_ID" />
+            </Principal>
+            <Dependent Role="Task">
+              <PropertyRef Name="Project_Ref" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Employee_Position1">
+          <End Role="Position" Type="Self.Position" Multiplicity="0..1" />
+          <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Position">
+              <PropertyRef Name="Position_ID" />
+            </Principal>
+            <Dependent Role="Employee">
+              <PropertyRef Name="Position_Ref" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order_Employee">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+          <End Role="Order" Type="Self.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="Employee_ID" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="Employee_Ref" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Task_Employee">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+          <End Role="Task" Type="Self.Task" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="Employee_ID" />
+            </Principal>
+            <Dependent Role="Task">
+              <PropertyRef Name="Employee_Ref" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Material_Material_Type">
+          <End Role="Item_Type" Type="Self.Item_Type" Multiplicity="0..1" />
+          <End Role="Item" Type="Self.Item" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Item_Type">
+              <PropertyRef Name="Item_type_ID" />
+            </Principal>
+            <Dependent Role="Item">
+              <PropertyRef Name="Item_type_Ref" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Task_Task_Status">
+          <End Role="Status" Type="Self.Status" Multiplicity="0..1" />
+          <End Role="Task" Type="Self.Task" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Status">
+              <PropertyRef Name="Status_ID" />
+            </Principal>
+            <Dependent Role="Task">
+              <PropertyRef Name="Task_status_Ref" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Item_Color">
+          <End Role="Color" Type="Self.Color" Multiplicity="*" />
+          <End Role="Item" Type="Self.Item" Multiplicity="*" />
+        </Association>
+        <Association Name="Task_Item">
+          <End Role="Item" Type="Self.Item" Multiplicity="*" />
+          <End Role="Task" Type="Self.Task" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="DesignStudioEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Attachment" EntityType="Self.Attachment" />
+          <EntitySet Name="Color" EntityType="Self.Color" />
+          <EntitySet Name="Customer" EntityType="Self.Customer" />
+          <EntitySet Name="Customer_Type" EntityType="Self.Customer_Type" />
+          <EntitySet Name="Design_Project" EntityType="Self.Design_Project" />
+          <EntitySet Name="Employee" EntityType="Self.Employee" />
+          <EntitySet Name="Interior_Type" EntityType="Self.Interior_Type" />
+          <EntitySet Name="Item" EntityType="Self.Item" />
+          <EntitySet Name="Item_Type" EntityType="Self.Item_Type" />
+          <EntitySet Name="Order" EntityType="Self.Order" />
+          <EntitySet Name="Position" EntityType="Self.Position" />
+          <EntitySet Name="Status" EntityType="Self.Status" />
+          <EntitySet Name="Style" EntityType="Self.Style" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="Task" EntityType="Self.Task" />
+          <AssociationSet Name="FK_Attachment_Design_Project" Association="Self.FK_Attachment_Design_Project">
+            <End Role="Design_Project" EntitySet="Design_Project" />
+            <End Role="Attachment" EntitySet="Attachment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Customer_Customer_Type" Association="Self.FK_Customer_Customer_Type">
+            <End Role="Customer_Type" EntitySet="Customer_Type" />
+            <End Role="Customer" EntitySet="Customer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order_Customer" Association="Self.FK_Order_Customer">
+            <End Role="Customer" EntitySet="Customer" />
+            <End Role="Order" EntitySet="Order" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Design_Project_Employee" Association="Self.FK_Design_Project_Employee">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="Design_Project" EntitySet="Design_Project" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Design_Project_Interior_Type" Association="Self.FK_Design_Project_Interior_Type">
+            <End Role="Interior_Type" EntitySet="Interior_Type" />
+            <End Role="Design_Project" EntitySet="Design_Project" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Design_Project_Order" Association="Self.FK_Design_Project_Order">
+            <End Role="Order" EntitySet="Order" />
+            <End Role="Design_Project" EntitySet="Design_Project" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Design_Project_Status" Association="Self.FK_Design_Project_Status">
+            <End Role="Status" EntitySet="Status" />
+            <End Role="Design_Project" EntitySet="Design_Project" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Design_Project_Style" Association="Self.FK_Design_Project_Style">
+            <End Role="Style" EntitySet="Style" />
+            <End Role="Design_Project" EntitySet="Design_Project" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Task_Design_Project" Association="Self.FK_Task_Design_Project">
+            <End Role="Design_Project" EntitySet="Design_Project" />
+            <End Role="Task" EntitySet="Task" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Employee_Position1" Association="Self.FK_Employee_Position1">
+            <End Role="Position" EntitySet="Position" />
+            <End Role="Employee" EntitySet="Employee" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order_Employee" Association="Self.FK_Order_Employee">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="Order" EntitySet="Order" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Task_Employee" Association="Self.FK_Task_Employee">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="Task" EntitySet="Task" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Material_Material_Type" Association="Self.FK_Material_Material_Type">
+            <End Role="Item_Type" EntitySet="Item_Type" />
+            <End Role="Item" EntitySet="Item" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Task_Task_Status" Association="Self.FK_Task_Task_Status">
+            <End Role="Status" EntitySet="Status" />
+            <End Role="Task" EntitySet="Task" />
+          </AssociationSet>
+          <AssociationSet Name="Item_Color" Association="Self.Item_Color">
+            <End Role="Color" EntitySet="Color" />
+            <End Role="Item" EntitySet="Item" />
+          </AssociationSet>
+          <AssociationSet Name="Task_Item" Association="Self.Task_Item">
+            <End Role="Item" EntitySet="Item" />
+            <End Role="Task" EntitySet="Task" />
+          </AssociationSet>
+          <FunctionImport Name="sp_alterdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_creatediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_dropdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(DesignStudioModel.sp_helpdiagramdefinition_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(DesignStudioModel.sp_helpdiagrams_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_renamediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="new_diagramname" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_upgraddiagrams" />
+        </EntityContainer>
+        <ComplexType Name="sp_helpdiagramdefinition_Result">
+          <Property Type="Int32" Name="version" Nullable="true" />
+          <Property Type="Binary" Name="definition" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_helpdiagrams_Result">
+          <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+          <Property Type="Int32" Name="OwnerID" Nullable="false" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище DesignStudioModelContainer" CdmEntityContainer="DesignStudioEntities">
+          <EntitySetMapping Name="Attachment">
+            <EntityTypeMapping TypeName="DesignStudioModel.Attachment">
+              <MappingFragment StoreEntitySet="Attachment">
+                <ScalarProperty Name="Attachment_ID" ColumnName="Attachment_ID" />
+                <ScalarProperty Name="Attachment_path" ColumnName="Attachment_path" />
+                <ScalarProperty Name="Project_Ref" ColumnName="Project_Ref" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Color">
+            <EntityTypeMapping TypeName="DesignStudioModel.Color">
+              <MappingFragment StoreEntitySet="Color">
+                <ScalarProperty Name="Color_ID" ColumnName="Color_ID" />
+                <ScalarProperty Name="Color1" ColumnName="Color" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Customer">
+            <EntityTypeMapping TypeName="DesignStudioModel.Customer">
+              <MappingFragment StoreEntitySet="Customer">
+                <ScalarProperty Name="Customer_ID" ColumnName="Customer_ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Adress" ColumnName="Adress" />
+                <ScalarProperty Name="Mail_adress" ColumnName="Mail_adress" />
+                <ScalarProperty Name="Customer_type_Ref" ColumnName="Customer_type_Ref" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Customer_Type">
+            <EntityTypeMapping TypeName="DesignStudioModel.Customer_Type">
+              <MappingFragment StoreEntitySet="Customer Type">
+                <ScalarProperty Name="Customer_type_ID" ColumnName="Customer_type_ID" />
+                <ScalarProperty Name="Customer_type1" ColumnName="Customer_type" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Design_Project">
+            <EntityTypeMapping TypeName="DesignStudioModel.Design_Project">
+              <MappingFragment StoreEntitySet="Design Project">
+                <ScalarProperty Name="Project_ID" ColumnName="Project_ID" />
+                <ScalarProperty Name="Project_name" ColumnName="Project_name" />
+                <ScalarProperty Name="Project_price" ColumnName="Project_price" />
+                <ScalarProperty Name="Employee_Ref" ColumnName="Employee_Ref" />
+                <ScalarProperty Name="Order_Ref" ColumnName="Order_Ref" />
+                <ScalarProperty Name="Interior_type_Ref" ColumnName="Interior_type_Ref" />
+                <ScalarProperty Name="Style_Ref" ColumnName="Style_Ref" />
+                <ScalarProperty Name="Project_status_Ref" ColumnName="Project_status_Ref" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Employee">
+            <EntityTypeMapping TypeName="DesignStudioModel.Employee">
+              <MappingFragment StoreEntitySet="Employee">
+                <ScalarProperty Name="Employee_ID" ColumnName="Employee_ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Birth_date" ColumnName="Birth_date" />
+                <ScalarProperty Name="Residence_place" ColumnName="Residence_place" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Passport_number" ColumnName="Passport_number" />
+                <ScalarProperty Name="Position_Ref" ColumnName="Position_Ref" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Interior_Type">
+            <EntityTypeMapping TypeName="DesignStudioModel.Interior_Type">
+              <MappingFragment StoreEntitySet="Interior Type">
+                <ScalarProperty Name="Interior_type_ID" ColumnName="Interior_type_ID" />
+                <ScalarProperty Name="Interior_type1" ColumnName="Interior_type" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Item">
+            <EntityTypeMapping TypeName="DesignStudioModel.Item">
+              <MappingFragment StoreEntitySet="Item">
+                <ScalarProperty Name="Item_ID" ColumnName="Item_ID" />
+                <ScalarProperty Name="Item_name" ColumnName="Item_name" />
+                <ScalarProperty Name="Size" ColumnName="Size" />
+                <ScalarProperty Name="Item_type_Ref" ColumnName="Item_type_Ref" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Item_Type">
+            <EntityTypeMapping TypeName="DesignStudioModel.Item_Type">
+              <MappingFragment StoreEntitySet="Item Type">
+                <ScalarProperty Name="Item_type_ID" ColumnName="Item_type_ID" />
+                <ScalarProperty Name="Item_type1" ColumnName="Item_type" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Order">
+            <EntityTypeMapping TypeName="DesignStudioModel.Order">
+              <MappingFragment StoreEntitySet="Order">
+                <ScalarProperty Name="Order_ID" ColumnName="Order_ID" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Start_date" ColumnName="Start_date" />
+                <ScalarProperty Name="End_date" ColumnName="End_date" />
+                <ScalarProperty Name="Total_price" ColumnName="Total_price" />
+                <ScalarProperty Name="Customer_Ref" ColumnName="Customer_Ref" />
+                <ScalarProperty Name="Employee_Ref" ColumnName="Employee_Ref" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Position">
+            <EntityTypeMapping TypeName="DesignStudioModel.Position">
+              <MappingFragment StoreEntitySet="Position">
+                <ScalarProperty Name="Position_ID" ColumnName="Position_ID" />
+                <ScalarProperty Name="Position_name" ColumnName="Position_name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Status">
+            <EntityTypeMapping TypeName="DesignStudioModel.Status">
+              <MappingFragment StoreEntitySet="Status">
+                <ScalarProperty Name="Status_ID" ColumnName="Status_ID" />
+                <ScalarProperty Name="Status1" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Style">
+            <EntityTypeMapping TypeName="DesignStudioModel.Style">
+              <MappingFragment StoreEntitySet="Style">
+                <ScalarProperty Name="Style_ID" ColumnName="Style_ID" />
+                <ScalarProperty Name="Style_name" ColumnName="Style_name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="DesignStudioModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Task">
+            <EntityTypeMapping TypeName="DesignStudioModel.Task">
+              <MappingFragment StoreEntitySet="Task">
+                <ScalarProperty Name="Task_ID" ColumnName="Task_ID" />
+                <ScalarProperty Name="Task_name" ColumnName="Task_name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Start_date" ColumnName="Start_date" />
+                <ScalarProperty Name="End_date" ColumnName="End_date" />
+                <ScalarProperty Name="Employee_Ref" ColumnName="Employee_Ref" />
+                <ScalarProperty Name="Project_Ref" ColumnName="Project_Ref" />
+                <ScalarProperty Name="Task_status_Ref" ColumnName="Task_status_Ref" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="Item_Color" TypeName="DesignStudioModel.Item_Color" StoreEntitySet="Item Color">
+            <EndProperty Name="Color">
+              <ScalarProperty Name="Color_ID" ColumnName="Color_Ref" />
+            </EndProperty>
+            <EndProperty Name="Item">
+              <ScalarProperty Name="Item_ID" ColumnName="Item_Ref" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="Task_Item" TypeName="DesignStudioModel.Task_Item" StoreEntitySet="Task Item">
+            <EndProperty Name="Item">
+              <ScalarProperty Name="Item_ID" ColumnName="Item_Ref" />
+            </EndProperty>
+            <EndProperty Name="Task">
+              <ScalarProperty Name="Task_ID" ColumnName="Task_Ref" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="Хранилище DesignStudioModel.sp_alterdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="Хранилище DesignStudioModel.sp_creatediagram" />
+          <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="Хранилище DesignStudioModel.sp_dropdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="Хранилище DesignStudioModel.sp_helpdiagramdefinition">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="DesignStudioModel.sp_helpdiagramdefinition_Result">
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="Хранилище DesignStudioModel.sp_helpdiagrams">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="DesignStudioModel.sp_helpdiagrams_Result">
+                <ScalarProperty Name="Database" ColumnName="Database" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Owner" ColumnName="Owner" />
+                <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="Хранилище DesignStudioModel.sp_renamediagram" />
+          <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="Хранилище DesignStudioModel.sp_upgraddiagrams" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

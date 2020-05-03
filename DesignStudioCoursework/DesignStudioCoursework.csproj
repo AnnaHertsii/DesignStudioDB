@@ -35,9 +35,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -56,6 +65,65 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Attachment.cs">
+      <DependentUpon>DesignStudioModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Color.cs">
+      <DependentUpon>DesignStudioModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Customer.cs">
+      <DependentUpon>DesignStudioModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Customer_Type.cs">
+      <DependentUpon>DesignStudioModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DesignStudioModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DesignStudioModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Design_Project.cs">
+      <DependentUpon>DesignStudioModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Employee.cs">
+      <DependentUpon>DesignStudioModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Interior_Type.cs">
+      <DependentUpon>DesignStudioModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Item.cs">
+      <DependentUpon>DesignStudioModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Item_Type.cs">
+      <DependentUpon>DesignStudioModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Order.cs">
+      <DependentUpon>DesignStudioModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Position.cs">
+      <DependentUpon>DesignStudioModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Review\ClientsReview\ClientsPage.xaml.cs">
+      <DependentUpon>ClientsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>DesignStudioModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_helpdiagrams_Result.cs">
+      <DependentUpon>DesignStudioModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Status.cs">
+      <DependentUpon>DesignStudioModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Style.cs">
+      <DependentUpon>DesignStudioModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagrams.cs">
+      <DependentUpon>DesignStudioModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Task.cs">
+      <DependentUpon>DesignStudioModel.tt</DependentUpon>
+    </Compile>
     <Page Include="About\AboutPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -89,6 +157,16 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="DesignStudioModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DesignStudioModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DesignStudioModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DesignStudioModel.edmx</DependentUpon>
+    </Compile>
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -113,6 +191,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="NewProject\NewProjectPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Review\ClientsReview\ClientsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -150,6 +232,14 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EntityDeploy Include="DesignStudioModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DesignStudioModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="DesignStudioModel.edmx.diagram">
+      <DependentUpon>DesignStudioModel.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -230,8 +320,22 @@
   <ItemGroup>
     <Folder Include="Management\ProjectManagement\" />
     <Folder Include="Management\TaskManagement\" />
-    <Folder Include="Review\ClientsReview\" />
     <Folder Include="Review\OrdersReview\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DesignStudioModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>DesignStudioModel.Context.cs</LastGenOutput>
+      <DependentUpon>DesignStudioModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="DesignStudioModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DesignStudioModel.edmx</DependentUpon>
+      <LastGenOutput>DesignStudioModel.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
