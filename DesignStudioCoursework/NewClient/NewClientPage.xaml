@@ -241,22 +241,15 @@
             Grid.Row="1"
             Grid.Column="0"
             Name="customer_type" 
+            FontSize="20" 
+            FontStyle ="Italic"
+            Foreground="#8787ed"
             Height="37" 
             HorizontalAlignment="Center"
             Margin="226,352,23,33" 
             Width="336">
-            <TextBlock 
-                FontStyle ="Italic" 
-                FontSize="20"
-                Foreground="#8787ed">
-                Приватний клієнт
-            </TextBlock>
-            <TextBlock 
-                FontStyle ="Italic" 
-                FontSize="20"
-                Foreground="#8787ed">
-                Компанія
-            </TextBlock>
+            <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Приватний клієнт"/>
+            <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Компанія"/>
         </ComboBox>
         <Button
             Name="AddCustomerButton"

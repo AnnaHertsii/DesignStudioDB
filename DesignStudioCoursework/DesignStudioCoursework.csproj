@@ -116,10 +116,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="NewProject\InteriorTypeWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="NewClient\NewClientPage.xaml.cs">
@@ -136,9 +132,6 @@
     </Compile>
     <Compile Include="NewProject\NewProjectPage.xaml.cs">
       <DependentUpon>NewProjectPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="NewProject\InteriorTypeWindow.xaml.cs">
-      <DependentUpon>InteriorTypeWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

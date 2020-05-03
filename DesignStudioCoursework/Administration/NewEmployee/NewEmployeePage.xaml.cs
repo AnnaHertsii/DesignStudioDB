@@ -34,5 +34,35 @@ namespace DesignStudioCoursework.NewEmployee
         {
             goBack();
         }
+
+        private void ComboBox_Selected(object sender, RoutedEventArgs e)
+        {
+            ComboBox comboBox = (ComboBox)sender;
+            ComboBoxItem selectedItem = (ComboBoxItem)comboBox.SelectedItem;
+            String employee = selectedItem.Content.ToString();
+
+            BitmapImage image = null;
+            if (employee == "Проектувальник")
+            {
+                image = new BitmapImage(new Uri("/DesignStudioCoursework;component/Resources/projecter.png", UriKind.Relative));
+            }
+            else if (employee == "Художник")
+            {
+                image = new BitmapImage(new Uri("/DesignStudioCoursework;component/Resources/painter.png", UriKind.Relative));
+            }
+            else if (employee == "Дизайнер")
+            {
+                image = new BitmapImage(new Uri("/DesignStudioCoursework;component/Resources/designer.png", UriKind.Relative));
+            }
+            else if (employee == "Менеджер")
+            {
+                image = new BitmapImage(new Uri("/DesignStudioCoursework;component/Resources/manager.png", UriKind.Relative));
+            }
+            else if (employee == "Секретар")
+            {
+                image = new BitmapImage(new Uri("/DesignStudioCoursework;component/Resources/secreter.png", UriKind.Relative));
+            }
+            employeeType.Source = image;
+        }
     }
 }

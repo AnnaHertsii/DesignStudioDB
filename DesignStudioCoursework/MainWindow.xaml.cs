@@ -24,7 +24,6 @@ namespace DesignStudioCoursework
         NewOrderPage newOrderPage;
         NewProjectPage newProjectPage;
         NewEmployeePage newEmployeePage;
-        InteriorTypePage interiorTypePage;
 
         public MainWindow()
         {

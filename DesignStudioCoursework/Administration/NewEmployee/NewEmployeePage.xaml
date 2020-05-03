@@ -266,43 +266,22 @@
             Text="" 
             Width="336" Margin="226,352,23,89"/>
         <ComboBox 
+            SelectionChanged="ComboBox_Selected"
             Grid.Row="1"
             Grid.Column="0"
+            FontSize="20" 
+            FontStyle ="Italic"
+            Foreground="#8787ed"
             Name="customer_type" 
             Height="37" 
             HorizontalAlignment="Center"
             Margin="226,422,23,19" 
             Width="336">
-            <TextBlock 
-                FontStyle ="Italic" 
-                FontSize="20"
-                Foreground="#8787ed">
-                Проектувальник
-            </TextBlock>
-            <TextBlock 
-                FontStyle ="Italic" 
-                FontSize="20"
-                Foreground="#8787ed">
-                Художник
-            </TextBlock>
-            <TextBlock 
-                FontStyle ="Italic" 
-                FontSize="20"
-                Foreground="#8787ed">
-                Дизайнер
-            </TextBlock>
-            <TextBlock 
-                FontStyle ="Italic" 
-                FontSize="20"
-                Foreground="#8787ed">
-                Менеджер
-            </TextBlock>
-            <TextBlock 
-                FontStyle ="Italic" 
-                FontSize="20"
-                Foreground="#8787ed">
-                Секретар
-            </TextBlock>
+            <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Проектувальник"/>
+            <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Художник"/>
+            <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Дизайнер"/>
+            <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Менеджер"/>
+            <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Секретар"/>
         </ComboBox>
         <Button
             Name="AddCustomerButton"
@@ -322,6 +301,7 @@
         <Image 
             Grid.Row="1"
             Grid.Column="1"
+            Name="employeeType"
             HorizontalAlignment="Left" 
             Source="/DesignStudioCoursework;component/Resources/worker.png" 
             Stretch="Uniform"
