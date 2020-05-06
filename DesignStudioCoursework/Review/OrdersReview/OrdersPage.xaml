@@ -38,13 +38,14 @@
             <RowDefinition Height="593*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition />
-            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="53*" />
+            <ColumnDefinition Width="478*" />
+            <ColumnDefinition Width="54*"/>
         </Grid.ColumnDefinitions>
         <Menu
             Background="#99A2F1"
             Foreground="White"
-            Grid.Row="0" Grid.ColumnSpan="2">
+            Grid.Row="0" Grid.ColumnSpan="3">
             <MenuItem 
                 Header="Головна" 
                 FontSize="16"
@@ -99,31 +100,53 @@
         </Menu>
         <Border 
             Grid.Row="1"
-            Background="#BCC3FF" Grid.ColumnSpan="2" >
-            <DataGrid 
+            Background="#BCC3FF" Grid.ColumnSpan="3" />
+        <DataGrid 
                 FontSize="20" 
+                Grid.Row="1"
+                Grid.Column="1"
+                CanUserAddRows="True"
                 FontStyle ="Italic"
                 Foreground="#7373E5"
-                Name="DataGridCustomer"
+                Name="DataGridOrder"
+                Background="#BCC3FF"
                 AutoGenerateColumns="True"
-                HorizontalAlignment="Left" 
-                Height="472"
-                Margin="100,74,0,0"
-                VerticalAlignment="Top" 
-                Width="992"/>
-        </Border>
+                Margin="13,74,10,111"/>
+        <Image
+            Grid.Row="1"
+            Source="/DesignStudioCoursework;component/Resources/leangirl.png" 
+            Stretch="Uniform" Margin="0,164,0,111" Grid.Column="2"/>
+        <Button
+            Name="EditCustomerButton"
+            Height="56"
+            Cursor="Hand"
+            Margin="312,507,400,0"
+            VerticalAlignment="Top"
+            HorizontalAlignment="Center"
+            Style="{StaticResource BlueButtonStyle}"
+            Grid.Row="1" 
+            FontSize="24"
+            FontStyle="Italic"
+            Foreground="White"
+            Content="Редагувати" Width="244" Grid.Column="1">
+        </Button>
         <Button
             Name="BackButton"
-            Height="36"
+            Height="42"
             Cursor="Hand"
-            Margin="10,10,57,0"
+            Margin="10,10,46,0"
+            HorizontalAlignment="Center"
             VerticalAlignment="Top"
             BorderThickness="0"
             Style="{StaticResource BlueButtonStyle}"
             Click="BackButton_Click"
             Grid.Row="1" 
-            Grid.Column="0">
-            <Image HorizontalAlignment="Left" Source="/DesignStudioCoursework;component/Resources/back.png" Stretch="Uniform" Height="36" Width="34"/>
+            Grid.Column="0" Width="50">
+            <Image HorizontalAlignment="Left"
+                   Source="/DesignStudioCoursework;component/Resources/back.png" 
+                   Stretch="Uniform"
+                   Height="36" 
+                   Width="34"/>
         </Button>
         <Label 
             Grid.Row="1"
@@ -131,13 +154,14 @@
             FontStyle ="Italic" 
             Foreground="White" 
             FontWeight="Bold"
-            Content="Поточні замовлення" 
+            Content="Наші замовлення" 
             HorizontalAlignment="Center" 
             VerticalAlignment="Top"
             FontSize="24"
-            Width="274" 
-            RenderTransformOrigin="0.507,0.441" Margin="330,10,442,0" Height="36"/>
+            Width="226" 
+            RenderTransformOrigin="0.507,0.441" Margin="350,10,380,0" Height="36"/>
 
     </Grid>
 </Page>
+
 

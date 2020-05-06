@@ -23,8 +23,28 @@ namespace DesignStudioCoursework.Review.ClientsReview
         {
             this.goBack = goBack;
             InitializeComponent();
-            var designStudioEntities = new DesignStudioEntities();
-            DataGridCustomer.ItemsSource = designStudioEntities.Customer.ToList().Select(c => new { c.Customer_ID, c.Name, c.Phone, c.Adress, c.Mail_adress});
+            ShowCustomers();
+            //var designStudioEntities = new DesignStudioEntities();
+            //DataGridCustomer.ItemsSource = designStudioEntities.Customer.ToList().Select(c => new { c.Customer_ID, c.Name, c.Phone, c.Adress, c.Mail_adress});
+        }
+
+        public void ShowCustomers()
+        {
+            using (var Content = new DesignStudioEntities())
+            {
+                var customers = from customer in Content.Customer
+                                   join type in Content.Customer_Type on customer.Customer_type_Ref equals type.Customer_type_ID
+                                   select new
+                                   {
+                                       customer.Customer_ID,
+                                       customer.Name,
+                                       customer.Phone,
+                                       customer.Adress,
+                                       customer.Mail_adress,
+                                       type.Customer_type1
+                                   };
+                DataGridCustomer.ItemsSource = customers.ToList();
+            }
         }
 
         private void ExitClicked(object sender, RoutedEventArgs e)

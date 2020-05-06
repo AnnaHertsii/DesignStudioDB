@@ -346,6 +346,12 @@
       <DependentUpon>DesignStudioModel.edmx</DependentUpon>
       <LastGenOutput>DesignStudioModel.cs</LastGenOutput>
     </Content>
+    <Resource Include="Resources\taskicon.png" />
+    <Resource Include="Resources\projecticon.png" />
+    <Resource Include="Resources\ordericon.png" />
+    <Resource Include="Resources\exit.png" />
+    <Resource Include="Resources\clienticon.png" />
+    <Resource Include="Resources\leangirl.png" />
     <Resource Include="Resources\hello.png" />
   </ItemGroup>
   <ItemGroup>

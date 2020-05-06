@@ -108,29 +108,39 @@
             <MenuItem 
                 Header="Головна" 
                 FontSize="16"
+                Cursor="Hand"
                 Foreground="White">
                 <MenuItem 
                     Background="#F2F2F2"
                     Foreground="#99A2F1"
+                    Cursor="Hand"
                     Click="ExitClicked"
-                    Header="Вийти">
+                    Header="Вийти"
+                    Icon="/DesignStudioCoursework;component/Resources/exit.png">
                 </MenuItem>
             </MenuItem>
             <MenuItem 
-                Header="Перегляд" 
+                Header="Редагування" 
                 FontSize="16" 
+                Cursor="Hand"
                 Foreground="White">
                 <MenuItem 
                     Name="Clients"
                     Background="#F2F2F2"
                     Foreground="#99A2F1"
-                    Header="Наші клієнти" Click="Clients_Click">
+                    Cursor="Hand"
+                    Header="Наші клієнти" 
+                    Icon ="/DesignStudioCoursework;component/Resources/clienticon.png" 
+                    Click="Clients_Click">
                 </MenuItem>
                 <MenuItem 
                     Name="Orders"
                     Background="#F2F2F2"
                     Foreground="#99A2F1"
-                    Header="Поточні замовлення" Click="Orders_Click">
+                    Cursor="Hand"
+                    Header="Поточні замовлення"
+                    Icon="/DesignStudioCoursework;component/Resources/ordericon.png"
+                    Click="Orders_Click">
                 </MenuItem>
             </MenuItem>
             <MenuItem 
@@ -141,38 +151,42 @@
                     Name="Projects"
                     Background="#F2F2F2"
                     Foreground="#99A2F1"
+                    Cursor="Hand"
+                    Icon="/DesignStudioCoursework;component/Resources/projecticon.png"
                     Header="Управління проектами">
                 </MenuItem>
                 <MenuItem 
                     Name="Tasks"
                     Background="#F2F2F2"
                     Foreground="#99A2F1"
+                    Cursor="Hand"
+                    Icon="/DesignStudioCoursework;component/Resources/taskicon.png"
                     Header="Управління задачами">
                 </MenuItem>
             </MenuItem>
             <MenuItem 
                 Header="Адміністрація" 
                 FontSize="16" 
+                Cursor="Hand"
                 Foreground="White">
                 <MenuItem 
                     Background="#F2F2F2"
                     Foreground="#99A2F1"
+                    Cursor="Hand"
                     Header="Управління працівниками">
                     <MenuItem 
                     Background="#F2F2F2"
                     Foreground="#99A2F1"
-                    Header="Перегляд усіх працівників">
+                    Cursor="Hand"
+                    Header="Редагувати працівників">
                     </MenuItem>
                     <MenuItem    
                     Name="AddNewEmployee"
                     Background="#F2F2F2"
                     Foreground="#99A2F1"
-                    Header="Додати нового працівника" Click="AddNewEmployee_Click">
-                    </MenuItem>
-                    <MenuItem 
-                    Background="#F2F2F2"
-                    Foreground="#99A2F1"
-                    Header="Видалити працівника">
+                    Cursor="Hand"
+                    Header="Додати нового працівника"
+                    Click="AddNewEmployee_Click">
                     </MenuItem>
                 </MenuItem>
             </MenuItem>
@@ -180,7 +194,9 @@
                 Name="About"
                 Header="Про нас" 
                 FontSize="16" 
-                Foreground="White" Click="About_Click"/>
+                Cursor="Hand"
+                Foreground="White" 
+                Click="About_Click"/>
         </Menu>
 
         <Border           

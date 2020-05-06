@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:DesignStudioCoursework"
         mc:Ignorable="d"
         Icon="/DesignStudioCoursework;component/Resources/logo.png"
-        Title="Вхід" Height="450" Width="800">
+        Title="Вхід" Height="450" Width="700">
     <Window.Resources>
         <Style x:Key="CoralButton" TargetType="Button">
             <Setter Property="Foreground" Value="White"/>
@@ -83,7 +83,7 @@
         <Image
             Grid.Row="0"
             Source="/DesignStudioCoursework;component/Resources/hello.png" 
-            Stretch="Uniform" Margin="333,10,319,0"/>
+            Stretch="Uniform" Margin="290,10,277,5"/>
         <TextBox 
             Name="Login"
             FontStyle ="Italic" 
@@ -118,8 +118,8 @@ Margin="205,110,151,117"
             Foreground="White"
             Content="Вхід в систему"
             HorizontalAlignment="Center" 
-            Margin="324,0,284,0"
-            Width="184" 
+            Margin="262,5,249,0"
+            Width="181" 
             Height="48" 
             VerticalAlignment="Top" 
             Grid.Row="1"/>
@@ -130,8 +130,8 @@ Margin="205,110,151,117"
             Foreground="White"
             Content="Логін:"
             HorizontalAlignment="Center" 
-            Margin="86,58,623,0"
-            Width="83" 
+            Margin="36,58,572,0"
+            Width="84" 
             Height="35" 
             VerticalAlignment="Top"
             Grid.Row="1"/>
@@ -142,8 +142,8 @@ Margin="205,110,151,117"
             Foreground="White"
             Content="Пароль:"
             HorizontalAlignment="Center" 
-            Margin="86,110,608,0"
-            Width="98" 
+            Margin="36,110,542,0"
+            Width="114" 
             Height="41" 
             VerticalAlignment="Top"
             Grid.Row="1"/>

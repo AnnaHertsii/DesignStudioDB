@@ -113,6 +113,16 @@ namespace DesignStudioCoursework.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap clienticon {
+            get {
+                object obj = ResourceManager.GetObject("clienticon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap corridor {
             get {
                 object obj = ResourceManager.GetObject("corridor", resourceCulture);
@@ -133,6 +143,16 @@ namespace DesignStudioCoursework.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap exit {
+            get {
+                object obj = ResourceManager.GetObject("exit", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap hello {
             get {
                 object obj = ResourceManager.GetObject("hello", resourceCulture);
@@ -146,6 +166,16 @@ namespace DesignStudioCoursework.Properties {
         internal static System.Drawing.Bitmap kitchen {
             get {
                 object obj = ResourceManager.GetObject("kitchen", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap leangirl {
+            get {
+                object obj = ResourceManager.GetObject("leangirl", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -223,6 +253,16 @@ namespace DesignStudioCoursework.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ordericon {
+            get {
+                object obj = ResourceManager.GetObject("ordericon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap painter {
             get {
                 object obj = ResourceManager.GetObject("painter", resourceCulture);
@@ -243,9 +283,29 @@ namespace DesignStudioCoursework.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap projecticon {
+            get {
+                object obj = ResourceManager.GetObject("projecticon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap secreter {
             get {
                 object obj = ResourceManager.GetObject("secreter", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap taskicon {
+            get {
+                object obj = ResourceManager.GetObject("taskicon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
