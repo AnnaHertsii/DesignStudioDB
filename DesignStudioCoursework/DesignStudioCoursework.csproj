@@ -97,6 +97,9 @@
     <Compile Include="Item_Type.cs">
       <DependentUpon>DesignStudioModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="LoginWindow.xaml.cs">
+      <DependentUpon>LoginWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Order.cs">
       <DependentUpon>DesignStudioModel.tt</DependentUpon>
     </Compile>
@@ -136,6 +139,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="About\WorksPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LoginWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -339,6 +346,7 @@
       <DependentUpon>DesignStudioModel.edmx</DependentUpon>
       <LastGenOutput>DesignStudioModel.cs</LastGenOutput>
     </Content>
+    <Resource Include="Resources\hello.png" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
