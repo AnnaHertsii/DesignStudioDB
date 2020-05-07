@@ -98,13 +98,11 @@
             <ColumnDefinition Width="333*"/>
             <ColumnDefinition Width="333*"/>
         </Grid.ColumnDefinitions>
-
         <Menu 
             Cursor="Hand"
-            Grid.ColumnSpan="3"
             Background="#99A2F1"
             Foreground="White"
-            Grid.Row="0">
+            Grid.Row="0" Grid.ColumnSpan="3">
             <MenuItem 
                 Header="Головна" 
                 FontSize="16"
@@ -115,8 +113,10 @@
                     Foreground="#99A2F1"
                     Cursor="Hand"
                     Click="ExitClicked"
-                    Header="Вийти"
-                    Icon="/DesignStudioCoursework;component/Resources/exit.png">
+                    Header="Вийти">
+                    <MenuItem.Icon>
+                        <Image Source="/DesignStudioCoursework;component/Resources/exit.png"/>
+                    </MenuItem.Icon>
                 </MenuItem>
             </MenuItem>
             <MenuItem 
@@ -130,8 +130,10 @@
                     Foreground="#99A2F1"
                     Cursor="Hand"
                     Header="Наші клієнти" 
-                    Icon ="/DesignStudioCoursework;component/Resources/clienticon.png" 
                     Click="Clients_Click">
+                    <MenuItem.Icon>
+                        <Image Source="/DesignStudioCoursework;component/Resources/clienticon.png"/>
+                    </MenuItem.Icon>
                 </MenuItem>
                 <MenuItem 
                     Name="Orders"
@@ -139,8 +141,10 @@
                     Foreground="#99A2F1"
                     Cursor="Hand"
                     Header="Поточні замовлення"
-                    Icon="/DesignStudioCoursework;component/Resources/ordericon.png"
                     Click="Orders_Click">
+                    <MenuItem.Icon>
+                        <Image Source="/DesignStudioCoursework;component/Resources/ordericon.png"/>
+                    </MenuItem.Icon>
                 </MenuItem>
             </MenuItem>
             <MenuItem 
@@ -152,16 +156,20 @@
                     Background="#F2F2F2"
                     Foreground="#99A2F1"
                     Cursor="Hand"
-                    Icon="/DesignStudioCoursework;component/Resources/projecticon.png"
                     Header="Управління проектами">
+                    <MenuItem.Icon>
+                        <Image Source="/DesignStudioCoursework;component/Resources/projecticon.png"/>
+                    </MenuItem.Icon>
                 </MenuItem>
                 <MenuItem 
                     Name="Tasks"
                     Background="#F2F2F2"
                     Foreground="#99A2F1"
                     Cursor="Hand"
-                    Icon="/DesignStudioCoursework;component/Resources/taskicon.png"
                     Header="Управління задачами">
+                    <MenuItem.Icon>
+                        <Image Source="/DesignStudioCoursework;component/Resources/taskicon.png"/>
+                    </MenuItem.Icon>
                 </MenuItem>
             </MenuItem>
             <MenuItem 
@@ -198,7 +206,6 @@
                 Foreground="White" 
                 Click="About_Click"/>
         </Menu>
-
         <Border           
             Grid.ColumnSpan="3" 
             Background="#BCC3FF" 

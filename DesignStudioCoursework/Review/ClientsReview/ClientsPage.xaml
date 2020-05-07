@@ -128,7 +128,7 @@
             FontSize="24"
             FontStyle="Italic"
             Foreground="White"
-            Content="Редагувати" Width="244" Grid.Column="1">
+            Content="Редагувати" Width="244" Grid.Column="1" Click="EditCustomerButton_Click">
         </Button>
         <Button
             Name="BackButton"

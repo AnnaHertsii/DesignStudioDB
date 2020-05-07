@@ -56,5 +56,11 @@ namespace DesignStudioCoursework.Review.ClientsReview
         {
             goBack();
         }
+
+        private void EditCustomerButton_Click(object sender, RoutedEventArgs e)
+        {
+            UpdateClientWindow updateClient = new UpdateClientWindow();
+            updateClient.Show();
+        }
     }
 }

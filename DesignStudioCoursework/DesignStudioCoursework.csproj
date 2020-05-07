@@ -109,6 +109,9 @@
     <Compile Include="Review\ClientsReview\ClientsPage.xaml.cs">
       <DependentUpon>ClientsPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Review\ClientsReview\UpdateClientWindow.xaml.cs">
+      <DependentUpon>UpdateClientWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Review\OrdersReview\OrdersPage.xaml.cs">
       <DependentUpon>OrdersPage.xaml</DependentUpon>
     </Compile>
@@ -205,6 +208,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Review\ClientsReview\ClientsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Review\ClientsReview\UpdateClientWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

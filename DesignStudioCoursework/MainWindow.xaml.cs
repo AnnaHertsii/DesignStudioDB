@@ -59,8 +59,8 @@ namespace DesignStudioCoursework
                     MainFrame.Content = newEmployeePage;
                     break;
                 case 4:
-                    clientsPage = new ClientsPage(CloseFrame);
-                    MainFrame.Content = clientsPage;
+                    clientsPage = new ClientsPage(CloseFrame);                    
+                    MainFrame.Content = clientsPage;                   
                     break;
                 case 5:
                     ordersPage = new OrdersPage(CloseFrame);
