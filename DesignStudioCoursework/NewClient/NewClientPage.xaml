@@ -255,7 +255,7 @@
             Name="AddCustomerButton"
             Height="56"
             Cursor="Hand"
-            Margin="160,39,181,0"
+            Margin="194,43,147,0"
             VerticalAlignment="Top"
             HorizontalAlignment="Center"
             BorderThickness="0"

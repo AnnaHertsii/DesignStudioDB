@@ -23,29 +23,7 @@ namespace DesignStudioCoursework.Review.ClientsReview
         {
             this.goBack = goBack;
             InitializeComponent();
-            ShowCustomers();
-            //var designStudioEntities = new DesignStudioEntities();
-            //DataGridCustomer.ItemsSource = designStudioEntities.Customer.ToList().Select(c => new { c.Customer_ID, c.Name, c.Phone, c.Adress, c.Mail_adress});
-        }
-
-        public void ShowCustomers()
-        {
-            using (var Content = new DesignStudioEntities())
-            {
-                var customers = from customer in Content.Customer
-                                   join type in Content.Customer_Type on customer.Customer_type_Ref equals type.Customer_type_ID
-                                   select new
-                                   {
-                                       customer.Customer_ID,
-                                       customer.Name,
-                                       customer.Phone,
-                                       customer.Adress,
-                                       customer.Mail_adress,
-                                       type.Customer_type1
-                                   };
-                DataGridCustomer.ItemsSource = customers.ToList();
-            }
-        }
+           }
 
         private void ExitClicked(object sender, RoutedEventArgs e)
         {
@@ -59,8 +37,47 @@ namespace DesignStudioCoursework.Review.ClientsReview
 
         private void EditCustomerButton_Click(object sender, RoutedEventArgs e)
         {
-            UpdateClientWindow updateClient = new UpdateClientWindow();
+            int index = Int16.Parse(GetSelectedCellValue(0));
+            UpdateClientWindow updateClient = new UpdateClientWindow(index);
             updateClient.Show();
+        }
+
+        private void ShowCustomersButton_Click(object sender, RoutedEventArgs e)
+        {
+            ShowCustomers();
+        }
+
+        public void ShowCustomers()
+        {
+            using (var Content = new DesignStudioEntities())
+            {
+                var customers = from customer in Content.Customer
+                                join type in Content.Customer_Type on customer.Customer_type_Ref equals type.Customer_type_ID
+                                select new
+                                {
+                                    customer.Customer_ID,
+                                    customer.Name,
+                                    customer.Phone,
+                                    customer.Adress,
+                                    customer.Mail_adress,
+                                    type.Customer_type1
+                                };
+                DataGridCustomer.ItemsSource = customers.ToList();
+            }
+        }
+
+        public string GetSelectedCellValue(int index)
+        {
+            DataGridCellInfo cellInfo = DataGridCustomer.SelectedCells[index];
+            if (cellInfo == null) return null;
+
+            DataGridBoundColumn column = cellInfo.Column as DataGridBoundColumn;
+            if (column == null) return null;
+
+            FrameworkElement element = new FrameworkElement() { DataContext = cellInfo.Item };
+            BindingOperations.SetBinding(element, TagProperty, column.Binding);
+
+            return element.Tag.ToString();
         }
     }
 }

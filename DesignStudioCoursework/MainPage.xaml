@@ -1,4 +1,4 @@
-﻿<Page x:Class="DesignStudioCoursework.MainPage"
+﻿ <Page x:Class="DesignStudioCoursework.MainPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -160,6 +160,16 @@
                     <MenuItem.Icon>
                         <Image Source="/DesignStudioCoursework;component/Resources/projecticon.png"/>
                     </MenuItem.Icon>
+                    <MenuItem 
+                    Name="NotOpenedProjects"
+                    Background="#F2F2F2"
+                    Foreground="#99A2F1"
+                    Cursor="Hand"
+                    Header="Невідкриті проекти">
+                        <MenuItem.Icon>
+                            <Image Source="/DesignStudioCoursework;component/Resources/projecticon.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
                 </MenuItem>
                 <MenuItem 
                     Name="Tasks"

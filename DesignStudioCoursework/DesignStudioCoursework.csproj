@@ -124,6 +124,7 @@
     <Compile Include="Status.cs">
       <DependentUpon>DesignStudioModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Structure\Client.cs" />
     <Compile Include="Style.cs">
       <DependentUpon>DesignStudioModel.tt</DependentUpon>
     </Compile>

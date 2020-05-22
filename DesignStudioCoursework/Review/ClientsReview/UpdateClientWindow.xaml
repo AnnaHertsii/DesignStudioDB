@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DesignStudioCoursework.Review.ClientsReview"
         mc:Ignorable="d"
+        Icon="/DesignStudioCoursework;component/Resources/logo.png"
         Title="Оновлення інформації клієнта" Height="561" Width="500">
     <Window.Resources>
         <Style x:Key="BlueButtonStyle" TargetType="{x:Type Button}">
@@ -45,7 +46,7 @@
             Name="BackButton"
             Height="38"
             Cursor="Hand"
-            Margin="11,10,438,0"
+            Margin="11,10,434,0"
             VerticalAlignment="Top"
             BorderThickness="0"
             Style="{StaticResource BlueButtonStyle}"
@@ -73,7 +74,7 @@
             VerticalAlignment="Top"
             FontSize="20"
             Width="138" 
-            RenderTransformOrigin="0.5,0.516" Margin="11,87,0,0"/>
+            RenderTransformOrigin="0.5,0.516" Margin="11,94,0,0"/>
         <TextBox 
             Padding="10,0,0,0"
             Grid.Row="0"
@@ -95,7 +96,7 @@
             VerticalAlignment="Top"
             FontSize="20"
             Width="185" 
-            RenderTransformOrigin="0.5,0.516" Margin="11,153,0,0"/>
+            RenderTransformOrigin="0.5,0.516" Margin="11,161,0,0"/>
         <TextBox 
             Padding="10,0,0,0"
             Grid.Row="0"
@@ -117,7 +118,7 @@
             VerticalAlignment="Top"
             FontSize="20"
             Width="185" 
-            RenderTransformOrigin="0.5,0.516" Margin="11,217,0,0"/>
+            RenderTransformOrigin="0.5,0.516" Margin="11,226,0,0"/>
         <TextBox 
             Padding="10,0,0,0"
             Grid.Row="0"
@@ -139,7 +140,7 @@
             VerticalAlignment="Top"
             FontSize="20"
             Width="185" 
-            RenderTransformOrigin="0.5,0.516" Margin="10,282,0,0"/>
+            RenderTransformOrigin="0.5,0.516" Margin="11,291,0,0"/>
         <TextBox 
             Padding="10,0,0,0"
             Grid.Row="0"
@@ -161,7 +162,7 @@
             VerticalAlignment="Top"
             FontSize="20"
             Width="185" 
-            RenderTransformOrigin="0.5,0.516" Margin="11,348,0,0"/>
+            RenderTransformOrigin="0.5,0.516" Margin="11,354,0,0"/>
         <ComboBox 
             Grid.Row="0"
             Name="customer_type" 
@@ -170,16 +171,17 @@
             Foreground="#8787ed"
             Height="37" 
             HorizontalAlignment="Center"
-            Margin="216,360,19,10" 
-            Width="257">
+            Margin="216,354,19,16" 
+            Width="257"
+            SelectedIndex="0">
             <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Приватний клієнт"/>
             <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Компанія"/>
         </ComboBox>
         <Button
             Name="UpdateCustomerButton"
-            Height="56"
+            Height="48"
             Cursor="Hand"
-            Margin="132,39,134,0"
+            Margin="151,39,134,0"
             VerticalAlignment="Top"
             HorizontalAlignment="Center"
             BorderThickness="0"
@@ -188,7 +190,7 @@
             FontSize="24"
             FontStyle="Italic"
             Foreground="White"
-            Content="Зберегти" Width="226">
+            Content="Зберегти" Width="207">
         </Button>
     </Grid>
 </Window>
