@@ -152,7 +152,7 @@
             HorizontalAlignment="Center" 
             TextWrapping="Wrap"
             Text="" 
-            Width="336" Margin="226,87,23,298"/>
+            Width="336" Margin="226,87,23,303"/>
         <Label 
             Grid.Row="1"
             Grid.Column="0"
@@ -176,7 +176,7 @@
             HorizontalAlignment="Center" 
             TextWrapping="Wrap"
             Text="" 
-            Width="336" Margin="226,153,23,232"/>
+            Width="336" Margin="226,153,23,238"/>
         <Label 
             Grid.Row="1"
             Grid.Column="0"
@@ -200,7 +200,7 @@
             HorizontalAlignment="Center" 
             TextWrapping="Wrap"
             Text="" 
-            Width="336" Margin="226,217,23,168"/>
+            Width="336" Margin="226,217,23,174"/>
         <Label 
             Grid.Row="1"
             Grid.Column="0"
@@ -224,7 +224,7 @@
             HorizontalAlignment="Center" 
             TextWrapping="Wrap"
             Text="" 
-            Width="336" Margin="226,282,23,103"/>
+            Width="336" Margin="226,282,23,109"/>
         <Label 
             Grid.Row="1"
             Grid.Column="0"
@@ -236,17 +236,16 @@
             VerticalAlignment="Top"
             FontSize="20"
             Width="185" 
-            RenderTransformOrigin="0.5,0.516" Margin="11,352,0,0"/>
+            RenderTransformOrigin="0.5,0.516" Margin="11,345,0,0"/>
         <ComboBox 
             Grid.Row="1"
             Grid.Column="0"
             Name="customer_type" 
             FontSize="20" 
             FontStyle ="Italic"
-            Foreground="#8787ed"
-            Height="37" 
+            Foreground="#8787ed" 
             HorizontalAlignment="Center"
-            Margin="226,352,23,33" 
+            Margin="226,345,23,47" 
             Width="336">
             <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Приватний клієнт"/>
             <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Компанія"/>
@@ -255,7 +254,7 @@
             Name="AddCustomerButton"
             Height="56"
             Cursor="Hand"
-            Margin="194,43,147,0"
+            Margin="182,29,159,0"
             VerticalAlignment="Top"
             HorizontalAlignment="Center"
             BorderThickness="0"
@@ -264,7 +263,7 @@
             FontSize="24"
             FontStyle="Italic"
             Foreground="White"
-            Content="Зареєструвати" Width="244">
+            Content="Зареєструвати" Width="244" Click="AddCustomerButton_Click">
         </Button>
         <Image 
             Grid.Row="1"

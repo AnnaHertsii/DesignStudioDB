@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -33,6 +34,56 @@ namespace DesignStudioCoursework
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
             goBack();
+        }
+
+        private void AddCustomerButton_Click(object sender, RoutedEventArgs e)
+        {
+            AddCustomer();
+        }
+
+        public void AddCustomer()
+        {
+            try
+            {
+                int customer_id = MaxID() + 1;
+                string connectionString = @"Data Source=DESKTOP-O22ROGE;Initial Catalog=DesignStudio;Integrated Security=True";
+                SqlConnection connection = new SqlConnection(connectionString);
+                connection.Open();
+                SqlCommand command = new SqlCommand();
+
+                int custom_type = 1;
+                if (customer_type.Text == "Приватний клієнт")
+                    custom_type = 1;
+                else if (customer_type.Text == "Компанія")
+                    custom_type = 2;
+
+                string strSQL = string.Format("INSERT INTO Customer(Customer_ID, Name, Phone, Adress, Mail_adress, Customer_type_Ref) " +
+                    "VALUES ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}')", customer_id, name.Text, phone.Text, adress.Text, mail_adress.Text, custom_type);
+
+                SqlCommand myCommand = new SqlCommand(strSQL, connection);
+                myCommand.ExecuteNonQuery();
+
+                MessageBox.Show("Новий клієнт успішно зареєстрований!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        public int MaxID()
+        {
+            string connectionString = @"Data Source=DESKTOP-O22ROGE;Initial Catalog=DesignStudio;Integrated Security=True";
+            SqlConnection connection = new SqlConnection(connectionString);
+            connection.Open();
+            SqlCommand command = new SqlCommand();
+            string strSQL = "SELECT MAX(Customer_ID) FROM Customer";
+            SqlCommand myCommand = new SqlCommand(strSQL, connection);
+            SqlDataReader reader = myCommand.ExecuteReader();
+            string st = null;
+            if (reader.Read())
+                st = reader[0].ToString();
+            return Int32.Parse(st);
         }
     }
 }

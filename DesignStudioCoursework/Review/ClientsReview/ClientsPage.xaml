@@ -111,16 +111,16 @@
                 Name="DataGridCustomer"
                 Background="#BCC3FF"
                 AutoGenerateColumns="True"
-                Margin="13,74,10,111"/>
+                Margin="13,63,10,148"/>
         <Image
             Grid.Row="1"
             Source="/DesignStudioCoursework;component/Resources/leangirl.png" 
-            Stretch="Uniform" Margin="0,171,0,104" Grid.Column="2"/>
+            Stretch="Uniform" Margin="0,127,0,148" Grid.Column="2" RenderTransformOrigin="0.542,0.319"/>
         <Button
-            Name="EditCustomerButton"
-            Height="56"
+            Name="UpdateCustomerButton"
+            Height="48"
             Cursor="Hand"
-            Margin="702,507,10,0"
+            Margin="369,452,357,0"
             VerticalAlignment="Top"
             HorizontalAlignment="Center"
             Style="{StaticResource BlueButtonStyle}"
@@ -128,7 +128,20 @@
             FontSize="24"
             FontStyle="Italic"
             Foreground="White"
-            Content="Змінити" Width="244" Grid.Column="1" Click="EditCustomerButton_Click"/>
+            Content="Оновити" Width="230" Grid.Column="1" Click="UpdateCustomerButton_Click"/>
+        <Button
+            Name="DeleteCustomerButton"
+            Height="48"
+            Cursor="Hand"
+            Margin="716,452,10,0"
+            VerticalAlignment="Top"
+            HorizontalAlignment="Center"
+            Style="{StaticResource BlueButtonStyle}"
+            Grid.Row="1" 
+            FontSize="24"
+            FontStyle="Italic"
+            Foreground="White"
+            Content="Видалити" Width="230" Grid.Column="1" Click="DeleteCustomerButton_Click"/>
         <Button
             Name="BackButton"
             Height="36"
@@ -158,12 +171,12 @@
             VerticalAlignment="Top"
             FontSize="24"
             Width="182" 
-            RenderTransformOrigin="0.507,0.441" Margin="350,10,424,0" Height="36"/>
+            RenderTransformOrigin="0.507,0.441" Margin="350,5,424,0" Height="36"/>
         <Button
             Name="ShowCustomersButton"
-            Height="56"
+            Height="48"
             Cursor="Hand"
-            Margin="13,507,699,0"
+            Margin="13,452,713,0"
             VerticalAlignment="Top"
             HorizontalAlignment="Center"
             Style="{StaticResource BlueButtonStyle}"
@@ -171,12 +184,12 @@
             FontSize="24"
             FontStyle="Italic"
             Foreground="White"
-            Content="Показати" Width="244" Grid.Column="1" Click="ShowCustomersButton_Click"/>
+            Content="Показати" Width="230" Grid.Column="1" Click="ShowCustomersButton_Click"/>
         <Button
             x:Name="FindCustomerButton"
-            Height="56"
+            Height="48"
             Cursor="Hand"
-            Margin="364,507,348,0"
+            Margin="13,519,713,0"
             VerticalAlignment="Top"
             HorizontalAlignment="Center"
             Style="{StaticResource BlueButtonStyle}"
@@ -184,7 +197,7 @@
             FontSize="24"
             FontStyle="Italic"
             Foreground="White"
-            Content="Знайти" Width="244" Grid.Column="1"/>
+            Content="Знайти" Width="230" Grid.Column="1"/>
 
     </Grid>
 </Page>

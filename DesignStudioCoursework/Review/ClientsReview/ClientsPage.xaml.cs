@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -35,7 +36,12 @@ namespace DesignStudioCoursework.Review.ClientsReview
             goBack();
         }
 
-        private void EditCustomerButton_Click(object sender, RoutedEventArgs e)
+        private void UpdateCustomerButton_Click(object sender, RoutedEventArgs e)
+        {
+            UpdateCustomer();       
+        }
+
+        public void UpdateCustomer()
         {
             int index = Int16.Parse(GetSelectedCellValue(0));
             UpdateClientWindow updateClient = new UpdateClientWindow(index);
@@ -64,6 +70,25 @@ namespace DesignStudioCoursework.Review.ClientsReview
                                 };
                 DataGridCustomer.ItemsSource = customers.ToList();
             }
+        }
+
+        private void DeleteCustomerButton_Click(object sender, RoutedEventArgs e)
+        {
+            DeleteCustomer();
+            ShowCustomers();
+        }
+
+        public void DeleteCustomer()
+        {
+            string connectionString = @"Data Source=DESKTOP-O22ROGE;Initial Catalog=DesignStudio;Integrated Security=True";
+            SqlConnection connection = new SqlConnection(connectionString);
+            connection.Open();
+            int SelectedId = Int16.Parse(GetSelectedCellValue(0));
+            string strSQL = string.Format("DELETE Customer WHERE Customer_ID = '{0}'", SelectedId);
+            SqlCommand myCommand = new SqlCommand(strSQL, connection);
+            myCommand.ExecuteNonQuery();
+
+            MessageBox.Show("Клієнта видалено!");
         }
 
         public string GetSelectedCellValue(int index)

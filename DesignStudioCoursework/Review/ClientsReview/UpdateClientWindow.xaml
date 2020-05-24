@@ -58,12 +58,12 @@
             FontStyle ="Italic" 
             Foreground="White" 
             FontWeight="Bold"
-            Content="Новий клієнт" 
+            Content="Клієнт" 
             HorizontalAlignment="Center" 
             VerticalAlignment="Top"
             FontSize="24"
-            Width="178" 
-            RenderTransformOrigin="0.507,0.441" Margin="180,12,134,0" Height="36"/>
+            Width="98" 
+            RenderTransformOrigin="0.507,0.441" Margin="202,12,192,0" Height="36"/>
         <Label 
             Grid.Row="0"
             FontStyle ="Italic" 
@@ -190,7 +190,7 @@
             FontSize="24"
             FontStyle="Italic"
             Foreground="White"
-            Content="Зберегти" Width="207">
+            Content="Зберегти" Width="207" Click="UpdateCustomerButton_Click">
         </Button>
     </Grid>
 </Window>

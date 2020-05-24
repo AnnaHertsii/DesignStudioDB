@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,18 +18,21 @@ namespace DesignStudioCoursework.Review.ClientsReview
 {
     public partial class UpdateClientWindow : Window
     {
+        public int customer_index;
+
         public UpdateClientWindow(int index)
         {
             InitializeComponent();
-            fillClientFields(index);
+            customer_index = index;
+            fillClientFields();           
         }
 
-        public void fillClientFields(int index)
+        public void fillClientFields()
         {
             using (var Content = new DesignStudioEntities())
             {
                 Client chosenClient = (from customer in Content.Customer
-                                where customer.Customer_ID == index
+                                where customer.Customer_ID == customer_index
                                 select new Client
                                 {
                                     Name = customer.Name,
@@ -46,6 +50,34 @@ namespace DesignStudioCoursework.Review.ClientsReview
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
+            this.Close();
+        }
+
+        private void UpdateCustomerButton_Click(object sender, RoutedEventArgs e)
+        {          
+            UpdateCustomer();
+        }
+
+        public void UpdateCustomer()
+        {
+            string connectionString = @"Data Source=DESKTOP-O22ROGE;Initial Catalog=DesignStudio;Integrated Security=True";
+            SqlConnection connection = new SqlConnection(connectionString);
+            connection.Open();
+            SqlCommand command = new SqlCommand();
+
+            int custom_type = 1;
+            if (customer_type.Text == "Приватний клієнт")
+                custom_type = 1;
+            else if (customer_type.Text == "Компанія")
+                custom_type = 2;
+
+            string strSQL = string.Format("Update Customer Set Customer_ID = '{0}', Name ='{1}', Phone = '{2}', Adress = '{3}', Mail_adress = '{4}', Customer_type_Ref = '{5}'" +
+                " Where Customer_ID = '{6}'", customer_index, name.Text, phone.Text, adress.Text, mail_adress.Text, custom_type, customer_index);
+
+            SqlCommand myCommand = new SqlCommand(strSQL, connection);
+            myCommand.ExecuteNonQuery();
+
+            MessageBox.Show("Дані клієнта успішно оновлено!");
             this.Close();
         }
     }
