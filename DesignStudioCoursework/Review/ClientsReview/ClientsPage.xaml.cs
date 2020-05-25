@@ -27,7 +27,7 @@ namespace DesignStudioCoursework.Review.ClientsReview
         {
             this.goBack = goBack;
             InitializeComponent();
-           }
+        } 
 
         private void ExitClicked(object sender, RoutedEventArgs e)
         {

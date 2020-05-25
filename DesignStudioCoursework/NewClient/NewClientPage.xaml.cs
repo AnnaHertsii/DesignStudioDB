@@ -38,8 +38,23 @@ namespace DesignStudioCoursework
 
         private void AddCustomerButton_Click(object sender, RoutedEventArgs e)
         {
-            AddCustomer();
-        }
+            if (name.Text.Length > 150)
+                name_error.Visibility = Visibility.Visible;
+            if (phone.Text.Length > 15)
+                phone_error.Visibility = Visibility.Visible;
+            if (adress.Text.Length > 50)
+                adress_error.Visibility = Visibility.Visible;
+            if (mail_adress.Text.Length > 50)
+                mail_error.Visibility = Visibility.Visible;
+            else if ((name.Text.Length < 150) && (phone.Text.Length < 15) && (adress.Text.Length < 50) && (mail_adress.Text.Length < 15))
+            {
+                name_error.Visibility = Visibility.Hidden;
+                phone_error.Visibility = Visibility.Hidden;
+                adress_error.Visibility = Visibility.Hidden;
+                mail_error.Visibility = Visibility.Hidden;
+                AddCustomer();
+            }               
+        } 
 
         public void AddCustomer()
         {

@@ -104,7 +104,8 @@
             Grid.Row="1"
             Grid.ColumnSpan="2"
             Grid.RowSpan="2"
-            Background="#BCC3FF" />
+            Background="#BCC3FF" >
+        </Border>
         <Button
             Name="BackButton"
             Height="38"
@@ -154,6 +155,18 @@
             Text="" 
             Width="336" Margin="226,87,23,303"/>
         <Label 
+            Name="name_error"
+            Content="ПІБ не повинен перевищувати 150 символів"
+            Foreground="Red"
+            FontSize="12"
+            FontStyle="Italic"
+            Visibility="Hidden"
+            HorizontalAlignment="Left" 
+            Height="29" 
+            Margin="226,119,0,0"
+            VerticalAlignment="Top"
+            Width="336" Grid.Row="1"/>
+        <Label 
             Grid.Row="1"
             Grid.Column="0"
             FontStyle ="Italic" 
@@ -177,6 +190,18 @@
             TextWrapping="Wrap"
             Text="" 
             Width="336" Margin="226,153,23,238"/>
+        <Label 
+            Name="phone_error"
+            Content="Номер телефону не повинен перевищувати 15 символів"
+            Foreground="Red"
+            FontSize="12"
+            FontStyle="Italic"
+            Visibility="Hidden"
+            HorizontalAlignment="Left" 
+            Height="29" 
+            Margin="226,184,0,0"
+            VerticalAlignment="Top"
+            Width="336" Grid.Row="1"/>
         <Label 
             Grid.Row="1"
             Grid.Column="0"
@@ -202,6 +227,18 @@
             Text="" 
             Width="336" Margin="226,217,23,174"/>
         <Label 
+            Name="adress_error"
+            Content="Адреса не повинна перевищувати 50 символів"
+            Foreground="Red"
+            FontSize="12"
+            FontStyle="Italic"
+            Visibility="Hidden"
+            HorizontalAlignment="Left" 
+            Height="29" 
+            Margin="226,248,0,0"
+            VerticalAlignment="Top"
+            Width="336" Grid.Row="1"/>
+        <Label 
             Grid.Row="1"
             Grid.Column="0"
             FontStyle ="Italic" 
@@ -226,6 +263,18 @@
             Text="" 
             Width="336" Margin="226,282,23,109"/>
         <Label 
+            Name="mail_error"
+            Content="Поштова адреса не повинна перевищувати 50 символів"
+            Foreground="Red"
+            FontSize="12"
+            FontStyle="Italic"
+            Visibility="Hidden"
+            HorizontalAlignment="Left" 
+            Height="29" 
+            Margin="226,311,0,0"
+            VerticalAlignment="Top"
+            Width="336" Grid.Row="1"/>
+        <Label 
             Grid.Row="1"
             Grid.Column="0"
             FontStyle ="Italic" 
@@ -240,6 +289,7 @@
         <ComboBox 
             Grid.Row="1"
             Grid.Column="0"
+            SelectedIndex="0"
             Name="customer_type" 
             FontSize="20" 
             FontStyle ="Italic"
