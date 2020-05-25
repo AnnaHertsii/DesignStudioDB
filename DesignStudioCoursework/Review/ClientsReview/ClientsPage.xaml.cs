@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
+using DesignStudioCoursework.Structure;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
@@ -19,6 +20,8 @@ namespace DesignStudioCoursework.Review.ClientsReview
     public partial class ClientsPage : Page
     {
         private Action goBack;
+        SearchClient search = new SearchClient();
+        DisplayClient display = new DisplayClient();
 
         public ClientsPage(Action goBack)
         {
@@ -44,38 +47,19 @@ namespace DesignStudioCoursework.Review.ClientsReview
         public void UpdateCustomer()
         {
             int index = Int16.Parse(GetSelectedCellValue(0));
-            UpdateClientWindow updateClient = new UpdateClientWindow(index);
+            UpdateClientWindow updateClient = new UpdateClientWindow(index, DataGridCustomer);
             updateClient.Show();
         }
 
         private void ShowCustomersButton_Click(object sender, RoutedEventArgs e)
         {
-            ShowCustomers();
+            display.ShowCustomers(DataGridCustomer);
         }
-
-        public void ShowCustomers()
-        {
-            using (var db = new DesignStudioEntities())
-            {
-                var customers = from customer in db.Customer
-                                join type in db.Customer_Type on customer.Customer_type_Ref equals type.Customer_type_ID
-                                select new
-                                {
-                                    customer.Customer_ID,
-                                    customer.Name,
-                                    customer.Phone,
-                                    customer.Adress,
-                                    customer.Mail_adress,
-                                    type.Customer_type1
-                                };
-                DataGridCustomer.ItemsSource = customers.ToList();
-            }
-        }
-
+      
         private void DeleteCustomerButton_Click(object sender, RoutedEventArgs e)
         {
             DeleteCustomer();
-            ShowCustomers();
+            display.ShowCustomers(DataGridCustomer);
         }
 
         public void DeleteCustomer()
@@ -90,7 +74,7 @@ namespace DesignStudioCoursework.Review.ClientsReview
 
             MessageBox.Show("Клієнта видалено!");
         }
-         
+
         public string GetSelectedCellValue(int index)
         {
             DataGridCellInfo cellInfo = DataGridCustomer.SelectedCells[index];
@@ -103,6 +87,11 @@ namespace DesignStudioCoursework.Review.ClientsReview
             BindingOperations.SetBinding(element, TagProperty, column.Binding);
 
             return element.Tag.ToString();
+        }
+
+        private void FindCustomerButton_Click(object sender, RoutedEventArgs e)
+        {
+            search.ShowClientsByOption(DataGridCustomer, combobox_option, search_text);
         }
     }
 }

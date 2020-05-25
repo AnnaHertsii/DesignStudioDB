@@ -19,19 +19,22 @@ namespace DesignStudioCoursework.Review.ClientsReview
     public partial class UpdateClientWindow : Window
     {
         public int customer_index;
+        DataGrid datagrid;
+        DisplayClient display = new DisplayClient();
 
-        public UpdateClientWindow(int index)
+        public UpdateClientWindow(int index, DataGrid grid_name)
         {
             InitializeComponent();
             customer_index = index;
+            datagrid = grid_name;
             fillClientFields();           
         }
 
         public void fillClientFields()
         {
-            using (var Content = new DesignStudioEntities())
+            using (var db = new DesignStudioEntities())
             {
-                Client chosenClient = (from customer in Content.Customer
+                Client chosenClient = (from customer in db.Customer
                                 where customer.Customer_ID == customer_index
                                 select new Client
                                 {
@@ -56,6 +59,7 @@ namespace DesignStudioCoursework.Review.ClientsReview
         private void UpdateCustomerButton_Click(object sender, RoutedEventArgs e)
         {          
             UpdateCustomer();
+            display.ShowCustomers(datagrid);
         }
 
         public void UpdateCustomer()
@@ -77,7 +81,7 @@ namespace DesignStudioCoursework.Review.ClientsReview
             SqlCommand myCommand = new SqlCommand(strSQL, connection);
             myCommand.ExecuteNonQuery();
 
-            MessageBox.Show("Дані клієнта успішно оновлено!");
+            MessageBox.Show("Дані клієнта успішно оновлено!");           
             this.Close();
         }
     }

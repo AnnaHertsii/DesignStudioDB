@@ -116,7 +116,7 @@
         <Image
             Grid.Row="1"
             Source="/DesignStudioCoursework;component/Resources/leangirl.png" 
-            Stretch="Uniform" Margin="0,127,0,148" Grid.Column="2" RenderTransformOrigin="0.542,0.319"/>
+            Stretch="Uniform" Margin="0,170,0,105" Grid.Column="2" RenderTransformOrigin="0.542,0.319"/>
         <Button
             Name="UpdateCustomerButton"
             Cursor="Hand"
@@ -129,7 +129,7 @@
             FontSize="20"
             FontStyle="Italic"
             Foreground="White"
-            Content="Оновити" Width="310" Grid.Column="1" Click="UpdateCustomerButton_Click"/>
+            Content="Оновити клієнта" Width="310" Grid.Column="1" Click="UpdateCustomerButton_Click"/>
         <Button
             Name="DeleteCustomerButton"
             Cursor="Hand"
@@ -142,7 +142,7 @@
             FontSize="20"
             FontStyle="Italic"
             Foreground="White"
-            Content="Видалити" Width="314" Grid.Column="1" Click="DeleteCustomerButton_Click"/>
+            Content="Видалити клієнта" Width="314" Grid.Column="1" Click="DeleteCustomerButton_Click"/>
         <Button
             Name="BackButton"
             Height="36"
@@ -172,7 +172,7 @@
             VerticalAlignment="Top"
             FontSize="24"
             Width="182" 
-            RenderTransformOrigin="0.507,0.441" Margin="350,5,424,0" Height="36"/>
+            RenderTransformOrigin="0.507,0.441" Margin="397,5,377,0" Height="36"/>
         <Button
             Height="33"
             Name="ShowCustomersButton"
@@ -185,7 +185,7 @@
             FontSize="20"
             FontStyle="Italic"
             Foreground="White"
-            Content="Показати" Width="299" Grid.Column="1" Click="ShowCustomersButton_Click"/>
+            Content="Показати усіх клієнтів" Width="299" Grid.Column="1" Click="ShowCustomersButton_Click"/>
         <Button
             Name="FindCustomerButton"
             Cursor="Hand"
@@ -197,13 +197,14 @@
             FontSize="20"
             FontStyle="Italic"
             Foreground="White"
-            Content="Знайти" Width="299" Grid.Column="1" Height="33"/>
+            Content="Знайти клієнта" Width="299" Grid.Column="1" Height="33" Click="FindCustomerButton_Click"/>
         <ComboBox 
+                SelectedIndex="0"
                 Grid.Row="1"  
                 Margin="317,495,329,0"
                 VerticalAlignment="Top"
                 Width="310"
-                Name="customer_type" 
+                Name="combobox_option" 
                 FontSize="20" 
                 FontStyle ="Italic"
                 Foreground="#8787ed" 
@@ -214,6 +215,7 @@
             <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Поштова дреса"/>
         </ComboBox>
         <TextBox 
+            Name="search_text"
             Grid.Row="1"
             FontStyle ="Italic" 
             FontSize="20"
@@ -222,6 +224,6 @@
             Margin="632,495,0,0"
             TextWrapping="Wrap"
             VerticalAlignment="Top"
-            Width="314" Grid.Column="1" Height="33"/>
+            Width="302" Grid.Column="1" Height="33"/>
     </Grid>
 </Page>
