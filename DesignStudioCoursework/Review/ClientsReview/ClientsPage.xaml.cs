@@ -55,10 +55,10 @@ namespace DesignStudioCoursework.Review.ClientsReview
 
         public void ShowCustomers()
         {
-            using (var Content = new DesignStudioEntities())
+            using (var db = new DesignStudioEntities())
             {
-                var customers = from customer in Content.Customer
-                                join type in Content.Customer_Type on customer.Customer_type_Ref equals type.Customer_type_ID
+                var customers = from customer in db.Customer
+                                join type in db.Customer_Type on customer.Customer_type_Ref equals type.Customer_type_ID
                                 select new
                                 {
                                     customer.Customer_ID,
@@ -90,7 +90,7 @@ namespace DesignStudioCoursework.Review.ClientsReview
 
             MessageBox.Show("Клієнта видалено!");
         }
-
+         
         public string GetSelectedCellValue(int index)
         {
             DataGridCellInfo cellInfo = DataGridCustomer.SelectedCells[index];

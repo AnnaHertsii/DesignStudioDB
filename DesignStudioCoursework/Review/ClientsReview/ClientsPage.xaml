@@ -100,7 +100,8 @@
         </Menu>
         <Border 
             Grid.Row="1"
-            Background="#BCC3FF" Grid.ColumnSpan="3" />
+            Background="#BCC3FF" Grid.ColumnSpan="3" >
+        </Border>
         <DataGrid 
                 FontSize="20" 
                 Grid.Row="1"
@@ -111,37 +112,37 @@
                 Name="DataGridCustomer"
                 Background="#BCC3FF"
                 AutoGenerateColumns="True"
-                Margin="13,63,10,148"/>
+                Margin="13,63,10,105"/>
         <Image
             Grid.Row="1"
             Source="/DesignStudioCoursework;component/Resources/leangirl.png" 
             Stretch="Uniform" Margin="0,127,0,148" Grid.Column="2" RenderTransformOrigin="0.542,0.319"/>
         <Button
             Name="UpdateCustomerButton"
-            Height="48"
             Cursor="Hand"
-            Margin="369,452,357,0"
+            Height="33"
+            Margin="317,533,329,0"
             VerticalAlignment="Top"
             HorizontalAlignment="Center"
             Style="{StaticResource BlueButtonStyle}"
             Grid.Row="1" 
-            FontSize="24"
+            FontSize="20"
             FontStyle="Italic"
             Foreground="White"
-            Content="Оновити" Width="230" Grid.Column="1" Click="UpdateCustomerButton_Click"/>
+            Content="Оновити" Width="310" Grid.Column="1" Click="UpdateCustomerButton_Click"/>
         <Button
             Name="DeleteCustomerButton"
-            Height="48"
             Cursor="Hand"
-            Margin="716,452,10,0"
+            Height="33"
+            Margin="632,533,10,0"
             VerticalAlignment="Top"
             HorizontalAlignment="Center"
             Style="{StaticResource BlueButtonStyle}"
             Grid.Row="1" 
-            FontSize="24"
+            FontSize="20"
             FontStyle="Italic"
             Foreground="White"
-            Content="Видалити" Width="230" Grid.Column="1" Click="DeleteCustomerButton_Click"/>
+            Content="Видалити" Width="314" Grid.Column="1" Click="DeleteCustomerButton_Click"/>
         <Button
             Name="BackButton"
             Height="36"
@@ -173,31 +174,54 @@
             Width="182" 
             RenderTransformOrigin="0.507,0.441" Margin="350,5,424,0" Height="36"/>
         <Button
+            Height="33"
             Name="ShowCustomersButton"
-            Height="48"
             Cursor="Hand"
-            Margin="13,452,713,0"
+            Margin="13,533,644,0"
             VerticalAlignment="Top"
             HorizontalAlignment="Center"
             Style="{StaticResource BlueButtonStyle}"
             Grid.Row="1" 
-            FontSize="24"
+            FontSize="20"
             FontStyle="Italic"
             Foreground="White"
-            Content="Показати" Width="230" Grid.Column="1" Click="ShowCustomersButton_Click"/>
+            Content="Показати" Width="299" Grid.Column="1" Click="ShowCustomersButton_Click"/>
         <Button
-            x:Name="FindCustomerButton"
-            Height="48"
+            Name="FindCustomerButton"
             Cursor="Hand"
-            Margin="13,519,713,0"
+            Margin="13,495,644,0"
             VerticalAlignment="Top"
             HorizontalAlignment="Center"
             Style="{StaticResource BlueButtonStyle}"
             Grid.Row="1" 
-            FontSize="24"
+            FontSize="20"
             FontStyle="Italic"
             Foreground="White"
-            Content="Знайти" Width="230" Grid.Column="1"/>
-
+            Content="Знайти" Width="299" Grid.Column="1" Height="33"/>
+        <ComboBox 
+                Grid.Row="1"  
+                Margin="317,495,329,0"
+                VerticalAlignment="Top"
+                Width="310"
+                Name="customer_type" 
+                FontSize="20" 
+                FontStyle ="Italic"
+                Foreground="#8787ed" 
+                HorizontalAlignment="Center" Grid.Column="1">
+            <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Ім'я"/>
+            <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Телефон"/>
+            <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Адреса"/>
+            <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Поштова дреса"/>
+        </ComboBox>
+        <TextBox 
+            Grid.Row="1"
+            FontStyle ="Italic" 
+            FontSize="20"
+            Foreground="#8787ed"            
+            HorizontalAlignment="Left"
+            Margin="632,495,0,0"
+            TextWrapping="Wrap"
+            VerticalAlignment="Top"
+            Width="314" Grid.Column="1" Height="33"/>
     </Grid>
 </Page>
