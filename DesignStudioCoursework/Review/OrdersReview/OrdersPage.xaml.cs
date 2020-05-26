@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using DesignStudioCoursework.Structure;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
@@ -18,25 +19,24 @@ namespace DesignStudioCoursework.Review.OrdersReview
     public partial class OrdersPage : Page
     {
         private Action goBack;
+        SearchOrder search = new SearchOrder();
 
         public OrdersPage(Action goBack)
         {
             this.goBack = goBack;
             InitializeComponent();
-            ShowOrders();
         }
 
         public void ShowOrders()
         {
-            using (var Content = new DesignStudioEntities())
+            using (var db = new DesignStudioEntities())
             {
-                var orders = from order in Content.Order
-                                join customer in Content.Customer on order.Customer_Ref equals customer.Customer_ID
-                                join employee in Content.Employee on order.Employee_Ref equals employee.Employee_ID
-                                join position in Content.Position on employee.Position_Ref equals position.Position_ID
+                var orders = from order in db.Order
+                                join customer in db.Customer on order.Customer_Ref equals customer.Customer_ID
+                                join employee in db.Employee on order.Employee_Ref equals employee.Employee_ID
+                                join position in db.Position on employee.Position_Ref equals position.Position_ID
                                 select new
                                 {
-                                    order.Order_ID,
                                     order.Description,
                                     order.Start_date,
                                     order.End_date,
@@ -58,6 +58,16 @@ namespace DesignStudioCoursework.Review.OrdersReview
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
             goBack();
+        }
+
+        private void FindOrderButton_Click(object sender, RoutedEventArgs e)
+        {
+            search.ShowOrdersByOption(DataGridOrder, combobox_option, search_text);
+        }
+
+        private void ShowOrdersButton_Click(object sender, RoutedEventArgs e)
+        {
+            ShowOrders();
         }
     }
 }

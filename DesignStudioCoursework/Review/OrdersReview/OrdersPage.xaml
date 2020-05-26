@@ -97,10 +97,15 @@
                     Header="Управління працівниками">
                 </MenuItem>
             </MenuItem>
+            <MenuItem 
+                Header="Про нас" 
+                FontSize="16" 
+                Foreground="White"/>
         </Menu>
         <Border 
             Grid.Row="1"
-            Background="#BCC3FF" Grid.ColumnSpan="3" />
+            Background="#BCC3FF" Grid.ColumnSpan="3" >
+        </Border>
         <DataGrid 
                 FontSize="20" 
                 Grid.Row="1"
@@ -111,37 +116,49 @@
                 Name="DataGridOrder"
                 Background="#BCC3FF"
                 AutoGenerateColumns="True"
-                Margin="13,74,10,111"/>
+                Margin="13,63,10,105"/>
         <Image
             Grid.Row="1"
             Source="/DesignStudioCoursework;component/Resources/leangirl.png" 
-            Stretch="Uniform" Margin="0,164,0,111" Grid.Column="2"/>
+            Stretch="Uniform" Margin="0,170,0,105" Grid.Column="2" RenderTransformOrigin="0.542,0.319"/>
         <Button
-            Name="EditCustomerButton"
-            Height="56"
+            Name="UpdateOrderButton"
             Cursor="Hand"
-            Margin="312,507,400,0"
+            Height="33"
+            Margin="317,533,329,0"
             VerticalAlignment="Top"
             HorizontalAlignment="Center"
             Style="{StaticResource BlueButtonStyle}"
             Grid.Row="1" 
-            FontSize="24"
+            FontSize="20"
             FontStyle="Italic"
             Foreground="White"
-            Content="Редагувати" Width="244" Grid.Column="1">
-        </Button>
+            Content="Оновити замовлення" Width="310" Grid.Column="1"/>
+        <Button
+            Name="DeleteOrderButton"
+            Cursor="Hand"
+            Height="33"
+            Margin="632,533,10,0"
+            VerticalAlignment="Top"
+            HorizontalAlignment="Center"
+            Style="{StaticResource BlueButtonStyle}"
+            Grid.Row="1" 
+            FontSize="20"
+            FontStyle="Italic"
+            Foreground="White"
+            Content="Видалити замовлення" Width="314" Grid.Column="1"/>
         <Button
             Name="BackButton"
-            Height="42"
+            Height="36"
             Cursor="Hand"
-            Margin="10,10,46,0"
+            Margin="10,10,54,0"
             HorizontalAlignment="Center"
             VerticalAlignment="Top"
             BorderThickness="0"
             Style="{StaticResource BlueButtonStyle}"
             Click="BackButton_Click"
             Grid.Row="1" 
-            Grid.Column="0" Width="50">
+            Grid.Column="0" Width="42">
             <Image HorizontalAlignment="Left"
                    Source="/DesignStudioCoursework;component/Resources/back.png" 
                    Stretch="Uniform"
@@ -158,9 +175,59 @@
             HorizontalAlignment="Center" 
             VerticalAlignment="Top"
             FontSize="24"
-            Width="226" 
-            RenderTransformOrigin="0.507,0.441" Margin="350,10,380,0" Height="36"/>
-
+            Width="230" 
+            RenderTransformOrigin="0.507,0.441" Margin="377,5,349,0" Height="36"/>
+        <Button
+            Height="33"
+            Name="ShowOrdersButton"
+            Cursor="Hand"
+            Margin="13,533,644,0"
+            VerticalAlignment="Top"
+            HorizontalAlignment="Center"
+            Style="{StaticResource BlueButtonStyle}"
+            Grid.Row="1" 
+            FontSize="20"
+            FontStyle="Italic"
+            Foreground="White"
+            Content="Показати усі замовлення" Width="299" Grid.Column="1" Click="ShowOrdersButton_Click"/>
+        <Button
+            Name="FindOrderButton"
+            Cursor="Hand"
+            Margin="13,495,644,0"
+            VerticalAlignment="Top"
+            HorizontalAlignment="Center"
+            Style="{StaticResource BlueButtonStyle}"
+            Grid.Row="1" 
+            FontSize="20"
+            FontStyle="Italic"
+            Foreground="White"
+            Content="Знайти замовлення" Width="299" Grid.Column="1" Height="33" Click="FindOrderButton_Click"/>
+        <ComboBox 
+                SelectedIndex="0"
+                Grid.Row="1"  
+                Margin="317,495,329,0"
+                VerticalAlignment="Top"
+                Width="310"
+                Name="combobox_option" 
+                FontSize="20" 
+                FontStyle ="Italic"
+                Foreground="#8787ed" 
+                HorizontalAlignment="Center" Grid.Column="1">
+            <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Опис"/>
+            <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Ціна"/>
+            <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Клієнт"/>
+         </ComboBox>
+        <TextBox 
+            Name="search_text"
+            Grid.Row="1"
+            FontStyle ="Italic" 
+            FontSize="20"
+            Foreground="#8787ed"            
+            HorizontalAlignment="Left"
+            Margin="632,495,0,0"
+            TextWrapping="Wrap"
+            VerticalAlignment="Top"
+            Width="302" Grid.Column="1" Height="33"/>
     </Grid>
 </Page>
 

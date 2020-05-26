@@ -97,6 +97,10 @@
                     Header="Управління працівниками">
                 </MenuItem>
             </MenuItem>
+            <MenuItem 
+                Header="Про нас" 
+                FontSize="16" 
+                Foreground="White"/>
         </Menu>
         <Border 
             Grid.Row="1"

@@ -46,7 +46,7 @@ namespace DesignStudioCoursework.Review.ClientsReview
 
         public void UpdateCustomer()
         {
-            int index = Int16.Parse(GetSelectedCellValue(0));
+            int index = CurrentID();
             UpdateClientWindow updateClient = new UpdateClientWindow(index, DataGridCustomer);
             updateClient.Show();
         }
@@ -67,7 +67,7 @@ namespace DesignStudioCoursework.Review.ClientsReview
             string connectionString = @"Data Source=DESKTOP-O22ROGE;Initial Catalog=DesignStudio;Integrated Security=True";
             SqlConnection connection = new SqlConnection(connectionString);
             connection.Open();
-            int SelectedId = Int16.Parse(GetSelectedCellValue(0));
+            int SelectedId = CurrentID();
             string strSQL = string.Format("DELETE Customer WHERE Customer_ID = '{0}'", SelectedId);
             SqlCommand myCommand = new SqlCommand(strSQL, connection);
             myCommand.ExecuteNonQuery();
@@ -87,6 +87,24 @@ namespace DesignStudioCoursework.Review.ClientsReview
             BindingOperations.SetBinding(element, TagProperty, column.Binding);
 
             return element.Tag.ToString();
+        }
+
+        public int CurrentID()
+        {
+            string connectionString = @"Data Source=DESKTOP-O22ROGE;Initial Catalog=DesignStudio;Integrated Security=True";
+            SqlConnection connection = new SqlConnection(connectionString);
+            connection.Open();
+            string Name = GetSelectedCellValue(0);
+            string Phone = GetSelectedCellValue(1);
+            string Adress = GetSelectedCellValue(2);
+            SqlCommand command = new SqlCommand();
+            string strSQL = string.Format("SELECT Customer_ID FROM Customer WHERE Name = '{0}' AND Phone = '{1}' AND Adress = '{2}'", Name, Phone, Adress);
+            SqlCommand myCommand = new SqlCommand(strSQL, connection);
+            SqlDataReader reader = myCommand.ExecuteReader();
+            string st = null;
+            if (reader.Read())
+                st = reader[0].ToString();
+            return Int32.Parse(st);
         }
 
         private void FindCustomerButton_Click(object sender, RoutedEventArgs e)

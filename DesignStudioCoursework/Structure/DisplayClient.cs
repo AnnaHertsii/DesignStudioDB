@@ -17,7 +17,6 @@ namespace DesignStudioCoursework.Structure
                                 join type in db.Customer_Type on customer.Customer_type_Ref equals type.Customer_type_ID
                                 select new
                                 {
-                                    customer.Customer_ID,
                                     customer.Name,
                                     customer.Phone,
                                     customer.Adress,

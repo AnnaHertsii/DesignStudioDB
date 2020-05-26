@@ -38,7 +38,6 @@ namespace DesignStudioCoursework.Structure
                                    where customer.Name.Contains(SearchClientBox.Text)
                                    select new
                                    {
-                                       customer.Customer_ID,
                                        customer.Name,
                                        customer.Phone,
                                        customer.Adress,
@@ -58,7 +57,6 @@ namespace DesignStudioCoursework.Structure
                                   where customer.Phone.Contains(SearchClientBox.Text)
                                   select new
                                   {
-                                      customer.Customer_ID,
                                       customer.Name,
                                       customer.Phone,
                                       customer.Adress,
@@ -78,7 +76,6 @@ namespace DesignStudioCoursework.Structure
                                   where customer.Adress.Contains(SearchClientBox.Text)
                                   select new
                                   {
-                                      customer.Customer_ID,
                                       customer.Name,
                                       customer.Phone,
                                       customer.Adress,
@@ -98,7 +95,6 @@ namespace DesignStudioCoursework.Structure
                                   where customer.Mail_adress.Contains(SearchClientBox.Text)
                                   select new
                                   {
-                                      customer.Customer_ID,
                                       customer.Name,
                                       customer.Phone,
                                       customer.Adress,

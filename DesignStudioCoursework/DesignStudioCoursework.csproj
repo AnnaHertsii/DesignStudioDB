@@ -127,6 +127,7 @@
     <Compile Include="Structure\Client.cs" />
     <Compile Include="Structure\DisplayClient.cs" />
     <Compile Include="Structure\SearchClient.cs" />
+    <Compile Include="Structure\SearchOrder.cs" />
     <Compile Include="Style.cs">
       <DependentUpon>DesignStudioModel.tt</DependentUpon>
     </Compile>
