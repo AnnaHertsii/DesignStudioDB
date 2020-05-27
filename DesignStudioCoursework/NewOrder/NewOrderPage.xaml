@@ -3,6 +3,7 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:sys="clr-namespace:System;assembly=mscorlib"
       xmlns:local="clr-namespace:DesignStudioCoursework"
       mc:Ignorable="d" 
       d:DesignHeight="620" d:DesignWidth="1170"
@@ -171,6 +172,8 @@
             Grid.Row="1" Margin="226,153,23,288">
             <DatePicker 
             Name="start_date"
+            SelectedDate="{x:Static sys:DateTime.Today}"
+            Foreground="#8787ed"
             FontSize="20"
             FontStyle ="Italic"
             SelectedDateFormat="Short"
@@ -186,6 +189,8 @@
             Grid.Row="1" Margin="226,217,23,224">
             <DatePicker 
             Name="end_date"
+            SelectedDate="{x:Static sys:DateTime.Today}"
+            Foreground="#8787ed"
             FontSize="20"
             FontStyle ="Italic"
             SelectedDateFormat="Short"
@@ -247,7 +252,10 @@
         <ComboBox 
             Grid.Row="1"
             Grid.Column="0"
-            Name="customer" 
+            Name="customercombo"
+            ItemsSource="{Binding}"
+            SelectedValuePath="Customer_ID"
+            DisplayMemberPath="Name"
             FontSize="20" 
             FontStyle ="Italic"
             Foreground="#8787ed"
@@ -259,7 +267,7 @@
         <ComboBox 
             Grid.Row="1"
             Grid.Column="0"
-            Name="employee" 
+            Name="employeecombo"             
             FontSize="20" 
             FontStyle ="Italic"
             Foreground="#8787ed"
@@ -267,9 +275,19 @@
             HorizontalAlignment="Center"
             Margin="226,422,23,19" 
             Width="336">
+            <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Герцій Анна Олександрівна"/>
+            <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Заблоцька Марія Петрівна"/>
+            <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Семич Тамара Василівна"/>
+            <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Левчишин Олена Іванівна"/>
+            <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Данилюк Анастасія Вікторіна"/>
+            <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Монташевич Яна Петрівна"/>
+            <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Лучинська Тетяна Ігорівна"/>
+            <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Гілета Анна Іванівна"/>
+            <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Яропуд Софія Володимирівна"/>
+            <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Тарасенко Анастасія Володимирівна"/>
         </ComboBox>
         <Button
-            Name="AddCustomerButton"
+            Name="AddOrderButton"
             Height="56"
             Cursor="Hand"
             Margin="174,29,167,0"
@@ -281,7 +299,7 @@
             FontSize="24"
             FontStyle="Italic"
             Foreground="White"
-            Content="Оформити" Width="244">
+            Content="Оформити" Width="244" Click="AddOrderButton_Click">
         </Button>
         <Image 
             Grid.Row="1"

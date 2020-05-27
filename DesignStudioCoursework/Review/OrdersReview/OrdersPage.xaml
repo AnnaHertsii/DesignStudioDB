@@ -3,6 +3,7 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:sys="clr-namespace:System;assembly=mscorlib"
       xmlns:local="clr-namespace:DesignStudioCoursework.Review.OrdersReview"
       mc:Ignorable="d" 
       d:DesignHeight="620" d:DesignWidth="1170"
@@ -146,7 +147,7 @@
             FontSize="20"
             FontStyle="Italic"
             Foreground="White"
-            Content="Видалити замовлення" Width="314" Grid.Column="1"/>
+            Content="Видалити замовлення" Width="314" Grid.Column="1" Click="DeleteOrderButton_Click"/>
         <Button
             Name="BackButton"
             Height="36"
@@ -216,7 +217,10 @@
             <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Опис"/>
             <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Ціна"/>
             <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Клієнт"/>
-         </ComboBox>
+            <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Працівник"/>
+            <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Дата початку"/>
+            <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Дата завершення"/>
+        </ComboBox>
         <TextBox 
             Name="search_text"
             Grid.Row="1"
