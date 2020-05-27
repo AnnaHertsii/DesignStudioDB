@@ -62,7 +62,7 @@ namespace DesignStudioCoursework.Review.OrdersReview
 
         private void FindOrderButton_Click(object sender, RoutedEventArgs e)
         {
-            search.ShowOrdersByOption(DataGridOrder, combobox_option, search_text);
+            search.ShowOrdersByOption(DataGridOrder, combobox_option, search_text, datebox);
         }
 
         private void ShowOrdersButton_Click(object sender, RoutedEventArgs e)
@@ -119,5 +119,35 @@ namespace DesignStudioCoursework.Review.OrdersReview
                 st = reader[0].ToString();
             return Int32.Parse(st);
         }
+
+       
+
+        private void combobox_option_DropDownClosed(object sender, EventArgs e)
+        {
+            if (combobox_option.SelectedIndex == 0)
+            {
+                datebox.Visibility = System.Windows.Visibility.Hidden;
+            }
+            else if (combobox_option.SelectedIndex == 1)
+            {
+                datebox.Visibility = System.Windows.Visibility.Hidden;
+            }
+            else if (combobox_option.SelectedIndex == 2)
+            {
+                datebox.Visibility = System.Windows.Visibility.Hidden;
+            }
+            else if (combobox_option.SelectedIndex == 3)
+            {
+                datebox.Visibility = System.Windows.Visibility.Hidden;
+            }
+            else if (combobox_option.SelectedIndex == 4)
+            {
+                datebox.Visibility = System.Windows.Visibility.Visible;
+            }
+            else if (combobox_option.SelectedIndex == 5)
+            {
+                datebox.Visibility = System.Windows.Visibility.Visible;
+            }
+        }            
     }
 }

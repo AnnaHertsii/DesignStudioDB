@@ -204,7 +204,9 @@
             Foreground="White"
             Content="Знайти замовлення" Width="299" Grid.Column="1" Height="33" Click="FindOrderButton_Click"/>
         <ComboBox 
+                DropDownClosed="combobox_option_DropDownClosed"
                 SelectedIndex="0"
+                Cursor="Hand"
                 Grid.Row="1"  
                 Margin="317,495,329,0"
                 VerticalAlignment="Top"
@@ -232,6 +234,20 @@
             TextWrapping="Wrap"
             VerticalAlignment="Top"
             Width="302" Grid.Column="1" Height="33"/>
+        <DatePicker 
+            Name="datebox"
+            SelectedDate="{x:Static sys:DateTime.Today}"
+            Foreground="#8787ed"
+            FontSize="20"
+            FontStyle ="Italic"
+            SelectedDateFormat="Short"
+            HorizontalAlignment="Left" 
+            Height="32"
+            Visibility="Hidden"
+            VerticalAlignment="Top"
+            Width="302" 
+            Grid.Row="1"
+            Grid.Column="1" Margin="632,496,0,0"/>
     </Grid>
 </Page>
 

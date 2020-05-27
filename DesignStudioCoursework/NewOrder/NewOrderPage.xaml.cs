@@ -55,18 +55,24 @@ namespace DesignStudioCoursework
                 SqlCommand command = new SqlCommand();
                 int Customer_id = customercombo.SelectedIndex + 1;
                 int Employee_id = employeecombo.SelectedIndex + 1;
-
-                DateTime startdate = start_date.SelectedDate.Value;
-                DateTime enddate = end_date.SelectedDate.Value;
-                int totalprice = Int32.Parse(price.Text);
-
-                /*DateTime? selectedDate = start_date.SelectedDate;
-                if (selectedDate.HasValue)
+                int totalprice = 0;
+                if (price.Text != "")
                 {
-                    string formatted = selectedDate.Value.ToString("dd.MM.yyyy", System.Globalization.CultureInfo.InvariantCulture);
-                }*/
+                    totalprice = Int32.Parse(price.Text);
+                }
 
-                string strSQL = string.Format("INSERT INTO [Order](Order_ID, Description, Start_date, Total_price, Customer_Ref, Employee_Ref) VALUES ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}')", order_id, description.Text, startdate, totalprice, Customer_id, Employee_id);
+                string formattedstart = null;
+                string formattedend = null;
+                DateTime? startDate = start_date.SelectedDate;
+                DateTime? endDate = end_date.SelectedDate;
+                if (startDate.HasValue && endDate.HasValue)
+                {
+                    formattedstart = startDate.Value.ToString("yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture);
+                    formattedend = endDate.Value.ToString("yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture);
+                }
+
+                string strSQL = string.Format("INSERT INTO [Order](Order_ID, Description, Start_date, End_date, Total_price, Customer_Ref, Employee_Ref) VALUES ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}')",
+                    order_id, description.Text, formattedstart, formattedend, totalprice, Customer_id, Employee_id);
 
                 SqlCommand myCommand = new SqlCommand(strSQL, connection);
                 myCommand.ExecuteNonQuery();

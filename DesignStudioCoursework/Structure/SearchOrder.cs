@@ -9,31 +9,35 @@ namespace DesignStudioCoursework.Structure
 {
     class SearchOrder
     {
-        public void ShowOrdersByOption(DataGrid dataGrid_Order, ComboBox SearchOrderCombo, TextBox SearchOrderBox)
+        public void ShowOrdersByOption(DataGrid dataGrid_Order, ComboBox SearchOrderCombo, TextBox SearchOrderBox, DatePicker MyDate)
         {
             if (SearchOrderCombo.SelectedIndex == 0)
             {
+                //MyDate.Visibility = System.Windows.Visibility.Hidden;
                 ShowOrdersByDescription(dataGrid_Order, SearchOrderBox);
             }
             else if (SearchOrderCombo.SelectedIndex == 1)
             {
+                //MyDate.Visibility = System.Windows.Visibility.Hidden;
                 ShowOrdersByPrice(dataGrid_Order, SearchOrderBox);
             }
             else if (SearchOrderCombo.SelectedIndex == 2)
             {
+                //MyDate.Visibility = System.Windows.Visibility.Hidden;
                 ShowOrdersByCustomer(dataGrid_Order, SearchOrderBox);
             }
             else if (SearchOrderCombo.SelectedIndex == 3)
             {
-                ShowOrdersByCustomer(dataGrid_Order, SearchOrderBox);
+                //MyDate.Visibility = System.Windows.Visibility.Hidden;
+                ShowOrdersByEmployee(dataGrid_Order, SearchOrderBox);
             }
             else if (SearchOrderCombo.SelectedIndex == 4)
             {
-                ShowOrdersByStartDate(dataGrid_Order, SearchOrderBox);
+                ShowOrdersByStartDate(dataGrid_Order, MyDate);
             }
             else if (SearchOrderCombo.SelectedIndex == 5)
             {
-                ShowOrdersByEndDate(dataGrid_Order, SearchOrderBox);
+                ShowOrdersByEndDate(dataGrid_Order, MyDate);
             }
         }
 
@@ -129,15 +133,21 @@ namespace DesignStudioCoursework.Structure
             }
         }
 
-        private void ShowOrdersByStartDate(DataGrid dataGrid_Order, TextBox SearchOrderBox)
+        private void ShowOrdersByStartDate(DataGrid dataGrid_Order, DatePicker MyDate)
         {
+            string formattedstart = null;
+            DateTime? startDate = MyDate.SelectedDate;
+            if (startDate.HasValue)
+            {
+                formattedstart = startDate.Value.ToString("yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture);              
+            }
             using (var db = new DesignStudioEntities())
             {
                 var orders = from order in db.Order
                              join customer in db.Customer on order.Customer_Ref equals customer.Customer_ID
                              join employee in db.Employee on order.Employee_Ref equals employee.Employee_ID
                              join position in db.Position on employee.Position_Ref equals position.Position_ID
-                             where order.Start_date.ToString().Contains(SearchOrderBox.Text)
+                             where order.Start_date.ToString().Contains(formattedstart)
                              select new
                              {
                                  order.Description,
@@ -152,15 +162,21 @@ namespace DesignStudioCoursework.Structure
             }
         }
 
-        private void ShowOrdersByEndDate(DataGrid dataGrid_Order, TextBox SearchOrderBox)
+        private void ShowOrdersByEndDate(DataGrid dataGrid_Order, DatePicker MyDate)
         {
+            string formattedend = null;
+            DateTime? endDate = MyDate.SelectedDate;
+            if (endDate.HasValue)
+            {
+                formattedend = endDate.Value.ToString("yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture);
+            }
             using (var db = new DesignStudioEntities())
             {
                 var orders = from order in db.Order
                              join customer in db.Customer on order.Customer_Ref equals customer.Customer_ID
                              join employee in db.Employee on order.Employee_Ref equals employee.Employee_ID
                              join position in db.Position on employee.Position_Ref equals position.Position_ID
-                             where order.End_date.ToString().Contains(SearchOrderBox.Text)
+                             where order.End_date.ToString().Contains(formattedend)
                              select new
                              {
                                  order.Description,
