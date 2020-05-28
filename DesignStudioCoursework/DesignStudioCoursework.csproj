@@ -115,6 +115,9 @@
     <Compile Include="Review\OrdersReview\OrdersPage.xaml.cs">
       <DependentUpon>OrdersPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Review\OrdersReview\UpdateOrderWindow.xaml.cs">
+      <DependentUpon>UpdateOrderWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="sp_helpdiagramdefinition_Result.cs">
       <DependentUpon>DesignStudioModel.tt</DependentUpon>
     </Compile>
@@ -220,6 +223,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Review\OrdersReview\OrdersPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Review\OrdersReview\UpdateOrderWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

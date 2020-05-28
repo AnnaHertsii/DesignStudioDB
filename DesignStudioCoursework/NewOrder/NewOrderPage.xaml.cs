@@ -26,7 +26,7 @@ namespace DesignStudioCoursework
         {
             this.goBack = goBack;
             InitializeComponent();
-            BindComboCustomer();
+            BindComboCustomer();       
         }
        
         private void ExitClicked(object sender, RoutedEventArgs e)
@@ -39,9 +39,68 @@ namespace DesignStudioCoursework
             goBack();
         }
 
+        private void end_date_click(object sender, RoutedEventArgs e)
+        {           
+            end_date.SelectedDate = start_date.SelectedDate;
+            end_date.DisplayDateStart = start_date.SelectedDate;
+        }
+
         private void AddOrderButton_Click(object sender, RoutedEventArgs e)
         {
-            AddOrder();
+            if (description.Text.Length > 150)
+                description_error.Visibility = Visibility.Visible;
+            else
+            {
+                description_error.Visibility = Visibility.Hidden;
+            }
+
+            if (end_date.SelectedDate < start_date.SelectedDate)
+            {
+                enddate_error.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                enddate_error.Visibility = Visibility.Hidden;
+            }
+
+            bool isDigit = true;
+            foreach (char c in price.Text)
+            {
+                if (c < '0' || c > '9')
+                    isDigit = false;
+            }
+            if (isDigit == false)
+            {
+                price_error.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                price_error.Visibility = Visibility.Hidden;
+            }
+
+            if (customercombo.SelectedIndex == -1)
+                customer_error.Visibility = Visibility.Visible;
+            else
+            {
+                customer_error.Visibility = Visibility.Hidden;
+            }
+
+            if (employeecombo.SelectedIndex == -1)
+                employee_error.Visibility = Visibility.Visible;
+            else
+            {
+                employee_error.Visibility = Visibility.Hidden;
+            }
+            
+            if ((description.Text.Length < 150) && (end_date.SelectedDate >= start_date.SelectedDate) && (isDigit == true) && (customercombo.SelectedIndex != -1) && (employeecombo.SelectedIndex != -1))
+            {
+                description_error.Visibility = Visibility.Hidden;
+                enddate_error.Visibility = Visibility.Hidden;
+                price_error.Visibility = Visibility.Hidden;
+                customer_error.Visibility = Visibility.Hidden;
+                employee_error.Visibility = Visibility.Hidden;
+                AddOrder();
+            }           
         }
 
         public void AddOrder()

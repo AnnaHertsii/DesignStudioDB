@@ -36,7 +36,7 @@
 
     <Grid Height="620" VerticalAlignment="Top">
         <Grid.RowDefinitions>
-            <RowDefinition Height="25*" />
+            <RowDefinition Height="25" />
             <RowDefinition Height="421*" />
             <RowDefinition Height="100*" />
         </Grid.RowDefinitions>
@@ -154,7 +154,19 @@
             HorizontalAlignment="Center" 
             TextWrapping="Wrap"
             Text="" 
-            Width="336" Margin="226,87,23,354"/>
+            Width="336" Margin="226,87,23,357"/>
+        <Label 
+            Name="description_error"
+            Content="Опис замовлення не повинен перевищувати 150 символів"
+            Foreground="Red"
+            FontSize="12"
+            FontStyle="Italic"
+            Visibility="Hidden"
+            HorizontalAlignment="Left" 
+            Height="29" 
+            Margin="226,124,0,0"
+            VerticalAlignment="Top"
+            Width="336" Grid.Row="1"/>
         <Label 
             Grid.Row="1"
             Grid.Column="0"
@@ -169,10 +181,11 @@
             RenderTransformOrigin="0.5,0.516" Margin="11,153,0,0"/>
         <Border
             Background="White"
-            Grid.Row="1" Margin="226,153,23,288">
+            Grid.Row="1" Margin="226,153,23,291">
             <DatePicker 
             Name="start_date"
             SelectedDate="{x:Static sys:DateTime.Today}"
+            DisplayDateStart="{x:Static sys:DateTime.Today}"
             Foreground="#8787ed"
             FontSize="20"
             FontStyle ="Italic"
@@ -186,19 +199,21 @@
         </Border>
         <Border
             Background="White"
-            Grid.Row="1" Margin="226,217,23,224">
+            Grid.Row="1" Margin="226,217,23,229">
             <DatePicker 
             Name="end_date"
             SelectedDate="{x:Static sys:DateTime.Today}"
+            DisplayDateStart="{x:Static sys:DateTime.Today}"
             Foreground="#8787ed"
             FontSize="20"
+            MouseDoubleClick="end_date_click"
             FontStyle ="Italic"
             SelectedDateFormat="Short"
             HorizontalAlignment="Left" 
             Height="36"
             VerticalAlignment="Top"
             Width="336" 
-            Grid.Row="1"
+            Grid.Row="1"                
             Grid.Column="0"/>
         </Border>
         <Label 
@@ -219,7 +234,7 @@
             FontStyle ="Italic" 
             Foreground="White" 
             FontWeight="Bold"
-            Content="Вартість" 
+            Content="Вартість (грн)" 
             HorizontalAlignment="Left" 
             VerticalAlignment="Top"
             FontSize="20"
@@ -236,7 +251,7 @@
             HorizontalAlignment="Center" 
             TextWrapping="Wrap"
             Text="" 
-            Width="336" Margin="226,282,23,159"/>
+            Width="336" Margin="226,282,23,162"/>
         <Label 
             Grid.Row="1"
             Grid.Column="0"
@@ -248,7 +263,7 @@
             VerticalAlignment="Top"
             FontSize="20"
             Width="137" 
-            RenderTransformOrigin="0.5,0.516" Margin="11,352,0,0"/>
+            RenderTransformOrigin="0.5,0.516" Margin="10,349,0,0"/>
         <ComboBox 
             Grid.Row="1"
             Grid.Column="0"
@@ -261,9 +276,21 @@
             Foreground="#8787ed"
             Height="37" 
             HorizontalAlignment="Center"
-            Margin="226,352,23,89" 
+            Margin="226,349,23,95" 
             Width="336">
         </ComboBox>
+        <Label 
+            Name="customer_error"
+            Content="Оберіть замовника зі списку клієнтів"
+            Foreground="Red"
+            FontSize="12"
+            FontStyle="Italic"
+            Visibility="Hidden"
+            HorizontalAlignment="Left" 
+            Height="30" 
+            Margin="226,386,0,0"
+            VerticalAlignment="Top"
+            Width="336" Grid.Row="1"/>
         <ComboBox 
             Grid.Row="1"
             Grid.Column="0"
@@ -273,7 +300,7 @@
             Foreground="#8787ed"
             Height="37" 
             HorizontalAlignment="Center"
-            Margin="226,422,23,19" 
+            Margin="226,416,23,28" 
             Width="336">
             <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Герцій Анна Олександрівна"/>
             <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Заблоцька Марія Петрівна"/>
@@ -286,6 +313,18 @@
             <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Яропуд Софія Володимирівна"/>
             <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Тарасенко Анастасія Володимирівна"/>
         </ComboBox>
+        <Label 
+            Name="employee_error"
+            Content="Оберіть працівника, який оформлює замовлення"
+            Foreground="Red"
+            FontSize="12"
+            FontStyle="Italic"
+            Visibility="Hidden"
+            HorizontalAlignment="Left" 
+            Height="26" 
+            Margin="226,453,0,0"
+            VerticalAlignment="Top"
+            Width="336" Grid.Row="1"/>
         <Button
             Name="AddOrderButton"
             Height="56"
@@ -320,6 +359,30 @@
             VerticalAlignment="Top"
             FontSize="20"
             Width="185" 
-            RenderTransformOrigin="0.5,0.516" Margin="10,422,0,0"/>
+            RenderTransformOrigin="0.5,0.516" Margin="10,416,0,0"/>
+        <Label 
+            Name="price_error"
+            Content="Введіть коректну суму"
+            Foreground="Red"
+            FontSize="12"
+            FontStyle="Italic"
+            Visibility="Hidden"
+            HorizontalAlignment="Left" 
+            Height="30" 
+            Margin="226,319,0,0"
+            VerticalAlignment="Top"
+            Width="336" Grid.Row="1"/>
+        <Label 
+            Name="enddate_error"
+            Content="Дата завершення має бути не раніше дати початку"
+            Foreground="Red"
+            FontSize="12"
+            FontStyle="Italic"
+            Visibility="Hidden"
+            HorizontalAlignment="Left" 
+            Height="30" 
+            Margin="226,252,0,0"
+            VerticalAlignment="Top"
+            Width="336" Grid.Row="1"/>
     </Grid>
 </Page>   
