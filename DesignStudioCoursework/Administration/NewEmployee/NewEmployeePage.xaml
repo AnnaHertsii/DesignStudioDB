@@ -3,6 +3,7 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:sys="clr-namespace:System;assembly=mscorlib"
       xmlns:local="clr-namespace:DesignStudioCoursework.NewEmployee"
       mc:Ignorable="d" 
       d:DesignHeight="620" d:DesignWidth="1170"
@@ -155,6 +156,18 @@
             Text="" 
             Width="336" Margin="226,87,23,354"/>
         <Label 
+            Name="name_error"
+            Content="ПІБ не повинен перевищувати 150 символів"
+            Foreground="Red"
+            FontSize="12"
+            FontStyle="Italic"
+            Visibility="Hidden"
+            HorizontalAlignment="Left" 
+            Height="29" 
+            Margin="226,124,0,0"
+            VerticalAlignment="Top"
+            Width="336" Grid.Row="1"/>
+        <Label 
             Grid.Row="1"
             Grid.Column="0"
             FontStyle ="Italic" 
@@ -170,7 +183,12 @@
             Background="White"
             Grid.Row="1" Margin="226,153,23,288">
             <DatePicker 
-            Name="birthdate"
+            Name="birthdate" 
+            DisplayDateStart="1/01/1970"
+            DisplayDateEnd="1/01/2002"
+            DisplayDate="1/05/1995"
+            SelectedDate="1/05/1995"
+            Foreground="#8787ed"
             FontSize="20"
             FontStyle ="Italic"
             SelectedDateFormat="Short"
@@ -178,8 +196,7 @@
             Height="37"
             VerticalAlignment="Top"
             Width="336" 
-            Grid.Row="1"
-            Grid.Column="0"/>
+            />
         </Border>
         <Label 
             Grid.Row="1"
@@ -264,7 +281,7 @@
             HorizontalAlignment="Center" 
             TextWrapping="Wrap"
             Text="" 
-            Width="336" Margin="226,352,23,89"/>
+            Width="336" Margin="226,347,23,94"/>
         <ComboBox 
             SelectionChanged="ComboBox_Selected"
             Grid.Row="1"
@@ -272,10 +289,10 @@
             FontSize="20" 
             FontStyle ="Italic"
             Foreground="#8787ed"
-            Name="customer_type" 
+            Name="position" 
             Height="37" 
             HorizontalAlignment="Center"
-            Margin="226,422,23,19" 
+            Margin="226,413,23,28" 
             Width="336">
             <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Проектувальник"/>
             <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Художник"/>
@@ -284,7 +301,7 @@
             <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Секретар"/>
         </ComboBox>
         <Button
-            Name="AddCustomerButton"
+            Name="AddEmployeeButton"
             Height="56"
             Cursor="Hand"
             Margin="174,29,167,0"
@@ -296,7 +313,7 @@
             FontSize="24"
             FontStyle="Italic"
             Foreground="White"
-            Content="Зареєструвати" Width="244">
+            Content="Зареєструвати" Width="244" Click="AddEmployeeButton_Click">
         </Button>
         <Image 
             Grid.Row="1"
@@ -318,6 +335,54 @@
             FontSize="20"
             Width="185" 
             RenderTransformOrigin="0.5,0.516" Margin="10,422,0,0"/>
+        <Label 
+            Name="adress_error"
+            Content="Адреса не повинна перевищувати 50 символів"
+            Foreground="Red"
+            FontSize="12"
+            FontStyle="Italic"
+            Visibility="Hidden"
+            HorizontalAlignment="Left" 
+            Height="29" 
+            Margin="226,253,0,0"
+            VerticalAlignment="Top"
+            Width="336" Grid.Row="1"/>
+        <Label 
+            Name="phone_error"
+            Content="Телефон не повинен перевищувати 15 символів"
+            Foreground="Red"
+            FontSize="12"
+            FontStyle="Italic"
+            Visibility="Hidden"
+            HorizontalAlignment="Left" 
+            Height="29" 
+            Margin="226,318,0,0"
+            VerticalAlignment="Top"
+            Width="336" Grid.Row="1"/>
+        <Label 
+            Name="passport_error"
+            Content="Довжина паспорту не повинна перевищувати 50 символів"
+            Foreground="Red"
+            FontSize="12"
+            FontStyle="Italic"
+            Visibility="Hidden"
+            HorizontalAlignment="Left" 
+            Height="29" 
+            Margin="226,384,0,0"
+            VerticalAlignment="Top"
+            Width="349" Grid.Row="1"/>
+        <Label 
+            x:Name="position_error"
+            Content="Оберіть посаду працівника"
+            Foreground="Red"
+            FontSize="12"
+            FontStyle="Italic"
+            Visibility="Hidden"
+            HorizontalAlignment="Left" 
+            Height="29" 
+            Margin="226,450,0,0"
+            VerticalAlignment="Top"
+            Width="336" Grid.Row="1" Grid.RowSpan="2"/>
     </Grid>
 </Page>
 
