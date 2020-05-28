@@ -40,13 +40,29 @@ namespace DesignStudioCoursework
         {
             if (name.Text.Length > 150)
                 name_error.Visibility = Visibility.Visible;
+            else
+            {
+                name_error.Visibility = Visibility.Hidden;
+            }
             if (phone.Text.Length > 15)
                 phone_error.Visibility = Visibility.Visible;
+            else
+            {
+                phone_error.Visibility = Visibility.Hidden;
+            }
             if (adress.Text.Length > 50)
                 adress_error.Visibility = Visibility.Visible;
+            else
+            {
+                adress_error.Visibility = Visibility.Hidden;
+            }
             if (mail_adress.Text.Length > 50)
                 mail_error.Visibility = Visibility.Visible;
-            else if ((name.Text.Length < 150) && (phone.Text.Length < 15) && (adress.Text.Length < 50) && (mail_adress.Text.Length < 15))
+            else
+            {
+                mail_error.Visibility = Visibility.Hidden;
+            }
+            if ((name.Text.Length < 150) && (phone.Text.Length < 15) && (adress.Text.Length < 50) && (mail_adress.Text.Length < 15))
             {
                 name_error.Visibility = Visibility.Hidden;
                 phone_error.Visibility = Visibility.Hidden;

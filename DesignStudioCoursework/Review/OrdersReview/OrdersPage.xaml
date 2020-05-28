@@ -134,7 +134,7 @@
             FontSize="20"
             FontStyle="Italic"
             Foreground="White"
-            Content="Оновити замовлення" Width="310" Grid.Column="1"/>
+            Content="Оновити замовлення" Width="310" Grid.Column="1" Click="UpdateOrderButton_Click"/>
         <Button
             Name="DeleteOrderButton"
             Cursor="Hand"

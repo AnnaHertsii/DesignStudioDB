@@ -129,6 +129,7 @@
     </Compile>
     <Compile Include="Structure\Client.cs" />
     <Compile Include="Structure\DisplayClient.cs" />
+    <Compile Include="Structure\DisplayOrder.cs" />
     <Compile Include="Structure\SearchClient.cs" />
     <Compile Include="Structure\SearchOrder.cs" />
     <Compile Include="Style.cs">

@@ -81,12 +81,24 @@ namespace DesignStudioCoursework.Review.OrdersReview
             string connectionString = @"Data Source=DESKTOP-O22ROGE;Initial Catalog=DesignStudio;Integrated Security=True";
             SqlConnection connection = new SqlConnection(connectionString);
             connection.Open();
-            int SelectedId = CurrentID();
+            int SelectedId = CurrentID_Delete();
             string strSQL = string.Format("DELETE [Order] WHERE Order_ID = '{0}'", SelectedId);
             SqlCommand myCommand = new SqlCommand(strSQL, connection);
             myCommand.ExecuteNonQuery();
 
             MessageBox.Show("Замовлення видалено!");
+        }
+
+        private void UpdateOrderButton_Click(object sender, RoutedEventArgs e)
+        {
+            UpdateOrder();
+        }
+
+        public void UpdateOrder()
+        {
+            int index = CurrentID();
+            UpdateOrderWindow updateOrder = new UpdateOrderWindow(index, DataGridOrder);
+            updateOrder.Show();
         }
 
         public string GetSelectedCellValue(int index)
@@ -103,7 +115,7 @@ namespace DesignStudioCoursework.Review.OrdersReview
             return element.Tag.ToString();
         }
 
-        public int CurrentID()
+        public int CurrentID_Delete()
         {
             string connectionString = @"Data Source=DESKTOP-O22ROGE;Initial Catalog=DesignStudio;Integrated Security=True";
             SqlConnection connection = new SqlConnection(connectionString);
@@ -120,7 +132,22 @@ namespace DesignStudioCoursework.Review.OrdersReview
             return Int32.Parse(st);
         }
 
-       
+        public int CurrentID()
+        {
+            string connectionString = @"Data Source=DESKTOP-O22ROGE;Initial Catalog=DesignStudio;Integrated Security=True";
+            SqlConnection connection = new SqlConnection(connectionString);
+            connection.Open();
+            string Description = GetSelectedCellValue(0);
+            string Customer = GetSelectedCellValue(4);
+            SqlCommand command = new SqlCommand();
+            string strSQL = string.Format("SELECT Order_ID FROM [Order] WHERE Description = '{0}'", Description);
+            SqlCommand myCommand = new SqlCommand(strSQL, connection);
+            SqlDataReader reader = myCommand.ExecuteReader();
+            string st = null;
+            if (reader.Read())
+                st = reader[0].ToString();
+            return Int32.Parse(st);
+        }
 
         private void combobox_option_DropDownClosed(object sender, EventArgs e)
         {
@@ -148,6 +175,6 @@ namespace DesignStudioCoursework.Review.OrdersReview
             {
                 datebox.Visibility = System.Windows.Visibility.Visible;
             }
-        }            
+        }      
     }
 }

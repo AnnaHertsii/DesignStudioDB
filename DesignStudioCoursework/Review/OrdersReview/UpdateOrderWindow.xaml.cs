@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DesignStudioCoursework.Structure;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,13 +21,41 @@ namespace DesignStudioCoursework.Review.OrdersReview
     public partial class UpdateOrderWindow : Window
     {   
         public List<Customer> Customers { get; set; }
-        private Action goBack;
+        public int order_index;
+        DataGrid datagrid;
+        DisplayOrder display = new DisplayOrder();
 
-        public UpdateOrderWindow(Action goBack)
+        public UpdateOrderWindow(int index, DataGrid grid_name)
         {
-            this.goBack = goBack;
+            order_index = index;
             InitializeComponent();
             BindComboCustomer();
+            datagrid = grid_name;
+            fillOrderFields();
+        }
+
+        public void fillOrderFields()
+        {
+            using (var db = new DesignStudioEntities())
+            {
+                var chosenOrder = (from order in db.Order
+                                       where order.Order_ID == order_index
+                                       select new
+                                       {
+                                           Descriptiona = order.Description,
+                                           Start = order.Start_date,
+                                           End = order.End_date,
+                                           Price = order.Total_price,
+                                           Customer = order.Customer_Ref,
+                                           Employee = order.Employee_Ref,
+                                       }).FirstOrDefault();
+                description.Text = chosenOrder.Descriptiona;
+                start_date.SelectedDate = chosenOrder.Start;
+                end_date.SelectedDate = chosenOrder.End;
+                price.Text = chosenOrder.Price.ToString();
+                customercombo.SelectedIndex = (int)chosenOrder.Customer-1;
+                employeecombo.SelectedIndex = (int)chosenOrder.Employee - 1;
+            }
         }
 
         private void ExitClicked(object sender, RoutedEventArgs e)
@@ -36,7 +65,7 @@ namespace DesignStudioCoursework.Review.OrdersReview
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
-            goBack();
+            this.Close();
         }
 
         private void BindComboCustomer()
