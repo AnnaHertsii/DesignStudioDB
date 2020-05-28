@@ -36,8 +36,8 @@
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="454" />
-            <RowDefinition Height="76" />
+            <RowDefinition Height="461" />
+            <RowDefinition Height="69" />
         </Grid.RowDefinitions>
         <Border 
             Grid.Row="0"
@@ -86,7 +86,19 @@
             HorizontalAlignment="Center" 
             TextWrapping="Wrap"
             Text="" 
-            Width="257" Margin="216,88,19,329"/>
+            Width="257" Margin="216,88,19,336"/>
+        <Label 
+            Name="description_error"
+            Content="Опис не має перевищувати 150 символів"
+            Foreground="Red"
+            FontSize="12"
+            FontStyle="Italic"
+            Visibility="Hidden"
+            HorizontalAlignment="Left" 
+            Height="25" 
+            Margin="216,125,0,0"
+            VerticalAlignment="Top"
+            Width="257"/>
         <Label 
             Grid.Row="0"
             FontStyle ="Italic" 
@@ -107,7 +119,19 @@
             HorizontalAlignment="Center" 
             TextWrapping="Wrap"
             Text="" 
-            Width="257" Margin="216,150,19,267"/>
+            Width="257" Margin="216,150,19,274"/>
+        <Label 
+            Name="enddate_error"
+            Content="Некоректна дата завершення"
+            Foreground="Red"
+            FontSize="12"
+            FontStyle="Italic"
+            Visibility="Hidden"
+            HorizontalAlignment="Left" 
+            Height="25" 
+            Margin="216,250,0,0"
+            VerticalAlignment="Top"
+            Width="257"/>
         <Label 
             Grid.Row="0"
             FontStyle ="Italic" 
@@ -128,7 +152,7 @@
             HorizontalAlignment="Center" 
             TextWrapping="Wrap"
             Text="" 
-            Width="257" Margin="216,213,19,204"/>
+            Width="257" Margin="216,213,19,211"/>
         <Label 
             Grid.Row="0"
             FontStyle ="Italic" 
@@ -150,7 +174,7 @@
             HorizontalAlignment="Center" 
             TextWrapping="Wrap"
             Text="" 
-            Width="257" Margin="216,276,19,141"/>
+            Width="257" Margin="216,276,19,148"/>
         <Label 
             Grid.Row="0"
             FontStyle ="Italic" 
@@ -172,7 +196,7 @@
             FontStyle ="Italic"
             Foreground="#8787ed" 
             HorizontalAlignment="Center"
-            Margin="216,339,19,78" 
+            Margin="216,339,19,85" 
             Width="257"
             SelectedIndex="0"/>
         <ComboBox 
@@ -181,10 +205,9 @@
             x:Name="employeecombo"             
             FontSize="20" 
             FontStyle ="Italic"
-            Foreground="#8787ed"
-            Height="37" 
+            Foreground="#8787ed" 
             HorizontalAlignment="Center"
-            Margin="216,401,19,16" 
+            Margin="216,402,19,23" 
             Width="257">
             <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Герцій Анна Олександрівна"/>
             <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Заблоцька Марія Петрівна"/>
@@ -210,7 +233,7 @@
             FontSize="24"
             FontStyle="Italic"
             Foreground="White"
-            Content="Зберегти" Width="206"/>
+            Content="Зберегти" Width="206" Click="UpdateOrderButton_Click"/>
         <Label 
             Grid.Row="0"
             FontStyle ="Italic" 
@@ -248,6 +271,42 @@
             VerticalAlignment="Top"
             Width="251" Margin="216,213,0,0" 
             />
+        <Label 
+            x:Name="price_error"
+            Content="Некоректна ціна"
+            Foreground="Red"
+            FontSize="12"
+            FontStyle="Italic"
+            Visibility="Hidden"
+            HorizontalAlignment="Left" 
+            Height="25" 
+            Margin="216,313,0,0"
+            VerticalAlignment="Top"
+            Width="257"/>
+        <Label 
+            x:Name="customer_error"
+            Content="Оберіть замовника зі списку клієнтів"
+            Foreground="Red"
+            FontSize="12"
+            FontStyle="Italic"
+            Visibility="Hidden"
+            HorizontalAlignment="Left" 
+            Height="25" 
+            Margin="216,376,0,0"
+            VerticalAlignment="Top"
+            Width="257"/>
+        <Label 
+            x:Name="employee_error"
+            Content="Оберіть працівника"
+            Foreground="Red"
+            FontSize="12"
+            FontStyle="Italic"
+            Visibility="Hidden"
+            HorizontalAlignment="Left" 
+            Height="25" 
+            Margin="216,438,0,0"
+            VerticalAlignment="Top"
+            Width="257" Grid.RowSpan="2"/>
     </Grid>
 </Window>
 
