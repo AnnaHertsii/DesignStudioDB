@@ -66,5 +66,10 @@ namespace DesignStudioCoursework
         {
             pageChanged(5);
         }
+
+        private void EditEmployees_Click(object sender, RoutedEventArgs e)
+        {
+            pageChanged(6);
+        }
     }
 }

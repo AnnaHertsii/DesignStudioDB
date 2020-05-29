@@ -238,6 +238,19 @@
             Margin="226,225,23,216" 
             Width="336">
         </ComboBox>
+        <TextBox 
+            Padding="10,0,0,0"
+            Grid.Row="1"
+            Grid.Column="0"
+            Name="interior"
+            FontStyle ="Italic" 
+            FontSize="20"
+            Foreground="#8787ed"
+            HorizontalAlignment="Center" 
+            TextWrapping="Wrap"
+            Text="" 
+            Width="336" Margin="226,280,23,161"
+            MouseDoubleClick="interior_Click"/>
         <Button
             Name="AddCustomerButton"
             Height="56"
@@ -332,16 +345,5 @@
             TextWrapping="Wrap"
             Text="" 
             Width="336" Margin="226,431,23,10"/>
-        <ComboBox 
-            Grid.Row="1"
-            Grid.Column="0"
-            Name="interior" 
-            FontSize="20" 
-            FontStyle ="Italic"
-            Foreground="#8787ed"
-            Height="37" 
-            HorizontalAlignment="Center"
-            Margin="226,280,23,161" 
-            Width="336"/>
     </Grid>
 </Page>   

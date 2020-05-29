@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
-using DesignStudioCoursework.Structure;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
@@ -15,19 +14,17 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace DesignStudioCoursework.Review.ClientsReview
+namespace DesignStudioCoursework.Administration.NewEmployee
 {
-    public partial class ClientsPage : Page
+    public partial class EmployeesPage : Page
     {
         private Action goBack;
-        SearchClient search = new SearchClient();
-        DisplayClient display = new DisplayClient();
 
-        public ClientsPage(Action goBack)
+        public EmployeesPage(Action goBack)
         {
             this.goBack = goBack;
             InitializeComponent();
-        } 
+        }
 
         private void ExitClicked(object sender, RoutedEventArgs e)
         {
@@ -36,48 +33,55 @@ namespace DesignStudioCoursework.Review.ClientsReview
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
-            goBack(); 
+            goBack();
         }
 
-        private void UpdateCustomerButton_Click(object sender, RoutedEventArgs e)
+        public void ShowEmployees()
         {
-            UpdateCustomer();       
+            using (var db = new DesignStudioEntities())
+            {
+                var employees = from employee in db.Employee
+                                join position in db.Position on employee.Position_Ref equals position.Position_ID
+                                select new
+                                {
+                                    employee.Name,
+                                    Birthdate = employee.Birth_date,
+                                    Adress = employee.Residence_place,
+                                    employee.Phone,
+                                    Passport = employee.Passport_number,
+                                    Position = position.Position_name
+                                };
+                DataGridEmployee.ItemsSource = employees.ToList();
+            }
         }
 
-        public void UpdateCustomer()
+        private void ShowEmployeesButton_Click(object sender, RoutedEventArgs e)
         {
-            int index = CurrentID();
-            UpdateClientWindow updateClient = new UpdateClientWindow(index, DataGridCustomer);
-            updateClient.Show();
+            ShowEmployees();
         }
 
-        private void ShowCustomersButton_Click(object sender, RoutedEventArgs e)
+        private void DeleteEmployeeButton_Click(object sender, RoutedEventArgs e)
         {
-            display.ShowCustomers(DataGridCustomer);
-        }
-      
-        private void DeleteCustomerButton_Click(object sender, RoutedEventArgs e)
-        {
-            DeleteCustomer();
-            display.ShowCustomers(DataGridCustomer);
+            DeleteEmployee();
+            ShowEmployees();
         }
 
-        public void DeleteCustomer()
+        public void DeleteEmployee()
         {
             string connectionString = @"Data Source=DESKTOP-O22ROGE;Initial Catalog=DesignStudio;Integrated Security=True";
             SqlConnection connection = new SqlConnection(connectionString);
             connection.Open();
             int SelectedId = CurrentID();
-            string strSQL = string.Format("DELETE Customer WHERE Customer_ID = '{0}'", SelectedId);
+            string strSQL = string.Format("DELETE Employee WHERE Employee_ID = '{0}'", SelectedId);
             SqlCommand myCommand = new SqlCommand(strSQL, connection);
             myCommand.ExecuteNonQuery();
 
-            MessageBox.Show("Клієнта видалено!");
+            MessageBox.Show("Працівника видалено з бази!");
         }
 
         public string GetSelectedCellValue(int index)
         {
-            DataGridCellInfo cellInfo = DataGridCustomer.SelectedCells[index];
+            DataGridCellInfo cellInfo = DataGridEmployee.SelectedCells[index];
             if (cellInfo == null) return null;
 
             DataGridBoundColumn column = cellInfo.Column as DataGridBoundColumn;
@@ -95,10 +99,9 @@ namespace DesignStudioCoursework.Review.ClientsReview
             SqlConnection connection = new SqlConnection(connectionString);
             connection.Open();
             string Name = GetSelectedCellValue(0);
-            string Phone = GetSelectedCellValue(1);
-            string Adress = GetSelectedCellValue(2);
+            string Passportnumber = GetSelectedCellValue(4);
             SqlCommand command = new SqlCommand();
-            string strSQL = string.Format("SELECT Customer_ID FROM Customer WHERE Name = '{0}' AND Phone = '{1}' AND Adress = '{2}'", Name, Phone, Adress);
+            string strSQL = string.Format("SELECT Employee_ID FROM Employee WHERE Name = '{0}' AND Passport_number = '{1}'", Name, Passportnumber);
             SqlCommand myCommand = new SqlCommand(strSQL, connection);
             SqlDataReader reader = myCommand.ExecuteReader();
             string st = null;
@@ -107,9 +110,11 @@ namespace DesignStudioCoursework.Review.ClientsReview
             return Int32.Parse(st);
         }
 
-        private void FindCustomerButton_Click(object sender, RoutedEventArgs e)
+        private void UpdateEmployeeButton_Click(object sender, RoutedEventArgs e)
         {
-            search.ShowClientsByOption(DataGridCustomer, combobox_option, search_text);
+            int index = CurrentID();
+            UpdateEmployeeWindow updateEmployee = new UpdateEmployeeWindow(index, DataGridEmployee);
+            updateEmployee.Show();
         }
     }
 }

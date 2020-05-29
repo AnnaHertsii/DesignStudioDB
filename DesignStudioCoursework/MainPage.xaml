@@ -192,12 +192,6 @@
                     Foreground="#99A2F1"
                     Cursor="Hand"
                     Header="Управління працівниками">
-                    <MenuItem 
-                    Background="#F2F2F2"
-                    Foreground="#99A2F1"
-                    Cursor="Hand"
-                    Header="Редагувати працівників">
-                    </MenuItem>
                     <MenuItem    
                     Name="AddNewEmployee"
                     Background="#F2F2F2"
@@ -205,6 +199,13 @@
                     Cursor="Hand"
                     Header="Додати нового працівника"
                     Click="AddNewEmployee_Click">
+                    </MenuItem>
+                    <MenuItem 
+                    Background="#F2F2F2"
+                    Foreground="#99A2F1"
+                    Cursor="Hand"
+                    Header="Редагувати працівників"
+                    Click="EditEmployees_Click">
                     </MenuItem>
                 </MenuItem>
             </MenuItem>

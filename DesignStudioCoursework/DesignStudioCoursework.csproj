@@ -65,6 +65,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Administration\NewEmployee\EmployeesPage.xaml.cs">
+      <DependentUpon>EmployeesPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Administration\NewEmployee\UpdateEmployeeWindow.xaml.cs">
+      <DependentUpon>UpdateEmployeeWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Attachment.cs">
       <DependentUpon>DesignStudioModel.tt</DependentUpon>
     </Compile>
@@ -129,6 +135,7 @@
     </Compile>
     <Compile Include="Structure\Client.cs" />
     <Compile Include="Structure\DisplayClient.cs" />
+    <Compile Include="Structure\DisplayEmployee.cs" />
     <Compile Include="Structure\DisplayOrder.cs" />
     <Compile Include="Structure\SearchClient.cs" />
     <Compile Include="Structure\SearchOrder.cs" />
@@ -150,6 +157,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="About\WorksPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Administration\NewEmployee\EmployeesPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Administration\NewEmployee\UpdateEmployeeWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
