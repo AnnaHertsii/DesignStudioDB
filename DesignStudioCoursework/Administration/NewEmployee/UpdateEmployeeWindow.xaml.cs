@@ -36,6 +36,7 @@ namespace DesignStudioCoursework.Administration.NewEmployee
             {
                 var chosenEmployee = (from employee in db.Employee
                                 join position in db.Position on employee.Position_Ref equals position.Position_ID
+                                where employee.Employee_ID == employee_index
                                 select new
                                 {
                                     employee.Name,
