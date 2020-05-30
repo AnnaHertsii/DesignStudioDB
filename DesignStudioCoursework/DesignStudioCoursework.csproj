@@ -138,6 +138,7 @@
     <Compile Include="Structure\DisplayEmployee.cs" />
     <Compile Include="Structure\DisplayOrder.cs" />
     <Compile Include="Structure\SearchClient.cs" />
+    <Compile Include="Structure\SearchEmployee.cs" />
     <Compile Include="Structure\SearchOrder.cs" />
     <Compile Include="Style.cs">
       <DependentUpon>DesignStudioModel.tt</DependentUpon>

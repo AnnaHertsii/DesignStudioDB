@@ -35,7 +35,6 @@ namespace DesignStudioCoursework.Administration.NewEmployee
             using (var db = new DesignStudioEntities())
             {
                 var chosenEmployee = (from employee in db.Employee
-                                join position in db.Position on employee.Position_Ref equals position.Position_ID
                                 where employee.Employee_ID == employee_index
                                 select new
                                 {
@@ -44,13 +43,14 @@ namespace DesignStudioCoursework.Administration.NewEmployee
                                     Adress = employee.Residence_place,
                                     employee.Phone,
                                     Passport = employee.Passport_number,
-                                    Position = position.Position_name
-                                }).FirstOrDefault(); ;
+                                    Position = employee.Position_Ref
+                                }).FirstOrDefault(); 
                 name.Text = chosenEmployee.Name;
-                //birthdate.SelectedDate = chosenEmployee.Birthdate;
+                birthdate.SelectedDate = chosenEmployee.Birthdate;
                 adress.Text = chosenEmployee.Adress;
                 phone.Text = chosenEmployee.Phone;
                 passport.Text = chosenEmployee.Passport;
+                position.SelectedIndex = (int)chosenEmployee.Position - 1;
             }
         }
 
@@ -59,33 +59,66 @@ namespace DesignStudioCoursework.Administration.NewEmployee
             this.Close();
         }
 
-        /*private void UpdateCustomerButton_Click(object sender, RoutedEventArgs e)
-        {
-            UpdateCustomer();
-            display.ShowCustomers(datagrid);
-        }
-
-        public void UpdateCustomer()
+        public void UpdateEmployee()
         {
             string connectionString = @"Data Source=DESKTOP-O22ROGE;Initial Catalog=DesignStudio;Integrated Security=True";
             SqlConnection connection = new SqlConnection(connectionString);
             connection.Open();
             SqlCommand command = new SqlCommand();
+            int Position_id = position.SelectedIndex + 1;
+            string formatteddate = null;
+            DateTime? date = birthdate.SelectedDate;            
+            if (date.HasValue)
+            {
+                formatteddate = date.Value.ToString("yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture);
+            }
 
-            int custom_type = 1;
-            if (customer_type.Text == "Приватний клієнт")
-                custom_type = 1;
-            else if (customer_type.Text == "Компанія")
-                custom_type = 2;
-
-            string strSQL = string.Format("Update Customer Set Customer_ID = '{0}', Name ='{1}', Phone = '{2}', Adress = '{3}', Mail_adress = '{4}', Customer_type_Ref = '{5}'" +
-                " Where Customer_ID = '{6}'", customer_index, name.Text, phone.Text, adress.Text, mail_adress.Text, custom_type, customer_index);
+            string strSQL = string.Format("Update Employee Set Employee_ID = '{0}', Name ='{1}', Birth_date = '{2}', Residence_place = '{3}', Phone = '{4}',  Passport_number = '{5}', Position_Ref = '{6}'" +
+                " Where Employee_ID = '{7}'", employee_index, name.Text, formatteddate, adress.Text, phone.Text, passport.Text, Position_id, employee_index);
 
             SqlCommand myCommand = new SqlCommand(strSQL, connection);
             myCommand.ExecuteNonQuery();
 
-            MessageBox.Show("Дані клієнта успішно оновлено!");
+            MessageBox.Show("Дані працівника успішно оновлено!");
             this.Close();
-        }*/
+        }
+
+        private void UpdateEmployeeButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (name.Text.Length > 150)
+                name_error.Visibility = Visibility.Visible;
+            else
+            {
+                name_error.Visibility = Visibility.Hidden;
+            }
+            if (adress.Text.Length > 50)
+                adress_error.Visibility = Visibility.Visible;
+            else
+            {
+                adress_error.Visibility = Visibility.Hidden;
+            }
+            if (phone.Text.Length > 15)
+                phone_error.Visibility = Visibility.Visible;
+            else
+            {
+                phone_error.Visibility = Visibility.Hidden;
+            }
+            if (passport.Text.Length > 50)
+                passport_error.Visibility = Visibility.Visible;
+            else
+            {
+                passport_error.Visibility = Visibility.Hidden;
+            }
+ 
+            if ((name.Text.Length < 150) && (adress.Text.Length < 50) && (phone.Text.Length < 15) && (passport.Text.Length < 50))
+            {
+                name_error.Visibility = Visibility.Hidden;
+                adress_error.Visibility = Visibility.Hidden;
+                phone_error.Visibility = Visibility.Hidden;
+                passport_error.Visibility = Visibility.Hidden;
+                UpdateEmployee();
+            }
+            display.ShowEmployees(datagrid);
+        }
     }
 }

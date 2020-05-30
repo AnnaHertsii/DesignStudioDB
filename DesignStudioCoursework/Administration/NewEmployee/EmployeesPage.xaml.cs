@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DesignStudioCoursework.Structure;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -19,6 +20,7 @@ namespace DesignStudioCoursework.Administration.NewEmployee
     public partial class EmployeesPage : Page
     {
         private Action goBack;
+        SearchEmployee search = new SearchEmployee();
 
         public EmployeesPage(Action goBack)
         {
@@ -115,6 +117,39 @@ namespace DesignStudioCoursework.Administration.NewEmployee
             int index = CurrentID();
             UpdateEmployeeWindow updateEmployee = new UpdateEmployeeWindow(index, DataGridEmployee);
             updateEmployee.Show();
+        }
+
+        private void FindEmployeeButton_Click(object sender, RoutedEventArgs e)
+        {
+            search.ShowEmployeesByOption(DataGridEmployee, combobox_option, search_text, birthdate);
+        }
+
+        private void combobox_option_DropDownClosed(object sender, EventArgs e)
+        {
+            if (combobox_option.SelectedIndex == 0)
+            {
+                birthdate.Visibility = System.Windows.Visibility.Hidden;
+            }
+            else if (combobox_option.SelectedIndex == 1)
+            {
+                birthdate.Visibility = System.Windows.Visibility.Visible;
+            }
+            else if (combobox_option.SelectedIndex == 2)
+            {
+                birthdate.Visibility = System.Windows.Visibility.Hidden;
+            }
+            else if (combobox_option.SelectedIndex == 3)
+            {
+                birthdate.Visibility = System.Windows.Visibility.Hidden;
+            }
+            else if (combobox_option.SelectedIndex == 4)
+            {
+                birthdate.Visibility = System.Windows.Visibility.Hidden;
+            }
+            else if (combobox_option.SelectedIndex == 5)
+            {
+                birthdate.Visibility = System.Windows.Visibility.Hidden;
+            }
         }
     }
 }

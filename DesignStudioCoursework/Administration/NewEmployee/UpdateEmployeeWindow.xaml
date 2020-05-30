@@ -85,7 +85,19 @@
             HorizontalAlignment="Center" 
             TextWrapping="Wrap"
             Text="" 
-            Width="257" Margin="216,72,19,342"/>
+            Width="257" Margin="216,72,19,338"/>
+        <Label 
+            Name="name_error"
+            Content="ПІБ не повинен перевищувати 150 символів"
+            Foreground="Red"
+            FontSize="12"
+            FontStyle="Italic"
+            Visibility="Hidden"
+            HorizontalAlignment="Left" 
+            Height="29" 
+            Margin="216,109,0,0"
+            VerticalAlignment="Top"
+            Width="257"/>
         <Label 
             Grid.Row="0"
             FontStyle ="Italic" 
@@ -106,7 +118,7 @@
             Foreground="#8787ed"
             HorizontalAlignment="Center" 
             TextWrapping="Wrap"
-            Width="257" Margin="216,139,19,275"/>
+            Width="257" Margin="216,138,19,275"/>
         <DatePicker 
             Name="birthdate" 
             DisplayDateStart="1/01/1970"
@@ -118,9 +130,9 @@
             FontStyle ="Italic"
             SelectedDateFormat="Short"
             HorizontalAlignment="Left" 
-            Height="30"
+            Height="33"
             VerticalAlignment="Top"
-            Width="246" Margin="216,139,0,0" />
+            Margin="216,138,0,0" Width="251"/>
         <Label 
             Grid.Row="0"
             FontStyle ="Italic" 
@@ -153,7 +165,7 @@
             HorizontalAlignment="Center" 
             TextWrapping="Wrap"
             Text="" 
-            Width="257" Margin="216,204,19,210"/>
+            Width="257" Margin="216,203,19,210"/>
         <TextBox 
             Padding="10,0,0,0"
             Grid.Row="0"
@@ -164,7 +176,7 @@
             HorizontalAlignment="Center" 
             TextWrapping="Wrap"
             Text="" 
-            Width="257" Margin="216,269,19,145"/>
+            Width="257" Margin="216,268,19,145"/>
         <TextBox 
             Padding="10,0,0,0"
             Grid.Row="0"
@@ -175,7 +187,7 @@
             HorizontalAlignment="Center" 
             TextWrapping="Wrap"
             Text="" 
-            Width="257" Margin="216,332,19,82"/>
+            Width="257" Margin="216,332,19,79"/>
         <Label 
             Grid.Row="0"
             FontStyle ="Italic" 
@@ -205,7 +217,7 @@
             FontStyle ="Italic"
             Foreground="#8787ed" 
             HorizontalAlignment="Center"
-            Margin="216,395,19,10" 
+            Margin="216,397,19,14" 
             Width="257"
             SelectedIndex="0">
             <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Проектувальник"/>
@@ -227,7 +239,43 @@
             FontSize="24"
             FontStyle="Italic"
             Foreground="White"
-            Content="Зберегти" Width="207">
+            Content="Зберегти" Width="207" Click="UpdateEmployeeButton_Click">
         </Button>
+        <Label 
+            Name="adress_error"
+            Content="Адреса не має перевищувати 50 символів"
+            Foreground="Red"
+            FontSize="12"
+            FontStyle="Italic"
+            Visibility="Hidden"
+            HorizontalAlignment="Left" 
+            Height="28" 
+            Margin="216,240,0,0"
+            VerticalAlignment="Top"
+            Width="257"/>
+        <Label 
+            Name="phone_error"
+            Content="Телефон не має перевищувати 15 символів"
+            Foreground="Red"
+            FontSize="12"
+            FontStyle="Italic"
+            Visibility="Hidden"
+            HorizontalAlignment="Left" 
+            Height="28" 
+            Margin="216,305,0,0"
+            VerticalAlignment="Top"
+            Width="257"/>
+        <Label 
+            x:Name="passport_error"
+            Content="Паспорт не має переищувати 50 символів"
+            Foreground="Red"
+            FontSize="12"
+            FontStyle="Italic"
+            Visibility="Hidden"
+            HorizontalAlignment="Left" 
+            Height="28" 
+            Margin="216,369,0,0"
+            VerticalAlignment="Top"
+            Width="257"/>
     </Grid>
 </Window>

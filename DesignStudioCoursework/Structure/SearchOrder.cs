@@ -13,22 +13,18 @@ namespace DesignStudioCoursework.Structure
         {
             if (SearchOrderCombo.SelectedIndex == 0)
             {
-                //MyDate.Visibility = System.Windows.Visibility.Hidden;
                 ShowOrdersByDescription(dataGrid_Order, SearchOrderBox);
             }
             else if (SearchOrderCombo.SelectedIndex == 1)
             {
-                //MyDate.Visibility = System.Windows.Visibility.Hidden;
                 ShowOrdersByPrice(dataGrid_Order, SearchOrderBox);
             }
             else if (SearchOrderCombo.SelectedIndex == 2)
             {
-                //MyDate.Visibility = System.Windows.Visibility.Hidden;
                 ShowOrdersByCustomer(dataGrid_Order, SearchOrderBox);
             }
             else if (SearchOrderCombo.SelectedIndex == 3)
             {
-                //MyDate.Visibility = System.Windows.Visibility.Hidden;
                 ShowOrdersByEmployee(dataGrid_Order, SearchOrderBox);
             }
             else if (SearchOrderCombo.SelectedIndex == 4)

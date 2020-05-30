@@ -201,8 +201,9 @@
             FontSize="20"
             FontStyle="Italic"
             Foreground="White"
-            Content="Знайти працівника" Width="299" Grid.Column="1" Height="33"/>
+            Content="Знайти працівника" Width="299" Grid.Column="1" Height="33" Click="FindEmployeeButton_Click"/>
         <ComboBox 
+                DropDownClosed="combobox_option_DropDownClosed"
                 SelectedIndex="0"
                 Grid.Row="1"  
                 Margin="317,495,329,0"
@@ -214,9 +215,11 @@
                 Foreground="#8787ed" 
                 HorizontalAlignment="Center" Grid.Column="1">
             <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Ім'я"/>
-            <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Телефон"/>
+            <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Дата народження"/>
             <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Адреса"/>
-            <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Поштова дреса"/>
+            <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Номер телефону"/>
+            <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Номер паспорта"/>
+            <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Посада"/>
         </ComboBox>
         <TextBox 
             Name="search_text"
@@ -229,5 +232,20 @@
             TextWrapping="Wrap"
             VerticalAlignment="Top"
             Width="302" Grid.Column="1" Height="33"/>
+        <DatePicker 
+            Name="birthdate" 
+            DisplayDateStart="1/01/1970"
+            DisplayDateEnd="1/01/2002"
+            DisplayDate="1/05/1995"
+            SelectedDate="1/05/1995"
+            Foreground="#8787ed"
+            FontSize="20"
+            FontStyle ="Italic"
+            Visibility="Hidden"
+            SelectedDateFormat="Short"
+            HorizontalAlignment="Left" 
+            Height="33"
+            VerticalAlignment="Top"
+            Margin="632,495,0,0" Width="302" Grid.Column="1" Grid.Row="1"/>
     </Grid>
 </Page>
