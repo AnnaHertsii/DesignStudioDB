@@ -141,7 +141,7 @@
             VerticalAlignment="Top"
             FontSize="20"
             Width="184" 
-            RenderTransformOrigin="0.5,0.516" Margin="11,70,0,0"/>
+            RenderTransformOrigin="0.5,0.516" Margin="11,146,0,0"/>
         <TextBox 
             Padding="10,0,0,0"
             Grid.Row="1"
@@ -153,7 +153,7 @@
             HorizontalAlignment="Center" 
             TextWrapping="Wrap"
             Text="" 
-            Width="336" Margin="226,70,23,371"/>
+            Width="336" Margin="226,146,23,294"/>
         <Label 
             Grid.Row="1"
             Grid.Column="0"
@@ -165,7 +165,7 @@
             VerticalAlignment="Top"
             FontSize="20"
             Width="210" 
-            RenderTransformOrigin="0.5,0.516" Margin="10,173,0,0"/>
+            RenderTransformOrigin="0.5,0.516" Margin="10,250,0,0"/>
         <Label 
             Grid.Row="1"
             Grid.Column="0"
@@ -177,7 +177,7 @@
             VerticalAlignment="Top"
             FontSize="20"
             Width="210" 
-            RenderTransformOrigin="0.5,0.516" Margin="10,122,0,0"/>
+            RenderTransformOrigin="0.5,0.516" Margin="10,198,0,0"/>
         <Label 
             Grid.Row="1"
             Grid.Column="0"
@@ -189,7 +189,7 @@
             VerticalAlignment="Top"
             FontSize="20"
             Width="195" 
-            RenderTransformOrigin="0.5,0.516" Margin="10,225,0,0"/>
+            RenderTransformOrigin="0.5,0.516" Margin="10,302,0,0"/>
         <TextBox 
             Padding="10,0,0,0"
             Grid.Row="1"
@@ -201,7 +201,7 @@
             HorizontalAlignment="Center" 
             TextWrapping="Wrap"
             Text="" 
-            Width="336" Margin="226,173,23,268"/>
+            Width="336" Margin="226,250,23,192"/>
         <Label 
             Grid.Row="1"
             Grid.Column="0"
@@ -213,31 +213,7 @@
             VerticalAlignment="Top"
             FontSize="20"
             Width="156" 
-            RenderTransformOrigin="0.5,0.516" Margin="11,280,0,0"/>
-        <ComboBox 
-            Grid.Row="1"
-            Grid.Column="0"
-            Name="customer" 
-            FontSize="20" 
-            FontStyle ="Italic"
-            Foreground="#8787ed"
-            Height="37" 
-            HorizontalAlignment="Center"
-            Margin="226,122,23,319" 
-            Width="336">
-        </ComboBox>
-        <ComboBox 
-            Grid.Row="1"
-            Grid.Column="0"
-            Name="employee" 
-            FontSize="20" 
-            FontStyle ="Italic"
-            Foreground="#8787ed"
-            Height="37" 
-            HorizontalAlignment="Center"
-            Margin="226,225,23,216" 
-            Width="336">
-        </ComboBox>
+            RenderTransformOrigin="0.5,0.516" Margin="11,92,0,0"/>
         <TextBox 
             Padding="10,0,0,0"
             Grid.Row="1"
@@ -249,7 +225,7 @@
             HorizontalAlignment="Center" 
             TextWrapping="Wrap"
             Text="" 
-            Width="336" Margin="226,280,23,161"
+            Width="336" Margin="226,92,23,348"
             MouseDoubleClick="interior_Click"/>
         <Button
             Name="AddCustomerButton"
@@ -286,7 +262,7 @@
             VerticalAlignment="Top"
             FontSize="20"
             Width="195" 
-            RenderTransformOrigin="0.5,0.516" Margin="10,330,0,0"/>
+            RenderTransformOrigin="0.5,0.516" Margin="10,352,0,0"/>
         <Label 
             Grid.Row="1"
             Grid.Column="0"
@@ -298,17 +274,20 @@
             VerticalAlignment="Top"
             FontSize="20"
             Width="211" 
-            RenderTransformOrigin="0.5,0.516" Margin="10,380,0,0"/>
+            RenderTransformOrigin="0.5,0.516" Margin="10,402,0,0"/>
         <ComboBox 
             Grid.Row="1"
             Grid.Column="0"
             Name="style" 
+            ItemsSource="{Binding}"
+            SelectedValuePath="Style_ID"
+            DisplayMemberPath="Style_name"
             FontSize="20" 
             FontStyle ="Italic"
             Foreground="#8787ed"
             Height="37" 
             HorizontalAlignment="Center"
-            Margin="226,330,23,111" 
+            Margin="226,352,23,88" 
             Width="336"/>
         <ComboBox 
             Grid.Row="1"
@@ -319,31 +298,38 @@
             Foreground="#8787ed"
             Height="37" 
             HorizontalAlignment="Center"
-            Margin="226,380,23,61" 
-            Width="336"/>
-        <Label 
-            Grid.Row="1"
-            Grid.Column="0"
-            FontStyle ="Italic" 
-            Foreground="White" 
-            FontWeight="Bold"
-            Content="Макет" 
-            HorizontalAlignment="Left" 
-            VerticalAlignment="Top"
-            FontSize="20"
-            Width="211" 
-            RenderTransformOrigin="0.5,0.516" Margin="11,431,0,0"/>
+            Margin="226,402,23,38" 
+            Width="336">
+            <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="В очікуванні"/>
+            <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Підтверджено"/>
+            <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="В процесі"/>
+            <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Завершено"/>
+        </ComboBox>
         <TextBox 
             Padding="10,0,0,0"
             Grid.Row="1"
             Grid.Column="0"
-            x:Name="attachment"
+            Name="order"
             FontStyle ="Italic" 
             FontSize="20"
             Foreground="#8787ed"
             HorizontalAlignment="Center" 
             TextWrapping="Wrap"
             Text="" 
-            Width="336" Margin="226,431,23,10"/>
+            Width="336" Margin="226,198,23,242"
+            MouseDoubleClick="order_Click"/>
+        <TextBox 
+            Padding="10,0,0,0"
+            Grid.Row="1"
+            Grid.Column="0"
+            Name="employee"
+            FontStyle ="Italic" 
+            FontSize="20"
+            Foreground="#8787ed"
+            HorizontalAlignment="Center" 
+            TextWrapping="Wrap"
+            Text="" 
+            Width="336" Margin="226,302,23,140"
+            MouseDoubleClick="employee_Click"/>
     </Grid>
 </Page>   

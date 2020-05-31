@@ -19,6 +19,7 @@ namespace DesignStudioCoursework
 {
     public partial class NewProjectPage : Page
     {
+        public List<Style> Styles { get; set; }
         String interiorType;
         private Action goBack;
 
@@ -26,6 +27,7 @@ namespace DesignStudioCoursework
         {
             this.goBack = goBack;
             InitializeComponent();
+            BindComboStyle();
         }
 
         public NewProjectPage(String val, Action goBack)
@@ -34,6 +36,7 @@ namespace DesignStudioCoursework
             InitializeComponent();
             interiorType = val;
             this.Loaded += new RoutedEventHandler(Page2_Loaded);
+            BindComboStyle();
         }
 
         void Page2_Loaded(object sender, RoutedEventArgs e)
@@ -89,6 +92,26 @@ namespace DesignStudioCoursework
         {
             InteriorTypePage interior = new InteriorTypePage(goBack);
             this.NavigationService.Navigate(interior);
+        }
+
+        private void order_Click(object sender, RoutedEventArgs e)
+        {
+            OrdersWindow orders = new OrdersWindow(order, employee);
+            orders.Show();
+        }
+
+        private void employee_Click(object sender, RoutedEventArgs e)
+        {
+            InteriorTypePage interior = new InteriorTypePage(goBack);
+            this.NavigationService.Navigate(interior);
+        }
+
+        private void BindComboStyle()
+        {
+            DesignStudioEntities db = new DesignStudioEntities();
+            var items = db.Style.ToList();
+            Styles = items;
+            DataContext = Styles;
         }
     }
 }
