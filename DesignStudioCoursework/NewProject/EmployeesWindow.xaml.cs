@@ -15,9 +15,6 @@ using System.Windows.Shapes;
 
 namespace DesignStudioCoursework.NewProject
 {
-    /// <summary>
-    /// Логика взаимодействия для EmployeesWindow.xaml
-    /// </summary>
     public partial class EmployeesWindow : Window
     {
         SearchEmployee search = new SearchEmployee();
@@ -27,6 +24,7 @@ namespace DesignStudioCoursework.NewProject
         {
             InitializeComponent();
             employee = employee1;
+            ShowEmployees();
         }
 
         private void FindEmployeeButton_Click(object sender, RoutedEventArgs e)
