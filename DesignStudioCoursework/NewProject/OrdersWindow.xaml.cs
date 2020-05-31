@@ -20,14 +20,12 @@ namespace DesignStudioCoursework.NewProject
     {
         SearchOrder search = new SearchOrder();
         TextBox order;
-        TextBox employee;
 
-        public OrdersWindow(TextBox order1, TextBox employee1)
+        public OrdersWindow(TextBox order1)
         {
             InitializeComponent();
             ShowOrders();
             order = order1;
-            employee = employee1;
         }
 
         public void ShowOrders()
@@ -109,23 +107,6 @@ namespace DesignStudioCoursework.NewProject
             BindingOperations.SetBinding(element, TagProperty, column.Binding);
 
             return element.Tag.ToString();
-        }
-        
-        public int CurrentID()
-        {
-            string connectionString = @"Data Source=DESKTOP-O22ROGE;Initial Catalog=DesignStudio;Integrated Security=True";
-            SqlConnection connection = new SqlConnection(connectionString);
-            connection.Open();
-            string Description = GetSelectedCellValue(0);
-            string Customer = GetSelectedCellValue(4);
-            SqlCommand command = new SqlCommand();
-            string strSQL = string.Format("SELECT Order_ID FROM [Order] WHERE Description = '{0}'", Description);
-            SqlCommand myCommand = new SqlCommand(strSQL, connection);
-            SqlDataReader reader = myCommand.ExecuteReader();
-            string st = null;
-            if (reader.Read())
-                st = reader[0].ToString();
-            return Int32.Parse(st);
-        }
+        }     
     }
 }

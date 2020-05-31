@@ -104,6 +104,6 @@
             Background="#8189cc"
             FontStyle="Italic"
             Foreground="White"
-            Content="Вибрати" Width="250" Height="33" Click="ShowAllButton_Click"/>
+            Content="Показати усі" Width="250" Height="33" Click="ShowAllButton_Click"/>
     </Grid>
 </Window>

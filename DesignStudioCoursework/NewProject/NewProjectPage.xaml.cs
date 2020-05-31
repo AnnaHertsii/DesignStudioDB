@@ -96,14 +96,14 @@ namespace DesignStudioCoursework
 
         private void order_Click(object sender, RoutedEventArgs e)
         {
-            OrdersWindow orders = new OrdersWindow(order, employee);
+            OrdersWindow orders = new OrdersWindow(order);
             orders.Show();
         }
 
         private void employee_Click(object sender, RoutedEventArgs e)
         {
-            InteriorTypePage interior = new InteriorTypePage(goBack);
-            this.NavigationService.Navigate(interior);
+            EmployeesWindow employees = new EmployeesWindow(order);
+            employees.Show();
         }
 
         private void BindComboStyle()
