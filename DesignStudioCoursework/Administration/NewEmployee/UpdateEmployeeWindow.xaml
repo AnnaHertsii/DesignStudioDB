@@ -221,10 +221,10 @@
             Width="257"
             SelectedIndex="0">
             <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Проектувальник"/>
-            <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Художник"/>
             <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Дизайнер"/>
             <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Менеджер"/>
             <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Секретар"/>
+            <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Художник"/>
         </ComboBox>
         <Button
             Name="UpdateEmployeeButton"

@@ -227,6 +227,18 @@
             Text="" 
             Width="336" Margin="226,92,23,348"
             MouseDoubleClick="interior_Click"/>
+        <Label 
+            Name="interior_error"
+            Content="Оберіть тип інтер'єру"
+            Foreground="Red"
+            FontSize="12"
+            FontStyle="Italic"
+            Visibility="Hidden"
+            HorizontalAlignment="Left" 
+            Height="29" 
+            Margin="226,124,0,0"
+            VerticalAlignment="Top"
+            Width="336" Grid.Row="1"/>
         <Button
             Name="AddProjectButton"
             Height="56"
@@ -297,6 +309,7 @@
             FontStyle ="Italic"
             Foreground="#8787ed"
             Height="37" 
+            SelectedIndex="0"
             HorizontalAlignment="Center"
             Margin="226,402,23,38" 
             Width="336">
@@ -331,5 +344,65 @@
             Text="" 
             Width="336" Margin="226,302,23,140"
             MouseDoubleClick="employee_Click"/>
+        <Label 
+            Name="name_error"
+            Content="Назва проекта не має перевищувати 50 символів"
+            Foreground="Red"
+            FontSize="12"
+            FontStyle="Italic"
+            Visibility="Hidden"
+            HorizontalAlignment="Left" 
+            Height="28" 
+            Margin="226,176,0,0"
+            VerticalAlignment="Top"
+            Width="336" Grid.Row="1"/>
+        <Label 
+            Name="order_error"
+            Content="Оберіть відповідне проекту замовлення"
+            Foreground="Red"
+            FontSize="12"
+            FontStyle="Italic"
+            Visibility="Hidden"
+            HorizontalAlignment="Left" 
+            Height="30" 
+            Margin="226,229,0,0"
+            VerticalAlignment="Top"
+            Width="336" Grid.Row="1"/>
+        <Label 
+            Name="price_error"
+            Content="Введіть коректну суму"
+            Foreground="Red"
+            FontSize="12"
+            FontStyle="Italic"
+            Visibility="Hidden"
+            HorizontalAlignment="Left" 
+            Height="30" 
+            Margin="225,279,0,0"
+            VerticalAlignment="Top"
+            Width="336" Grid.Row="1"/>
+        <Label 
+            Name="employee_error"
+            Content="Оберіть працівника відповідального за проект"
+            Foreground="Red"
+            FontSize="12"
+            FontStyle="Italic"
+            Visibility="Hidden"
+            HorizontalAlignment="Left" 
+            Height="30" 
+            Margin="225,331,0,0"
+            VerticalAlignment="Top"
+            Width="336" Grid.Row="1"/>
+        <Label 
+            Name="style_error"
+            Content="Оберіть стиль виконання проекту"
+            Foreground="Red"
+            FontSize="12"
+            FontStyle="Italic"
+            Visibility="Hidden"
+            HorizontalAlignment="Left" 
+            Height="30" 
+            Margin="225,381,0,0"
+            VerticalAlignment="Top"
+            Width="336" Grid.Row="1"/>
     </Grid>
 </Page>   

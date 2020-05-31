@@ -117,10 +117,66 @@ namespace DesignStudioCoursework
 
         private void AddProjectButton_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Order_ID"+ getOrderID());
-            MessageBox.Show("Employee_ID" + getEmployeeID());
-            MessageBox.Show("Interior_ID" + getInteriorID());
-            AddProject();
+            if (interior.Text == "")
+                interior_error.Visibility = Visibility.Visible;
+            else
+            {
+                interior_error.Visibility = Visibility.Hidden;
+            }
+
+            if (order.Text == "")
+                order_error.Visibility = Visibility.Visible;
+            else
+            {
+                order_error.Visibility = Visibility.Hidden;
+            }
+
+            if (employee.Text == "")
+                employee_error.Visibility = Visibility.Visible;
+            else
+            {
+                employee_error.Visibility = Visibility.Hidden;
+            }
+
+            if (name.Text.Length > 50)
+                name_error.Visibility = Visibility.Visible;
+            else
+            {
+                name_error.Visibility = Visibility.Hidden;
+            }
+
+            bool isDigit = true;
+            foreach (char c in price.Text)
+            {
+                if (c < '0' || c > '9')
+                    isDigit = false;
+            }
+            if (isDigit == false)
+            {
+                price_error.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                price_error.Visibility = Visibility.Hidden;
+            }
+
+            if (style.SelectedIndex == -1)
+                style_error.Visibility = Visibility.Visible;
+            else
+            {
+                style_error.Visibility = Visibility.Hidden;
+            }
+
+            if ((interior.Text != "") && (order.Text != "") && (employee.Text != "") && (name.Text.Length < 50) && (isDigit != false) && (style.SelectedIndex != -1))
+            {
+                interior_error.Visibility = Visibility.Hidden;
+                order_error.Visibility = Visibility.Hidden;
+                employee_error.Visibility = Visibility.Hidden;
+                name_error.Visibility = Visibility.Hidden;
+                price_error.Visibility = Visibility.Hidden;
+                style_error.Visibility = Visibility.Hidden;
+                AddProject();
+            }
         }
 
         public void AddProject()

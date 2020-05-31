@@ -59,13 +59,28 @@ namespace DesignStudioCoursework.Administration.NewEmployee
             this.Close();
         }
 
+        public int getPositionID()
+        {
+            string connectionString = @"Data Source=DESKTOP-O22ROGE;Initial Catalog=DesignStudio;Integrated Security=True";
+            SqlConnection connection = new SqlConnection(connectionString);
+            connection.Open();
+            SqlCommand command = new SqlCommand();
+            string strSQL = string.Format("SELECT TOP 1 Position_ID FROM [Position] WHERE Position_name = '{0}'", position.Text);
+            SqlCommand myCommand = new SqlCommand(strSQL, connection);
+            SqlDataReader reader = myCommand.ExecuteReader();
+            string st = null;
+            if (reader.Read())
+                st = reader[0].ToString();
+            return Int32.Parse(st);
+        }
+
         public void UpdateEmployee()
         {
             string connectionString = @"Data Source=DESKTOP-O22ROGE;Initial Catalog=DesignStudio;Integrated Security=True";
             SqlConnection connection = new SqlConnection(connectionString);
             connection.Open();
             SqlCommand command = new SqlCommand();
-            int Position_id = position.SelectedIndex + 1;
+            int Position_id = getPositionID();
             string formatteddate = null;
             DateTime? date = birthdate.SelectedDate;            
             if (date.HasValue)
@@ -81,7 +96,7 @@ namespace DesignStudioCoursework.Administration.NewEmployee
 
             MessageBox.Show("Дані працівника успішно оновлено!");
             this.Close();
-        }
+        }    
 
         private void UpdateEmployeeButton_Click(object sender, RoutedEventArgs e)
         {
