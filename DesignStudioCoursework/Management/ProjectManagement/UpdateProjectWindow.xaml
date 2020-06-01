@@ -112,7 +112,7 @@
         <TextBox 
             Padding="10,0,0,0"
             Grid.Row="0"
-            Name="phone"
+            Name="price"
             FontStyle ="Italic" 
             FontSize="20"
             Foreground="#8787ed"
@@ -134,13 +134,14 @@
         <TextBox 
             Padding="10,0,0,0"
             Grid.Row="0"
-            Name="adress"
+            Name="employee"
             FontStyle ="Italic" 
             FontSize="20"
             Foreground="#8787ed"
             HorizontalAlignment="Center" 
             TextWrapping="Wrap"
             Text="" 
+            MouseDoubleClick="employee_Click"
             Width="257" Margin="216,181,19,234"/>
         <Label 
             Grid.Row="0"
@@ -156,13 +157,14 @@
         <TextBox 
             Padding="10,0,0,0"
             Grid.Row="0"
-            Name="mail_adress"
+            Name="order"
             FontStyle ="Italic" 
             FontSize="20"
             Foreground="#8787ed"
             HorizontalAlignment="Center" 
             TextWrapping="Wrap"
             Text="" 
+            MouseDoubleClick="order_Click"
             Width="257" Margin="216,237,19,178"/>
         <Label 
             Grid.Row="0"
@@ -177,7 +179,7 @@
             RenderTransformOrigin="0.5,0.516" Margin="11,293,0,0" Height="37"/>
         <ComboBox 
             Grid.Row="0"
-            Name="customer_type" 
+            Name="interior" 
             FontSize="20" 
             FontStyle ="Italic"
             Foreground="#8787ed" 
@@ -185,11 +187,17 @@
             Margin="216,293,19,122" 
             Width="257"
             SelectedIndex="0">
-            <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Приватний клієнт"/>
-            <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Компанія"/>
+            <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Кухня"/>
+            <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Спальня"/>
+            <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Вітальня"/>
+            <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Санвузол"/>
+            <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Кабінет"/>
+            <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Дитяча"/>
+            <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Гардероб"/>
+            <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Коридор"/>
         </ComboBox>
         <Button
-            Name="UpdateCustomerButton"
+            Name="UpdateProjectButton"
             Height="48"
             Cursor="Hand"
             Margin="151,10,134,0"
@@ -201,24 +209,24 @@
             FontSize="24"
             FontStyle="Italic"
             Foreground="White"
-            Content="Зберегти" Width="207" Click="UpdateCustomerButton_Click">
+            Content="Зберегти" Width="207" Click="UpdateProjectButton_Click">
         </Button>
         <ComboBox 
             Grid.Row="0"
-            x:Name="customer_type_Copy" 
+            Name="style" 
             FontSize="20" 
             FontStyle ="Italic"
             Foreground="#8787ed" 
             HorizontalAlignment="Center"
             Margin="216,349,19,66" 
             Width="257"
-            SelectedIndex="0">
-            <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Приватний клієнт"/>
-            <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Компанія"/>
+            ItemsSource="{Binding}"
+            SelectedValuePath="Style_ID"
+            DisplayMemberPath="Style_name">
         </ComboBox>
         <ComboBox 
             Grid.Row="0"
-            x:Name="customer_type_Copy1" 
+            x:Name="status" 
             FontSize="20" 
             FontStyle ="Italic"
             Foreground="#8787ed" 
@@ -226,8 +234,10 @@
             Margin="216,405,19,10" 
             Width="257"
             SelectedIndex="0">
-            <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Приватний клієнт"/>
-            <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Компанія"/>
+            <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="В очікуванні"/>
+            <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Підтверджено"/>
+            <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="В процесі"/>
+            <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Завершено"/>
         </ComboBox>
         <Label 
             Grid.Row="0"

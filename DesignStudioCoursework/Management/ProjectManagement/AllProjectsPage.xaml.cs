@@ -136,9 +136,8 @@ namespace DesignStudioCoursework.Management.ProjectManagement
             SqlConnection connection = new SqlConnection(connectionString);
             connection.Open();
             string Name = GetSelectedCellValue(0);
-            string Price = GetSelectedCellValue(1);
             SqlCommand command = new SqlCommand();
-            string strSQL = string.Format("SELECT Project_ID FROM [Design Project] WHERE Project_name = '{0}' AND Project_price  = '{1}'", Name, Price);
+            string strSQL = string.Format("SELECT Project_ID FROM [Design Project] WHERE Project_name = '{0}'", Name);
             SqlCommand myCommand = new SqlCommand(strSQL, connection);
             SqlDataReader reader = myCommand.ExecuteReader();
             string st = null;
@@ -154,7 +153,9 @@ namespace DesignStudioCoursework.Management.ProjectManagement
 
         private void UpdateProjectButton_Click(object sender, RoutedEventArgs e)
         {
-
+            int index = CurrentID();
+            UpdateProjectWindow updateProject = new UpdateProjectWindow(index, DataGridProject);
+            updateProject.Show();
         }
     }
 }
