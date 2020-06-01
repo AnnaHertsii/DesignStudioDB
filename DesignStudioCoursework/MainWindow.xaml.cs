@@ -1,4 +1,5 @@
 ﻿using DesignStudioCoursework.Administration.NewEmployee;
+using DesignStudioCoursework.Management.ProjectManagement;
 using DesignStudioCoursework.NewEmployee;
 using DesignStudioCoursework.NewProject;
 using DesignStudioCoursework.Review.ClientsReview;
@@ -30,6 +31,7 @@ namespace DesignStudioCoursework
         ClientsPage clientsPage;
         OrdersPage ordersPage;
         EmployeesPage employeesPage;
+        AllProjectsPage allprojectsPage;
 
         public MainWindow()
         {
@@ -71,6 +73,10 @@ namespace DesignStudioCoursework
                 case 6:
                     employeesPage = new EmployeesPage(CloseFrame);
                     MainFrame.Content = employeesPage;
+                    break;
+                case 7:
+                    allprojectsPage = new AllProjectsPage(CloseFrame);
+                    MainFrame.Content = allprojectsPage;
                     break;
             }
         }

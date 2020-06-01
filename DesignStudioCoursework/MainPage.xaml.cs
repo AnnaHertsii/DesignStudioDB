@@ -71,5 +71,10 @@ namespace DesignStudioCoursework
         {
             pageChanged(6);
         }
+
+        private void AllProjects_Click(object sender, RoutedEventArgs e)
+        {
+            pageChanged(7);
+        }
     }
 }

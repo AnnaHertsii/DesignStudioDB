@@ -106,6 +106,12 @@
     <Compile Include="LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Management\ProjectManagement\AllProjectsPage.xaml.cs">
+      <DependentUpon>AllProjectsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Management\ProjectManagement\UpdateProjectWindow.xaml.cs">
+      <DependentUpon>UpdateProjectWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="NewProject\EmployeesWindow.xaml.cs">
       <DependentUpon>EmployeesWindow.xaml</DependentUpon>
     </Compile>
@@ -146,6 +152,7 @@
     <Compile Include="Structure\SearchClient.cs" />
     <Compile Include="Structure\SearchEmployee.cs" />
     <Compile Include="Structure\SearchOrder.cs" />
+    <Compile Include="Structure\SearchProject.cs" />
     <Compile Include="Style.cs">
       <DependentUpon>DesignStudioModel.tt</DependentUpon>
     </Compile>
@@ -217,6 +224,14 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Management\ProjectManagement\AllProjectsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Management\ProjectManagement\UpdateProjectWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="NewClient\NewClientPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -381,7 +396,6 @@
     <Resource Include="Resources\secreter.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Management\ProjectManagement\" />
     <Folder Include="Management\TaskManagement\" />
   </ItemGroup>
   <ItemGroup>

@@ -161,6 +161,17 @@
                         <Image Source="/DesignStudioCoursework;component/Resources/projecticon.png"/>
                     </MenuItem.Icon>
                     <MenuItem 
+                    Name="AllProjects"
+                    Background="#F2F2F2"
+                    Foreground="#99A2F1"
+                    Click="AllProjects_Click"
+                    Cursor="Hand"
+                    Header="Усі проекти">
+                        <MenuItem.Icon>
+                            <Image Source="/DesignStudioCoursework;component/Resources/projecticon.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem 
                     Name="NotOpenedProjects"
                     Background="#F2F2F2"
                     Foreground="#99A2F1"
