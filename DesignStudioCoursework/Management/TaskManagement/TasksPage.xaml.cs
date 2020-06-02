@@ -80,5 +80,11 @@ namespace DesignStudioCoursework.Management.TaskManagement
                 datebox.Visibility = System.Windows.Visibility.Hidden;
             }
         }
+
+        private void project_Click(object sender, RoutedEventArgs e)
+        {
+            //ProjectsWindow projects = new ProjectsWindow(order);
+            //projects.Show();
+        }
     }
 }

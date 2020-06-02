@@ -225,6 +225,7 @@
             <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Статус"/>
         </ComboBox>
         <TextBox 
+            MouseDoubleClick="project_Click"
             Name="search_text"
             Grid.Row="1"
             FontStyle ="Italic" 

@@ -11,7 +11,11 @@ namespace DesignStudioCoursework.Structure
     {
         public void ShowTasksByOption(DataGrid dataGrid_Task, ComboBox SearchTaskCombo, TextBox SearchTaskBox, DatePicker MyDate)
         {
-            if (SearchTaskCombo.SelectedIndex == 1)
+            if (SearchTaskCombo.SelectedIndex == 0)
+            {
+                ShowTasksByProject(dataGrid_Task, SearchTaskBox);
+            }
+            else if (SearchTaskCombo.SelectedIndex == 1)
             {
                 ShowTasksByName(dataGrid_Task, SearchTaskBox);
             }
@@ -27,7 +31,38 @@ namespace DesignStudioCoursework.Structure
             {
                 ShowTasksByEndDate(dataGrid_Task, MyDate);
             }
-            
+            else if (SearchTaskCombo.SelectedIndex == 5)
+            {
+                ShowTasksByEmployee(dataGrid_Task, SearchTaskBox);
+            }
+            else if (SearchTaskCombo.SelectedIndex == 6)
+            {
+                ShowTasksByStatus(dataGrid_Task, SearchTaskBox);
+            }
+
+        }
+
+        private void ShowTasksByProject(DataGrid dataGrid_Task, TextBox SearchTaskBox)
+        {
+            using (var db = new DesignStudioEntities())
+            {
+                var tasks = from task in db.Task
+                            join employee in db.Employee on task.Employee_Ref equals employee.Employee_ID
+                            join project in db.Design_Project on task.Project_Ref equals project.Project_ID
+                            join status in db.Status on task.Task_status_Ref equals status.Status_ID
+                            where project.Project_name.Contains(SearchTaskBox.Text)
+                            select new
+                            {
+                                Name = task.Task_name,
+                                task.Description,
+                                Start = task.Start_date,
+                                End = task.End_date,
+                                Employee = employee.Name,
+                                Project = project.Project_name,
+                                Status = status.Status1
+                            };
+                dataGrid_Task.ItemsSource = tasks.ToList();
+            }
         }
 
         private void ShowTasksByName(DataGrid dataGrid_Task, TextBox SearchTaskBox)
@@ -120,6 +155,52 @@ namespace DesignStudioCoursework.Structure
                             join project in db.Design_Project on task.Project_Ref equals project.Project_ID
                             join status in db.Status on task.Task_status_Ref equals status.Status_ID
                             where task.End_date.ToString().Contains(formattedend)
+                            select new
+                            {
+                                Name = task.Task_name,
+                                task.Description,
+                                Start = task.Start_date,
+                                End = task.End_date,
+                                Employee = employee.Name,
+                                Project = project.Project_name,
+                                Status = status.Status1
+                            };
+                dataGrid_Task.ItemsSource = tasks.ToList();
+            }
+        }
+
+        private void ShowTasksByEmployee(DataGrid dataGrid_Task, TextBox SearchTaskBox)
+        {
+            using (var db = new DesignStudioEntities())
+            {
+                var tasks = from task in db.Task
+                            join employee in db.Employee on task.Employee_Ref equals employee.Employee_ID
+                            join project in db.Design_Project on task.Project_Ref equals project.Project_ID
+                            join status in db.Status on task.Task_status_Ref equals status.Status_ID
+                            where employee.Name.Contains(SearchTaskBox.Text)
+                            select new
+                            {
+                                Name = task.Task_name,
+                                task.Description,
+                                Start = task.Start_date,
+                                End = task.End_date,
+                                Employee = employee.Name,
+                                Project = project.Project_name,
+                                Status = status.Status1
+                            };
+                dataGrid_Task.ItemsSource = tasks.ToList();
+            }
+        }
+
+        private void ShowTasksByStatus(DataGrid dataGrid_Task, TextBox SearchTaskBox)
+        {
+            using (var db = new DesignStudioEntities())
+            {
+                var tasks = from task in db.Task
+                            join employee in db.Employee on task.Employee_Ref equals employee.Employee_ID
+                            join project in db.Design_Project on task.Project_Ref equals project.Project_ID
+                            join status in db.Status on task.Task_status_Ref equals status.Status_ID
+                            where status.Status1.Contains(SearchTaskBox.Text)
                             select new
                             {
                                 Name = task.Task_name,
