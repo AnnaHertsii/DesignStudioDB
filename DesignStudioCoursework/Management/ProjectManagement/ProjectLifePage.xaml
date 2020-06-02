@@ -156,7 +156,7 @@
             Height="33"
             Name="ShowProjectsButton"
             Cursor="Hand"
-            Margin="333,495,324,0"
+            Margin="13,495,717,0"
             VerticalAlignment="Top"
             HorizontalAlignment="Center"
             Style="{StaticResource BlueButtonStyle}"
@@ -164,19 +164,19 @@
             FontSize="20"
             FontStyle="Italic"
             Foreground="White"
-            Content="Показати" Width="299" Grid.Column="1" Click="ShowProjectsButton_Click"/>
+            Content="Показати" Width="226" Grid.Column="1" Click="ShowProjectsButton_Click"/>
         <ComboBox 
                 SelectedIndex="0"
                 Cursor="Hand"
                 Grid.Row="1"  
-                Margin="13,495,633,0"
+                Margin="244,495,486,0"
                 VerticalAlignment="Top"
-                Width="310"
+                Width="226"
                 Name="combobox_option" 
                 FontSize="20" 
                 FontStyle ="Italic"
                 Foreground="#8787ed" 
-                HorizontalAlignment="Center" Grid.Column="1">
+                HorizontalAlignment="Center" Grid.Column="1" RenderTransformOrigin="-0.01,1.333">
             <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Майбутні проекти"/>
             <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Поточні проекти"/>
             <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Завершені проекти"/>
@@ -185,9 +185,9 @@
                 SelectedIndex="0"
                 Cursor="Hand"
                 Grid.Row="1"  
-                Margin="13,533,633,0"
+                Margin="717,495,10,0"
                 VerticalAlignment="Top"
-                Width="310"
+                Width="229"
                 Name="combobox_status" 
                 FontSize="20" 
                 FontStyle ="Italic"
@@ -202,7 +202,7 @@
             Height="33"
             x:Name="ChangeStatusButton"
             Cursor="Hand"
-            Margin="333,533,324,0"
+            Margin="475,495,244,0"
             VerticalAlignment="Top"
             HorizontalAlignment="Center"
             Style="{StaticResource BlueButtonStyle}"
@@ -210,6 +210,32 @@
             FontSize="20"
             FontStyle="Italic"
             Foreground="White"
-            Content="Змінити статус" Width="299" Grid.Column="1" Click="ChangeStatusButton_Click"/>
+            Content="Змінити статус" Width="237" Grid.Column="1" Click="ChangeStatusButton_Click"/>
+        <Button
+            Height="33"
+            x:Name="ChangeEndButton"
+            Cursor="Hand"
+            Margin="13,533,486,0"
+            VerticalAlignment="Top"
+            HorizontalAlignment="Center"
+            Style="{StaticResource BlueButtonStyle}"
+            Grid.Row="1" 
+            FontSize="20"
+            FontStyle="Italic"
+            Foreground="White"
+            Content="Змінити дату завершення" Width="457" Grid.Column="1" Click="ChangeEndButton_Click" />
+        <DatePicker 
+            Name="date"
+            SelectedDate="{x:Static sys:DateTime.Today}"
+            Foreground="#8787ed"
+            FontSize="20"
+            FontStyle ="Italic"
+            SelectedDateFormat="Short"
+            HorizontalAlignment="Left" 
+            Height="37"
+            VerticalAlignment="Top"
+            Width="471" 
+            Grid.Row="1"
+            Grid.Column="1" Margin="475,533,0,0"/>
     </Grid>
 </Page>

@@ -64,8 +64,6 @@ namespace DesignStudioCoursework.Management.ProjectManagement
 
                 SqlCommand myCommand = new SqlCommand(strSQL, connection);
                 myCommand.ExecuteNonQuery();
-
-                //MessageBox.Show("Статус проекта успішно оновлено!");
             }
             catch (Exception ex)
             {
@@ -101,6 +99,57 @@ namespace DesignStudioCoursework.Management.ProjectManagement
             if (reader.Read())
                 st = reader[0].ToString();
             return Int32.Parse(st);
+        }
+
+        public int CurrentOrderID()
+        {
+            string connectionString = @"Data Source=DESKTOP-O22ROGE;Initial Catalog=DesignStudio;Integrated Security=True";
+            SqlConnection connection = new SqlConnection(connectionString);
+            connection.Open();
+            string Description = GetSelectedCellValue(5);
+            SqlCommand command = new SqlCommand();
+            string strSQL = string.Format("SELECT Order_ID FROM [Order] WHERE Description = '{0}'", Description);
+            SqlCommand myCommand = new SqlCommand(strSQL, connection);
+            SqlDataReader reader = myCommand.ExecuteReader();
+            string st = null;
+            if (reader.Read())
+                st = reader[0].ToString();
+            return Int32.Parse(st);
+        }
+
+        public void UpdateEndDate()
+        {
+            int order_index = CurrentOrderID();
+            try
+            {
+                string connectionString = @"Data Source=DESKTOP-O22ROGE;Initial Catalog=DesignStudio;Integrated Security=True";
+                SqlConnection connection = new SqlConnection(connectionString);
+                connection.Open();
+                SqlCommand command = new SqlCommand();
+                
+                string formattedend = null;                
+                DateTime? endDate = date.SelectedDate;
+                if (endDate.HasValue )
+                {
+                    formattedend = endDate.Value.ToString("yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture);
+                }
+
+                string strSQL = string.Format("UPDATE [Order] SET End_date = '{0}' WHERE Order_ID = '{1}'", formattedend, order_index);
+
+                SqlCommand myCommand = new SqlCommand(strSQL, connection);
+                myCommand.ExecuteNonQuery();
+                MessageBox.Show("Дату завершення виконання робіт над замовленням змінено!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void ChangeEndButton_Click(object sender, RoutedEventArgs e)
+        {
+            UpdateEndDate();
+            life.ShowProjectsByOption(DataGridProject, combobox_option);
         }
     }
 }
