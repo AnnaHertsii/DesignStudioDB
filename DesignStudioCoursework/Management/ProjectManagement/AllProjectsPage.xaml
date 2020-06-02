@@ -219,6 +219,7 @@
             <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Ціна"/>
             <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Керівник проекту"/>
             <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Замовлення"/>
+            <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Клієнт"/>
             <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Тип інтер'єру"/>
             <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Стиль"/>
             <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Статус"/>
