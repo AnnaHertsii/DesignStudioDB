@@ -203,6 +203,26 @@
                     <MenuItem.Icon>
                         <Image Source="/DesignStudioCoursework;component/Resources/taskicon.png"/>
                     </MenuItem.Icon>
+                    <MenuItem 
+                    Name="AddNewTask"
+                    Background="#F2F2F2"
+                    Foreground="#99A2F1"
+                    Cursor="Hand"
+                    Header="Додати нову задачу">
+                        <MenuItem.Icon>
+                            <Image Source="/DesignStudioCoursework;component/Resources/taskicon.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem 
+                    Name="AllTasks"
+                    Background="#F2F2F2"
+                    Foreground="#99A2F1"
+                    Cursor="Hand"
+                    Header="Усі задачі" Click="AllTasks_Click">
+                        <MenuItem.Icon>
+                            <Image Source="/DesignStudioCoursework;component/Resources/taskicon.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
                 </MenuItem>
             </MenuItem>
             <MenuItem 
@@ -227,7 +247,7 @@
                     Background="#F2F2F2"
                     Foreground="#99A2F1"
                     Cursor="Hand"
-                    Header="Редагувати працівників"
+                    Header="Редагувати інформацію працівників"
                     Click="EditEmployees_Click">
                     </MenuItem>
                 </MenuItem>

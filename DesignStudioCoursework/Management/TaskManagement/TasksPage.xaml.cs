@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DesignStudioCoursework.Structure;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,15 +16,27 @@ using System.Windows.Shapes;
 
 namespace DesignStudioCoursework.Management.TaskManagement
 {
-    /// <summary>
-    /// Логика взаимодействия для TasksPage.xaml
-    /// </summary>
     public partial class TasksPage : Page
     {
-        public TasksPage()
+        DisplayTask display = new DisplayTask();
+        private Action goBack;
+
+        public TasksPage(Action goBack)
         {
+            this.goBack = goBack;
             InitializeComponent();
         }
+
+        private void ExitClicked(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            goBack();
+        }
+
 
         private void FindTaskButton_Click(object sender, RoutedEventArgs e)
         {
@@ -32,7 +45,7 @@ namespace DesignStudioCoursework.Management.TaskManagement
 
         private void ShowTasksButton_Click(object sender, RoutedEventArgs e)
         {
-
+            display.ShowTasks(DataGridTask);
         }
     }
 }

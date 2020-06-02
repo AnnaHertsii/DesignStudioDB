@@ -1,5 +1,6 @@
 ﻿using DesignStudioCoursework.Administration.NewEmployee;
 using DesignStudioCoursework.Management.ProjectManagement;
+using DesignStudioCoursework.Management.TaskManagement;
 using DesignStudioCoursework.NewEmployee;
 using DesignStudioCoursework.NewProject;
 using DesignStudioCoursework.Review.ClientsReview;
@@ -34,6 +35,7 @@ namespace DesignStudioCoursework
         AllProjectsPage allprojectsPage;
         ProjectLifePage lifeprojectsPage;
         NotOpenedProjectsPage notopened;
+        TasksPage alltasksPage;
 
         public MainWindow()
         {
@@ -88,7 +90,11 @@ namespace DesignStudioCoursework
                     notopened = new NotOpenedProjectsPage(CloseFrame);
                     MainFrame.Content = notopened;
                     break;
-                    
+                case 10:
+                    alltasksPage = new TasksPage(CloseFrame);
+                    MainFrame.Content = alltasksPage;
+                    break;
+
             }
         }
 

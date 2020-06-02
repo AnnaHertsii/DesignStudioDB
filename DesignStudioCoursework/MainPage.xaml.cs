@@ -86,7 +86,10 @@ namespace DesignStudioCoursework
         {
             pageChanged(9);
         }
-        
 
+        private void AllTasks_Click(object sender, RoutedEventArgs e)
+        {
+            pageChanged(10);
+        }
     }
 }

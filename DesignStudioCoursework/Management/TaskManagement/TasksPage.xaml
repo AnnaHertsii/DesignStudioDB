@@ -134,7 +134,7 @@
             FontSize="20"
             FontStyle="Italic"
             Foreground="White"
-            Content="Оновити завдання" Width="310" Grid.Column="1"/>
+            Content="Оновити задачу" Width="310" Grid.Column="1"/>
         <Button
             Name="DeleteTaskButton"
             Cursor="Hand"
@@ -147,7 +147,7 @@
             FontSize="20"
             FontStyle="Italic"
             Foreground="White"
-            Content="Видалити завдання" Width="314" Grid.Column="1" />
+            Content="Видалити задачу" Width="314" Grid.Column="1" />
         <Button
             Name="BackButton"
             Height="36"
@@ -172,12 +172,12 @@
             FontStyle ="Italic" 
             Foreground="White" 
             FontWeight="Bold"
-            Content="Завдання" 
+            Content="Задачі" 
             HorizontalAlignment="Center" 
             VerticalAlignment="Top"
             FontSize="24"
-            Width="127" 
-            RenderTransformOrigin="0.507,0.441" Margin="410,5,419,0" Height="53"/>
+            Width="106" 
+            RenderTransformOrigin="0.507,0.441" Margin="418,5,432,0" Height="53"/>
         <Button
             Height="33"
             Name="ShowTasksButton"
@@ -190,7 +190,7 @@
             FontSize="20"
             FontStyle="Italic"
             Foreground="White"
-            Content="Показати усі завдання" Width="299" Grid.Column="1" Click="ShowTasksButton_Click"/>
+            Content="Показати усі задачі" Width="299" Grid.Column="1" Click="ShowTasksButton_Click"/>
         <Button
             Name="FindTaskButton"
             Cursor="Hand"
@@ -202,7 +202,7 @@
             FontSize="20"
             FontStyle="Italic"
             Foreground="White"
-            Content="Знайти завдання" Width="299" Grid.Column="1" Height="33" Click="FindTaskButton_Click" />
+            Content="Знайти задачу" Width="299" Grid.Column="1" Height="33" Click="FindTaskButton_Click" />
         <ComboBox 
                 SelectedIndex="0"
                 Cursor="Hand"
