@@ -81,6 +81,12 @@ namespace DesignStudioCoursework
         {
             pageChanged(8);
         }
+
+        private void NotOpenedProjects_Click(object sender, RoutedEventArgs e)
+        {
+            pageChanged(9);
+        }
         
+
     }
 }

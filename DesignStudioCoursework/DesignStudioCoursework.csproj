@@ -109,6 +109,12 @@
     <Compile Include="Management\ProjectManagement\AllProjectsPage.xaml.cs">
       <DependentUpon>AllProjectsPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Management\ProjectManagement\NewProjectOrdPage.xaml.cs">
+      <DependentUpon>NewProjectOrdPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Management\ProjectManagement\NotOpenedProjectsPage.xaml.cs">
+      <DependentUpon>NotOpenedProjectsPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Management\ProjectManagement\ProjectLifePage.xaml.cs">
       <DependentUpon>ProjectLifePage.xaml</DependentUpon>
     </Compile>
@@ -230,6 +236,14 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Management\ProjectManagement\AllProjectsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Management\ProjectManagement\NewProjectOrdPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Management\ProjectManagement\NotOpenedProjectsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

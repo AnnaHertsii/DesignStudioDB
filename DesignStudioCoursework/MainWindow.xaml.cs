@@ -33,6 +33,7 @@ namespace DesignStudioCoursework
         EmployeesPage employeesPage;
         AllProjectsPage allprojectsPage;
         ProjectLifePage lifeprojectsPage;
+        NotOpenedProjectsPage notopened;
 
         public MainWindow()
         {
@@ -83,6 +84,11 @@ namespace DesignStudioCoursework
                     lifeprojectsPage = new ProjectLifePage(CloseFrame);
                     MainFrame.Content = lifeprojectsPage;
                     break;
+                case 9:
+                    notopened = new NotOpenedProjectsPage(CloseFrame);
+                    MainFrame.Content = notopened;
+                    break;
+                    
             }
         }
 

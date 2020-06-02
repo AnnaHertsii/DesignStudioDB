@@ -176,6 +176,7 @@
                     Background="#F2F2F2"
                     Foreground="#99A2F1"
                     Cursor="Hand"
+                    Click="NotOpenedProjects_Click"
                     Header="Невідкриті проекти">
                         <MenuItem.Icon>
                             <Image Source="/DesignStudioCoursework;component/Resources/projecticon.png"/>
