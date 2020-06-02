@@ -168,6 +168,7 @@
     <Compile Include="Structure\SearchEmployee.cs" />
     <Compile Include="Structure\SearchOrder.cs" />
     <Compile Include="Structure\SearchProject.cs" />
+    <Compile Include="Structure\SearchTask.cs" />
     <Compile Include="Style.cs">
       <DependentUpon>DesignStudioModel.tt</DependentUpon>
     </Compile>

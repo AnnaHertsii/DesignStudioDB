@@ -19,6 +19,7 @@ namespace DesignStudioCoursework.Management.TaskManagement
     public partial class TasksPage : Page
     {
         DisplayTask display = new DisplayTask();
+        SearchTask search = new SearchTask();
         private Action goBack;
 
         public TasksPage(Action goBack)
@@ -40,12 +41,44 @@ namespace DesignStudioCoursework.Management.TaskManagement
 
         private void FindTaskButton_Click(object sender, RoutedEventArgs e)
         {
-
+            search.ShowTasksByOption(DataGridTask, combobox_option, search_text, datebox);
         }
 
         private void ShowTasksButton_Click(object sender, RoutedEventArgs e)
         {
             display.ShowTasks(DataGridTask);
+        }
+
+        private void combobox_option_DropDownClosed(object sender, EventArgs e)
+        {
+            if (combobox_option.SelectedIndex == 0)
+            {
+                datebox.Visibility = System.Windows.Visibility.Hidden;
+            }
+            else if (combobox_option.SelectedIndex == 1)
+            {
+                datebox.Visibility = System.Windows.Visibility.Hidden;
+            }
+            else if (combobox_option.SelectedIndex == 2)
+            {
+                datebox.Visibility = System.Windows.Visibility.Hidden;
+            }
+            else if (combobox_option.SelectedIndex == 3)
+            {
+                datebox.Visibility = System.Windows.Visibility.Visible;
+            }
+            else if (combobox_option.SelectedIndex == 4)
+            {
+                datebox.Visibility = System.Windows.Visibility.Visible;
+            }
+            else if (combobox_option.SelectedIndex == 5)
+            {
+                datebox.Visibility = System.Windows.Visibility.Hidden;
+            }
+            else if (combobox_option.SelectedIndex == 6)
+            {
+                datebox.Visibility = System.Windows.Visibility.Hidden;
+            }
         }
     }
 }

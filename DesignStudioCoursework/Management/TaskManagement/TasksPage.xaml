@@ -204,6 +204,7 @@
             Foreground="White"
             Content="Знайти задачу" Width="299" Grid.Column="1" Height="33" Click="FindTaskButton_Click" />
         <ComboBox 
+                DropDownClosed="combobox_option_DropDownClosed"
                 SelectedIndex="0"
                 Cursor="Hand"
                 Grid.Row="1"  
@@ -215,13 +216,12 @@
                 FontStyle ="Italic"
                 Foreground="#8787ed" 
                 HorizontalAlignment="Center" Grid.Column="1">
+            <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Проект"/>
             <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Назва"/>
-            <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Ціна"/>
-            <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Керівник проекту"/>
-            <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Замовлення"/>
-            <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Клієнт"/>
-            <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Тип інтер'єру"/>
-            <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Стиль"/>
+            <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Опис"/>
+            <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Дата початку"/>
+            <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Дата завершення"/>
+            <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Керівник задачі"/>
             <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Статус"/>
         </ComboBox>
         <TextBox 
@@ -235,6 +235,20 @@
             TextWrapping="Wrap"
             VerticalAlignment="Top"
             Width="302" Grid.Column="1" Height="33"/>
+        <DatePicker 
+            Name="datebox"
+            SelectedDate="{x:Static sys:DateTime.Today}"
+            Foreground="#8787ed"
+            FontSize="20"
+            FontStyle ="Italic"
+            SelectedDateFormat="Short"
+            HorizontalAlignment="Left" 
+            Height="32"
+            Visibility="Hidden"
+            VerticalAlignment="Top"
+            Width="302" 
+            Grid.Row="1"
+            Grid.Column="1" Margin="632,496,0,0"/>
     </Grid>
 </Page>
 
