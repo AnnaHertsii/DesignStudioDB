@@ -109,6 +109,9 @@
     <Compile Include="Management\ProjectManagement\AllProjectsPage.xaml.cs">
       <DependentUpon>AllProjectsPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Management\ProjectManagement\ProjectLifePage.xaml.cs">
+      <DependentUpon>ProjectLifePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Management\ProjectManagement\UpdateProjectWindow.xaml.cs">
       <DependentUpon>UpdateProjectWindow.xaml</DependentUpon>
     </Compile>
@@ -150,6 +153,7 @@
     <Compile Include="Structure\DisplayEmployee.cs" />
     <Compile Include="Structure\DisplayOrder.cs" />
     <Compile Include="Structure\DisplayProject.cs" />
+    <Compile Include="Structure\ProjectLifeCycle.cs" />
     <Compile Include="Structure\SearchClient.cs" />
     <Compile Include="Structure\SearchEmployee.cs" />
     <Compile Include="Structure\SearchOrder.cs" />
@@ -226,6 +230,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Management\ProjectManagement\AllProjectsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Management\ProjectManagement\ProjectLifePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

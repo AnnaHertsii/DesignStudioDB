@@ -76,5 +76,11 @@ namespace DesignStudioCoursework
         {
             pageChanged(7);
         }
+
+        private void LifeCycleProjects_Click(object sender, RoutedEventArgs e)
+        {
+            pageChanged(8);
+        }
+        
     }
 }

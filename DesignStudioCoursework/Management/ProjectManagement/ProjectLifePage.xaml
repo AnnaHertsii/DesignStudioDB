@@ -1,0 +1,215 @@
+﻿<Page x:Class="DesignStudioCoursework.Management.ProjectManagement.ProjectLifePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:DesignStudioCoursework.Management.ProjectManagement"
+      xmlns:sys="clr-namespace:System;assembly=mscorlib"
+      mc:Ignorable="d" 
+      d:DesignHeight="620" d:DesignWidth="1170"
+      Title="Життєвий цикл проектів">
+    <Page.Resources>
+        <Style x:Key="BlueButtonStyle" TargetType="{x:Type Button}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border>
+                            <Border.Style>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="Background" Value="#99A2F1" />
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" Value="#8189cc" />
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Border.Style>
+                            <Grid Background="Transparent">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            </Grid>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25" />
+            <RowDefinition Height="593*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="53*" />
+            <ColumnDefinition Width="478*" />
+            <ColumnDefinition Width="54*"/>
+        </Grid.ColumnDefinitions>
+        <Menu
+            Background="#99A2F1"
+            Foreground="White"
+            Grid.Row="0" Grid.ColumnSpan="3">
+            <MenuItem 
+                Header="Головна" 
+                FontSize="16"
+                Foreground="White">
+                <MenuItem 
+                    Background="#F2F2F2"
+                    Foreground="#99A2F1"
+                    Click="ExitClicked"
+                    Header="Вийти">
+                </MenuItem>
+            </MenuItem>
+            <MenuItem 
+                Header="Перегляд" 
+                FontSize="16" 
+                Foreground="White">
+                <MenuItem 
+                    Background="#F2F2F2"
+                    Foreground="#99A2F1"
+                    Header="Наші клієнти">
+                </MenuItem>
+                <MenuItem 
+                    Background="#F2F2F2"
+                    Foreground="#99A2F1"
+                    Header="Поточні замовлення">
+                </MenuItem>
+            </MenuItem>
+            <MenuItem 
+                Header="Управління" 
+                FontSize="16" 
+                Foreground="White">
+                <MenuItem 
+                    Background="#F2F2F2"
+                    Foreground="#99A2F1"
+                    Header="Управління проектами">
+                </MenuItem>
+                <MenuItem 
+                    Background="#F2F2F2"
+                    Foreground="#99A2F1"
+                    Header="Управління задачами">
+                </MenuItem>
+            </MenuItem>
+            <MenuItem 
+                Header="Адміністрація" 
+                FontSize="16" 
+                Foreground="White">
+                <MenuItem 
+                    Background="#F2F2F2"
+                    Foreground="#99A2F1"
+                    Header="Управління працівниками">
+                </MenuItem>
+            </MenuItem>
+            <MenuItem 
+                Header="Про нас" 
+                FontSize="16" 
+                Foreground="White"/>
+        </Menu>
+        <Border 
+            Grid.Row="1"
+            Background="#BCC3FF" Grid.ColumnSpan="3" >
+        </Border>
+        <DataGrid 
+                FontSize="20" 
+                Grid.Row="1"
+                Grid.Column="1"
+                CanUserAddRows="True"
+                FontStyle ="Italic"
+                Foreground="#7373E5"
+                Name="DataGridProject"
+                Background="#BCC3FF"
+                AutoGenerateColumns="True"
+                Margin="13,63,10,105"/>
+        <Image
+            Grid.Row="1"
+            Source="/DesignStudioCoursework;component/Resources/leangirl.png" 
+            Stretch="Uniform" Margin="0,170,0,105" Grid.Column="2" RenderTransformOrigin="0.542,0.319"/>
+        <Button
+            Name="BackButton"
+            Height="36"
+            Cursor="Hand"
+            Margin="10,10,54,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            BorderThickness="0"
+            Style="{StaticResource BlueButtonStyle}"
+            Click="BackButton_Click"
+            Grid.Row="1" 
+            Grid.Column="0" Width="42">
+            <Image HorizontalAlignment="Left"
+                   Source="/DesignStudioCoursework;component/Resources/back.png" 
+                   Stretch="Uniform"
+                   Height="36" 
+                   Width="34"/>
+        </Button>
+        <Label 
+            Grid.Row="1"
+            Grid.Column="1"
+            FontStyle ="Italic" 
+            Foreground="White" 
+            FontWeight="Bold"
+            Content="Життєвий цикл проектів" 
+            HorizontalAlignment="Center" 
+            VerticalAlignment="Top"
+            FontSize="24"
+            Width="331" 
+            RenderTransformOrigin="0.507,0.441" Margin="317,10,308,0" Height="53"/>
+        <Button
+            Height="33"
+            Name="ShowProjectsButton"
+            Cursor="Hand"
+            Margin="333,495,324,0"
+            VerticalAlignment="Top"
+            HorizontalAlignment="Center"
+            Style="{StaticResource BlueButtonStyle}"
+            Grid.Row="1" 
+            FontSize="20"
+            FontStyle="Italic"
+            Foreground="White"
+            Content="Показати" Width="299" Grid.Column="1" Click="ShowProjectsButton_Click"/>
+        <ComboBox 
+                SelectedIndex="0"
+                Cursor="Hand"
+                Grid.Row="1"  
+                Margin="13,495,633,0"
+                VerticalAlignment="Top"
+                Width="310"
+                Name="combobox_option" 
+                FontSize="20" 
+                FontStyle ="Italic"
+                Foreground="#8787ed" 
+                HorizontalAlignment="Center" Grid.Column="1">
+            <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Майбутні проекти"/>
+            <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Поточні проекти"/>
+            <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Завершені проекти"/>
+        </ComboBox>
+        <ComboBox 
+                SelectedIndex="0"
+                Cursor="Hand"
+                Grid.Row="1"  
+                Margin="13,533,633,0"
+                VerticalAlignment="Top"
+                Width="310"
+                Name="combobox_status" 
+                FontSize="20" 
+                FontStyle ="Italic"
+                Foreground="#8787ed" 
+                HorizontalAlignment="Center" Grid.Column="1">
+            <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="В очікуванні"/>
+            <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Підтверджено"/>
+            <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="В процесі"/>
+            <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Завершено"/>
+        </ComboBox>
+        <Button
+            Height="33"
+            x:Name="ChangeStatusButton"
+            Cursor="Hand"
+            Margin="333,533,324,0"
+            VerticalAlignment="Top"
+            HorizontalAlignment="Center"
+            Style="{StaticResource BlueButtonStyle}"
+            Grid.Row="1" 
+            FontSize="20"
+            FontStyle="Italic"
+            Foreground="White"
+            Content="Змінити статус" Width="299" Grid.Column="1" Click="ChangeStatusButton_Click"/>
+    </Grid>
+</Page>

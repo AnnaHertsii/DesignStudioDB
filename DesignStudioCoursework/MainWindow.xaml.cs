@@ -32,6 +32,7 @@ namespace DesignStudioCoursework
         OrdersPage ordersPage;
         EmployeesPage employeesPage;
         AllProjectsPage allprojectsPage;
+        ProjectLifePage lifeprojectsPage;
 
         public MainWindow()
         {
@@ -77,6 +78,10 @@ namespace DesignStudioCoursework
                 case 7:
                     allprojectsPage = new AllProjectsPage(CloseFrame);
                     MainFrame.Content = allprojectsPage;
+                    break;
+                case 8:
+                    lifeprojectsPage = new ProjectLifePage(CloseFrame);
+                    MainFrame.Content = lifeprojectsPage;
                     break;
             }
         }

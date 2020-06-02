@@ -181,6 +181,17 @@
                             <Image Source="/DesignStudioCoursework;component/Resources/projecticon.png"/>
                         </MenuItem.Icon>
                     </MenuItem>
+                    <MenuItem 
+                    Name="LifeCycleProjects"
+                    Background="#F2F2F2"
+                    Foreground="#99A2F1"
+                    Cursor="Hand"
+                    Click="LifeCycleProjects_Click"
+                    Header="Життєвий цикл проектів">
+                        <MenuItem.Icon>
+                            <Image Source="/DesignStudioCoursework;component/Resources/projecticon.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
                 </MenuItem>
                 <MenuItem 
                     Name="Tasks"
