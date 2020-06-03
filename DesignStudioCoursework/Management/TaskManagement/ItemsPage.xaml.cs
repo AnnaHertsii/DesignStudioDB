@@ -39,9 +39,17 @@ namespace DesignStudioCoursework.Management.TaskManagement
             goBack();
         }
 
-        private void ShowAllItemsButton_Click(object sender, RoutedEventArgs e)
+        private void ChooseTaskButton_Click(object sender, RoutedEventArgs e)
         {
-            display.ShowItems(DataGridItem);
+            TasksWindow projects = new TasksWindow(task, task_id);
+            projects.Show();
+        }
+
+        private void ShowTaskItemsButton_Click(object sender, RoutedEventArgs e)
+        {
+            int task_ref = 0;
+            if (task_id.Text != "") task_ref = Int32.Parse(task_id.Text);
+            display.ShowItemsForTask(DataGridItem, task_ref);
         }
     }
 }

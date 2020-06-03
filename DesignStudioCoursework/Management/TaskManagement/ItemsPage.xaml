@@ -123,7 +123,7 @@
             Source="/DesignStudioCoursework;component/Resources/leangirl.png" 
             Stretch="Uniform" Margin="0,170,0,105" Grid.Column="2" RenderTransformOrigin="0.542,0.319"/>
         <Button
-            Name="UpdateTaskButton"
+            Name="UpdateItemButton"
             Cursor="Hand"
             Height="33"
             Margin="317,533,329,0"
@@ -134,12 +134,12 @@
             FontSize="20"
             FontStyle="Italic"
             Foreground="White"
-            Content="Оновити задачу" Width="310" Grid.Column="1"/>
+            Content="Оновити предмет" Width="310" Grid.Column="1"/>
         <Button
-            Name="DeleteTaskButton"
+            Name="DeleteItemButton"
             Cursor="Hand"
             Height="33"
-            Margin="632,533,10,0"
+            Margin="13,533,644,0"
             VerticalAlignment="Top"
             HorizontalAlignment="Center"
             Style="{StaticResource BlueButtonStyle}"
@@ -147,7 +147,7 @@
             FontSize="20"
             FontStyle="Italic"
             Foreground="White"
-            Content="Видалити задачу" Width="314" Grid.Column="1"/>
+            Content="Видалити предмет" Width="299" Grid.Column="1"/>
         <Button
             Name="BackButton"
             Height="36"
@@ -179,20 +179,7 @@
             Width="223" 
             RenderTransformOrigin="0.507,0.441" Margin="374,5,359,0" Height="53"/>
         <Button
-            Height="33"
-            Name="ShowAllItemsButton"
-            Cursor="Hand"
-            Margin="13,533,644,0"
-            VerticalAlignment="Top"
-            HorizontalAlignment="Center"
-            Style="{StaticResource BlueButtonStyle}"
-            Grid.Row="1" 
-            FontSize="20"
-            FontStyle="Italic"
-            Foreground="White"
-            Content="Показати усі предмети" Width="299" Grid.Column="1" Click="ShowAllItemsButton_Click" />
-        <Button
-            Name="FindTaskButton"
+            Name="ShowTaskItemsButton"
             Cursor="Hand"
             Margin="632,495,10,0"
             VerticalAlignment="Top"
@@ -202,7 +189,7 @@
             FontSize="20"
             FontStyle="Italic"
             Foreground="White"
-            Content="Показати предмети для задачі" Width="314" Grid.Column="1" Height="33"/>
+            Content="Показати предмети для задачі" Width="314" Grid.Column="1" Height="33" Click="ShowTaskItemsButton_Click"/>
         <TextBox 
             Name="task"
             Grid.Row="1"
@@ -213,7 +200,7 @@
             Margin="317,495,0,0"
             TextWrapping="Wrap"
             VerticalAlignment="Top"
-            Width="310" Grid.Column="1" Height="33"/>
+            Width="293" Grid.Column="1" Height="33"/>
         <DatePicker 
             Name="datebox"
             SelectedDate="{x:Static sys:DateTime.Today}"
@@ -240,7 +227,7 @@
             FontSize="20"
             FontStyle="Italic"
             Foreground="White"
-            Content="Обрати задачу" Width="299" Grid.Column="1"/>
+            Content="Обрати задачу" Width="299" Grid.Column="1" Click="ChooseTaskButton_Click"/>
         <TextBox 
             x:Name="task_id"
             Grid.Row="1"
@@ -253,6 +240,19 @@
             TextWrapping="Wrap"
             VerticalAlignment="Top"
             Width="44" Height="33"/>
+        <Button
+            x:Name="AddItemButton"
+            Cursor="Hand"
+            Height="33"
+            Margin="632,533,10,0"
+            VerticalAlignment="Top"
+            HorizontalAlignment="Center"
+            Style="{StaticResource BlueButtonStyle}"
+            Grid.Row="1" 
+            FontSize="20"
+            FontStyle="Italic"
+            Foreground="White"
+            Content="Додати предмет" Width="314" Grid.Column="1"/>
 
     </Grid>
 </Page>
