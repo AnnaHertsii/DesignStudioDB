@@ -147,7 +147,7 @@
             FontSize="20"
             FontStyle="Italic"
             Foreground="White"
-            Content="Видалити задачу" Width="314" Grid.Column="1" />
+            Content="Видалити задачу" Width="314" Grid.Column="1" Click="DeleteTaskButton_Click" />
         <Button
             Name="BackButton"
             Height="36"
