@@ -1,0 +1,98 @@
+﻿<Window x:Class="DesignStudioCoursework.Management.TaskManagement.ProjectsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DesignStudioCoursework.Management.TaskManagement"
+        mc:Ignorable="d"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        Title="Вибір проекту для замовлення" Height="450" Width="800">
+    <Grid>
+
+        <Border 
+            Background="#BCC3FF" >
+        </Border>
+        <Label
+            FontStyle ="Italic" 
+            Foreground="White" 
+            FontWeight="Bold"
+            Content="Наші проекти" 
+            HorizontalAlignment="Center" 
+            VerticalAlignment="Top"
+            FontSize="20"
+            Width="166" 
+            RenderTransformOrigin="0.507,0.441" Margin="327,10,299,0" Height="36"/>
+        <DataGrid 
+                FontSize="20"
+                CanUserAddRows="True"
+                FontStyle ="Italic"
+                Foreground="#7373E5"
+                Name="DataGridProject"
+                Background="#BCC3FF"
+                AutoGenerateColumns="True"
+                Margin="13,51,10,90"/>
+        <Button
+            Name="FindProjectButton"
+            Cursor="Hand"
+            Margin="13,334,529,0"
+            VerticalAlignment="Top"
+            HorizontalAlignment="Center" 
+            FontSize="20"
+            Background="#8189cc"
+            FontStyle="Italic"
+            Foreground="White"
+            Content="Знайти проект" Width="250" Height="33" Click="FindProjectButton_Click" />
+        <ComboBox 
+                SelectedIndex="0"
+                Cursor="Hand"  
+                Margin="268,334,265,0"
+                VerticalAlignment="Top"
+                Width="259"
+                Name="combobox_option" 
+                FontSize="20" 
+                FontStyle ="Italic"
+                Foreground="#8787ed" 
+                HorizontalAlignment="Center" Height="33">
+            <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Назва"/>
+            <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Ціна"/>
+            <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Керівник проекту"/>
+            <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Замовлення"/>
+            <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Клієнт"/>
+            <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Тип інтер'єру"/>
+            <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Стиль"/>
+            <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Статус"/>
+        </ComboBox>
+        <TextBox 
+            Name="search_text"
+            FontStyle ="Italic" 
+            FontSize="20"
+            Foreground="#8787ed"            
+            HorizontalAlignment="Left"
+            Margin="532,334,0,0"
+            TextWrapping="Wrap"
+            VerticalAlignment="Top"
+            Width="250" Height="33"/>
+        <Button
+            Name="ChooseProjectButton"
+            Cursor="Hand"
+            Margin="532,376,10,0"
+            VerticalAlignment="Top"
+            HorizontalAlignment="Center" 
+            FontSize="20"
+            Background="#8189cc"
+            FontStyle="Italic"
+            Foreground="White"
+            Content="Вибрати" Width="250" Height="33" Click="ChooseProjectButton_Click"/>
+        <Button
+            Name="ShowAllButton"
+            Cursor="Hand"
+            Margin="13,372,529,0"
+            VerticalAlignment="Top"
+            HorizontalAlignment="Center" 
+            FontSize="20"
+            Background="#8189cc"
+            FontStyle="Italic"
+            Foreground="White"
+            Content="Показати усі" Width="250" Height="33" Click="ShowAllButton_Click"/>
+    </Grid>
+</Window>

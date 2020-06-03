@@ -83,8 +83,8 @@ namespace DesignStudioCoursework.Management.TaskManagement
 
         private void project_Click(object sender, RoutedEventArgs e)
         {
-            //ProjectsWindow projects = new ProjectsWindow(order);
-            //projects.Show();
+            ProjectsWindow projects = new ProjectsWindow(search_text);
+            projects.Show();
         }
     }
 }
