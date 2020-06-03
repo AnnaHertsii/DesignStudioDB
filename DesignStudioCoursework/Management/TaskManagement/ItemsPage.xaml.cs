@@ -22,6 +22,7 @@ namespace DesignStudioCoursework.Management.TaskManagement
     {
         Action goBack;
         DisplayItem display = new DisplayItem();
+        int currentId = 0;
 
         public ItemsPage(Action goBack)
         {
@@ -65,12 +66,14 @@ namespace DesignStudioCoursework.Management.TaskManagement
             string connectionString = @"Data Source=DESKTOP-O22ROGE;Initial Catalog=DesignStudio;Integrated Security=True";
             SqlConnection connection = new SqlConnection(connectionString);
             connection.Open();
-            int SelectedId = CurrentID();
-            string strSQL = string.Format("DELETE [Item] WHERE Item_ID = '{0}'", SelectedId);
-            SqlCommand myCommand = new SqlCommand(strSQL, connection);
-            myCommand.ExecuteNonQuery();
-
-            MessageBox.Show("Предмет видалено!");
+            if (currentId != 0)
+            {
+                string strSQL = string.Format("DELETE [Item] WHERE Item_ID = '{0}'", currentId);
+                SqlCommand myCommand = new SqlCommand(strSQL, connection);
+                myCommand.ExecuteNonQuery();
+                MessageBox.Show("Предмет видалено!");
+            }
+            else MessageBox.Show("Виберіть предмет перед його видаленням!");
         }
 
         public string GetSelectedCellValue(int index)
@@ -87,36 +90,6 @@ namespace DesignStudioCoursework.Management.TaskManagement
             return element.Tag.ToString();
         }
 
-        public int getEmployeeID()
-        {
-            string connectionString = @"Data Source=DESKTOP-O22ROGE;Initial Catalog=DesignStudio;Integrated Security=True";
-            SqlConnection connection = new SqlConnection(connectionString);
-            connection.Open();
-            SqlCommand command = new SqlCommand();
-            string strSQL = string.Format("SELECT TOP 1 Employee_ID FROM [Employee] WHERE Name = '{0}'", GetSelectedCellValue(4));
-            SqlCommand myCommand = new SqlCommand(strSQL, connection);
-            SqlDataReader reader = myCommand.ExecuteReader();
-            string st = null;
-            if (reader.Read())
-                st = reader[0].ToString();
-            return Int32.Parse(st);
-        }
-
-        public int getProjectID()
-        {
-            string connectionString = @"Data Source=DESKTOP-O22ROGE;Initial Catalog=DesignStudio;Integrated Security=True";
-            SqlConnection connection = new SqlConnection(connectionString);
-            connection.Open();
-            SqlCommand command = new SqlCommand();
-            string strSQL = string.Format("SELECT TOP 1 Project_ID FROM [Design Project] WHERE Project_name = '{0}'", GetSelectedCellValue(5));
-            SqlCommand myCommand = new SqlCommand(strSQL, connection);
-            SqlDataReader reader = myCommand.ExecuteReader();
-            string st = null;
-            if (reader.Read())
-                st = reader[0].ToString();
-            return Int32.Parse(st);
-        }
-
         public int CurrentID()
         {
             string connectionString = @"Data Source=DESKTOP-O22ROGE;Initial Catalog=DesignStudio;Integrated Security=True";
@@ -124,14 +97,45 @@ namespace DesignStudioCoursework.Management.TaskManagement
             connection.Open();
             string Name = GetSelectedCellValue(0);
             string Amount = GetSelectedCellValue(2);
+            MessageBox.Show(Name);
+            MessageBox.Show(Amount);
             SqlCommand command = new SqlCommand();
-            string strSQL = string.Format("SELECT Item_ID FROM [Item] WHERE Item_name = '{0}' AND Item_amount = '{1}'", Name, Amount);
+            string strSQL = string.Format("SELECT TOP 1 Item_ID FROM [Item] WHERE Item_name = '{0}' AND Item_amount = {1}", Name, Int32.Parse(Amount));
             SqlCommand myCommand = new SqlCommand(strSQL, connection);
             SqlDataReader reader = myCommand.ExecuteReader();
             string st = null;
             if (reader.Read())
                 st = reader[0].ToString();
+            MessageBox.Show(st);
             return Int32.Parse(st);
+        }
+
+        private void UpdateItemButton_Click(object sender, RoutedEventArgs e)
+        {
+            UpdateItem();
+            int task_ref = 0;
+            if (task_id.Text != "") task_ref = Int32.Parse(task_id.Text);
+            display.ShowItemsForTask(DataGridItem, task_ref);
+        }
+
+        public void UpdateItem()
+        {
+            string connectionString = @"Data Source=DESKTOP-O22ROGE;Initial Catalog=DesignStudio;Integrated Security=True";
+            SqlConnection connection = new SqlConnection(connectionString);
+            connection.Open();
+            if (currentId != 0)
+            {
+                string strSQL = string.Format("UPDATE Item SET Item_name = '{0}', Item_amount = '{1}' WHERE Item_ID = '{2}'", GetSelectedCellValue(0), GetSelectedCellValue(2), currentId);
+                SqlCommand myCommand = new SqlCommand(strSQL, connection);
+                myCommand.ExecuteNonQuery();
+                MessageBox.Show("Предмет оновлено!");
+            }
+            else MessageBox.Show("Виберіть предмет перед тим як його оновити!");
+        }
+
+        private void ChooseItemButton_Copy_Click(object sender, RoutedEventArgs e)
+        {
+            currentId = CurrentID();
         }
     }
 }

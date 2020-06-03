@@ -126,7 +126,7 @@
             Name="UpdateItemButton"
             Cursor="Hand"
             Height="33"
-            Margin="317,533,329,0"
+            Margin="483,533,244,0"
             VerticalAlignment="Top"
             HorizontalAlignment="Center"
             Style="{StaticResource BlueButtonStyle}"
@@ -134,12 +134,12 @@
             FontSize="20"
             FontStyle="Italic"
             Foreground="White"
-            Content="Оновити предмет" Width="310" Grid.Column="1"/>
+            Content="Оновити предмет" Width="229" Grid.Column="1" Click="UpdateItemButton_Click"/>
         <Button
             Name="DeleteItemButton"
             Cursor="Hand"
             Height="33"
-            Margin="13,533,644,0"
+            Margin="249,533,478,0"
             VerticalAlignment="Top"
             HorizontalAlignment="Center"
             Style="{StaticResource BlueButtonStyle}"
@@ -147,7 +147,7 @@
             FontSize="20"
             FontStyle="Italic"
             Foreground="White"
-            Content="Видалити предмет" Width="299" Grid.Column="1" Click="DeleteItemButton_Click"/>
+            Content="Видалити предмет" Width="229" Grid.Column="1" Click="DeleteItemButton_Click"/>
         <Button
             Name="BackButton"
             Height="36"
@@ -181,7 +181,7 @@
         <Button
             Name="ShowTaskItemsButton"
             Cursor="Hand"
-            Margin="632,495,10,0"
+            Margin="483,495,10,0"
             VerticalAlignment="Top"
             HorizontalAlignment="Center"
             Style="{StaticResource BlueButtonStyle}"
@@ -189,7 +189,7 @@
             FontSize="20"
             FontStyle="Italic"
             Foreground="White"
-            Content="Показати предмети для задачі" Width="314" Grid.Column="1" Height="33" Click="ShowTaskItemsButton_Click"/>
+            Content="Показати предмети для задачі" Width="463" Grid.Column="1" Height="33" Click="ShowTaskItemsButton_Click"/>
         <TextBox 
             Name="task"
             Grid.Row="1"
@@ -197,10 +197,10 @@
             FontSize="20"
             Foreground="#8787ed"            
             HorizontalAlignment="Left"
-            Margin="317,495,0,0"
+            Margin="249,495,0,0"
             TextWrapping="Wrap"
             VerticalAlignment="Top"
-            Width="293" Grid.Column="1" Height="33"/>
+            Width="229" Grid.Column="1" Height="33"/>
         <DatePicker 
             Name="datebox"
             SelectedDate="{x:Static sys:DateTime.Today}"
@@ -219,7 +219,7 @@
             Height="33"
             x:Name="ChooseTaskButton"
             Cursor="Hand"
-            Margin="13,495,644,0"
+            Margin="13,495,712,0"
             VerticalAlignment="Top"
             HorizontalAlignment="Center"
             Style="{StaticResource BlueButtonStyle}"
@@ -227,7 +227,7 @@
             FontSize="20"
             FontStyle="Italic"
             Foreground="White"
-            Content="Обрати задачу" Width="299" Grid.Column="1" Click="ChooseTaskButton_Click"/>
+            Content="Обрати задачу" Width="231" Grid.Column="1" Click="ChooseTaskButton_Click"/>
         <TextBox 
             x:Name="task_id"
             Grid.Row="1"
@@ -244,7 +244,7 @@
             x:Name="AddItemButton"
             Cursor="Hand"
             Height="33"
-            Margin="632,533,10,0"
+            Margin="717,533,10,0"
             VerticalAlignment="Top"
             HorizontalAlignment="Center"
             Style="{StaticResource BlueButtonStyle}"
@@ -252,7 +252,20 @@
             FontSize="20"
             FontStyle="Italic"
             Foreground="White"
-            Content="Додати предмет" Width="314" Grid.Column="1"/>
+            Content="Додати предмет" Width="229" Grid.Column="1"/>
+        <Button
+            x:Name="ChooseItemButton_Copy"
+            Cursor="Hand"
+            Height="33"
+            Margin="13,533,712,0"
+            VerticalAlignment="Top"
+            HorizontalAlignment="Center"
+            Style="{StaticResource BlueButtonStyle}"
+            Grid.Row="1" 
+            FontSize="20"
+            FontStyle="Italic"
+            Foreground="White"
+            Content="Вибрати предмет" Width="231" Grid.Column="1" Click="ChooseItemButton_Copy_Click" />
 
     </Grid>
 </Page>
