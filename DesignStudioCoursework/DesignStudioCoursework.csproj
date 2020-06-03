@@ -121,6 +121,9 @@
     <Compile Include="Management\ProjectManagement\UpdateProjectWindow.xaml.cs">
       <DependentUpon>UpdateProjectWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Management\TaskManagement\ItemsPage.xaml.cs">
+      <DependentUpon>ItemsPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Management\TaskManagement\NewItemPage.xaml.cs">
       <DependentUpon>NewItemPage.xaml</DependentUpon>
     </Compile>
@@ -272,6 +275,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Management\ProjectManagement\UpdateProjectWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Management\TaskManagement\ItemsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
