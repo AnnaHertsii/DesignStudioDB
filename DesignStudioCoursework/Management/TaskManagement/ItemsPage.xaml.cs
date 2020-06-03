@@ -15,14 +15,24 @@ using System.Windows.Shapes;
 
 namespace DesignStudioCoursework.Management.TaskManagement
 {
-    /// <summary>
-    /// Логика взаимодействия для ItemsPage.xaml
-    /// </summary>
     public partial class ItemsPage : Page
     {
-        public ItemsPage()
+        Action goBack;
+
+        public ItemsPage(Action goBack)
         {
+            this.goBack = goBack;
             InitializeComponent();
+        }
+
+        private void ExitClicked(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            goBack();
         }
     }
 }

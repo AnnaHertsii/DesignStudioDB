@@ -238,7 +238,7 @@
                     Background="#F2F2F2"
                     Foreground="#99A2F1"
                     Cursor="Hand"
-                    Header="Предмети задіяні в задачах">
+                    Header="Предмети задіяні в задачах" Click="Items_Click">
                         <MenuItem.Icon>
                             <Image Source="/DesignStudioCoursework;component/Resources/taskicon.png"/>
                         </MenuItem.Icon>

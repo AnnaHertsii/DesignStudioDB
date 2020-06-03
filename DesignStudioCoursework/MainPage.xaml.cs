@@ -101,5 +101,10 @@ namespace DesignStudioCoursework
         {
             pageChanged(12);
         }
+
+        private void Items_Click(object sender, RoutedEventArgs e)
+        {
+            pageChanged(13);
+        }
     }
 }

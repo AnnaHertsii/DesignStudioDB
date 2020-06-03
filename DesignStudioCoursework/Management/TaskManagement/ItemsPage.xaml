@@ -202,9 +202,8 @@
             FontSize="20"
             FontStyle="Italic"
             Foreground="White"
-            Content="Показати предмети для задачі" Width="314" Grid.Column="1" Height="33" Click="FindTaskButton_Click" />
+            Content="Показати предмети для задачі" Width="314" Grid.Column="1" Height="33"/>
         <TextBox 
-            MouseDoubleClick="project_Click"
             Name="task"
             Grid.Row="1"
             FontStyle ="Italic" 
