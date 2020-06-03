@@ -208,7 +208,7 @@
                     Background="#F2F2F2"
                     Foreground="#99A2F1"
                     Cursor="Hand"
-                    Header="Додати нову задачу">
+                    Header="Додати нову задачу" Click="AddNewTask_Click">
                         <MenuItem.Icon>
                             <Image Source="/DesignStudioCoursework;component/Resources/taskicon.png"/>
                         </MenuItem.Icon>
