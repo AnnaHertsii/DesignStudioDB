@@ -20,10 +20,12 @@ namespace DesignStudioCoursework.Management.TaskManagement
     {
         DisplayTask display = new DisplayTask();
         SearchTask search = new SearchTask();
+        TextBox task;
 
-        public TasksWindow()
+        public TasksWindow(TextBox task1)
         {
             InitializeComponent();
+            this.task = task1;
         }
 
         private void ExitClicked(object sender, RoutedEventArgs e)
@@ -142,9 +144,9 @@ namespace DesignStudioCoursework.Management.TaskManagement
 
         private void ChooseTaskButton_Click(object sender, RoutedEventArgs e)
         {
-            //string Name = GetSelectedCellValue(0);
-            //project.Text = Name;
-            //this.Close();
+            string Name = GetSelectedCellValue(0);
+            task.Text = Name;
+            this.Close();
         }
     }
 }

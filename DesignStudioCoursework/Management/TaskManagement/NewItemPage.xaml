@@ -168,18 +168,7 @@
             FontSize="20"
             Width="185" 
             RenderTransformOrigin="0.5,0.516" Margin="11,153,0,0"/>
-        <TextBox 
-            Padding="10,0,0,0"
-            Grid.Row="1"
-            Grid.Column="0"
-            Name="price"
-            FontStyle ="Italic" 
-            FontSize="20"
-            Foreground="#8787ed"
-            HorizontalAlignment="Center" 
-            TextWrapping="Wrap"
-            Text="" 
-            Width="336" Margin="226,285,23,159"/>
+        
         <Label 
             Grid.Row="1"
             Grid.Column="0"
@@ -195,17 +184,19 @@
         <ComboBox 
             Grid.Row="1"
             Grid.Column="0"
-            Name="customercombo"
-            ItemsSource="{Binding}"
-            SelectedValuePath="Customer_ID"
-            DisplayMemberPath="Name"
+            Name="itemtypecombo"
             FontSize="20" 
+            SelectedIndex="0"
             FontStyle ="Italic"
             Foreground="#8787ed"
             Height="37" 
             HorizontalAlignment="Center"
             Margin="226,351,23,93" 
             Width="336">
+            <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Меблі"/>
+            <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Техніка"/>
+            <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Рослини"/>
+            <ComboBoxItem FontSize="20" FontStyle ="Italic" Foreground="#8787ed" Content="Декорації"/>
         </ComboBox>
         <Label 
             Name="customer_error"
@@ -244,7 +235,7 @@
             FontSize="24"
             FontStyle="Italic"
             Foreground="White"
-            Content="Оформити" Width="244">
+            Content="Оформити" Width="244" Click="AddItemButton_Click">
         </Button>
         <Image 
             Grid.Row="1"
@@ -325,6 +316,19 @@
             TextWrapping="Wrap"
             Text="" 
             Width="336" Margin="226,219,23,225"/>
+        <TextBox 
+            Padding="10,0,0,0"
+            Grid.Row="1"
+            Grid.Column="0"
+            x:Name="color"
+            FontStyle ="Italic" 
+            FontSize="20"
+            Foreground="#8787ed"
+            HorizontalAlignment="Center" 
+            TextWrapping="Wrap"
+            Text="" 
+            Width="336" Margin="226,285,23,159"/>
+
     </Grid>
 </Page>   
 
