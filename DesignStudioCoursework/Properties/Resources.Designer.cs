@@ -243,6 +243,16 @@ namespace DesignStudioCoursework.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap newtask {
+            get {
+                object obj = ResourceManager.GetObject("newtask", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap order2 {
             get {
                 object obj = ResourceManager.GetObject("order2", resourceCulture);

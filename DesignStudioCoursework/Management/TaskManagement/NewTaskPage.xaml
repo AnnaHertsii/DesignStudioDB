@@ -347,7 +347,7 @@
             Grid.Row="1"
             Grid.Column="1"
             HorizontalAlignment="Left" 
-            Source="/DesignStudioCoursework;component/Resources/order2.png" 
+            Source="/DesignStudioCoursework;component/Resources/newtask.png" 
             Stretch="Uniform"
             Width="422" Margin="90,43,0,56" 
             Grid.RowSpan="2"/>

@@ -362,6 +362,7 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EntityDeploy Include="DesignStudioModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -460,6 +461,7 @@
       <DependentUpon>DesignStudioModel.edmx</DependentUpon>
       <LastGenOutput>DesignStudioModel.cs</LastGenOutput>
     </Content>
+    <Resource Include="Resources\newtask.png" />
     <Resource Include="Resources\taskicon.png" />
     <Resource Include="Resources\projecticon.png" />
     <Resource Include="Resources\ordericon.png" />
