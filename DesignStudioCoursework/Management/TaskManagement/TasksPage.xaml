@@ -134,7 +134,7 @@
             FontSize="20"
             FontStyle="Italic"
             Foreground="White"
-            Content="Оновити задачу" Width="310" Grid.Column="1"/>
+            Content="Оновити задачу" Width="310" Grid.Column="1" Click="UpdateTaskButton_Click"/>
         <Button
             Name="DeleteTaskButton"
             Cursor="Hand"

@@ -127,6 +127,9 @@
     <Compile Include="Management\TaskManagement\TasksPage.xaml.cs">
       <DependentUpon>TasksPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Management\TaskManagement\UpdateTaskWindow.xaml.cs">
+      <DependentUpon>UpdateTaskWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="NewProject\EmployeesWindow.xaml.cs">
       <DependentUpon>EmployeesWindow.xaml</DependentUpon>
     </Compile>
@@ -268,6 +271,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Management\TaskManagement\TasksPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Management\TaskManagement\UpdateTaskWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

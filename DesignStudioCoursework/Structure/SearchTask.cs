@@ -50,7 +50,7 @@ namespace DesignStudioCoursework.Structure
                             join employee in db.Employee on task.Employee_Ref equals employee.Employee_ID
                             join project in db.Design_Project on task.Project_Ref equals project.Project_ID
                             join status in db.Status on task.Task_status_Ref equals status.Status_ID
-                            where project.Project_name.Contains(SearchTaskBox.Text)
+                            where project.Project_name == SearchTaskBox.Text
                             select new
                             {
                                 Name = task.Task_name,

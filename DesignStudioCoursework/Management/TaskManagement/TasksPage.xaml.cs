@@ -166,5 +166,11 @@ namespace DesignStudioCoursework.Management.TaskManagement
                 st = reader[0].ToString();
             return Int32.Parse(st);
         }
+
+        private void UpdateTaskButton_Click(object sender, RoutedEventArgs e)
+        {
+            UpdateTaskWindow update = new UpdateTaskWindow(CurrentID(), DataGridTask);
+            update.Show();
+        }
     }
 }

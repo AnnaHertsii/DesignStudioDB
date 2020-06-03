@@ -18,7 +18,6 @@ namespace DesignStudioCoursework.Management.TaskManagement
 {
     public partial class ProjectsWindow : Window
     {
-        private Action goBack;
         SearchProject search = new SearchProject();
         TextBox project;
 
@@ -36,7 +35,7 @@ namespace DesignStudioCoursework.Management.TaskManagement
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
-            goBack();
+            this.Close();
         }
 
         public void ShowProjects()
