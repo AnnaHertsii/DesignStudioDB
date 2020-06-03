@@ -147,7 +147,7 @@
             FontSize="20"
             FontStyle="Italic"
             Foreground="White"
-            Content="Видалити предмет" Width="299" Grid.Column="1"/>
+            Content="Видалити предмет" Width="299" Grid.Column="1" Click="DeleteItemButton_Click"/>
         <Button
             Name="BackButton"
             Height="36"
