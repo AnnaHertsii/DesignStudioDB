@@ -96,5 +96,10 @@ namespace DesignStudioCoursework
         {
             pageChanged(11);
         }
+
+        private void AddNewItem_Click(object sender, RoutedEventArgs e)
+        {
+            pageChanged(12);
+        }
     }
 }

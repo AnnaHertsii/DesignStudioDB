@@ -214,11 +214,31 @@
                         </MenuItem.Icon>
                     </MenuItem>
                     <MenuItem 
+                    Name="AddNewItem"
+                    Background="#F2F2F2"
+                    Foreground="#99A2F1"
+                    Cursor="Hand"
+                    Header="Додати новий предмет" Click="AddNewItem_Click">
+                        <MenuItem.Icon>
+                            <Image Source="/DesignStudioCoursework;component/Resources/taskicon.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem 
                     Name="AllTasks"
                     Background="#F2F2F2"
                     Foreground="#99A2F1"
                     Cursor="Hand"
                     Header="Усі задачі" Click="AllTasks_Click">
+                        <MenuItem.Icon>
+                            <Image Source="/DesignStudioCoursework;component/Resources/taskicon.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem 
+                    Name="Items"
+                    Background="#F2F2F2"
+                    Foreground="#99A2F1"
+                    Cursor="Hand"
+                    Header="Предмети задіяні в задачах">
                         <MenuItem.Icon>
                             <Image Source="/DesignStudioCoursework;component/Resources/taskicon.png"/>
                         </MenuItem.Icon>

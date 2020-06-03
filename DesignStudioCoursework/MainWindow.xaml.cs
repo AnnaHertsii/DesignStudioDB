@@ -37,6 +37,7 @@ namespace DesignStudioCoursework
         NotOpenedProjectsPage notopened;
         TasksPage alltasksPage;
         NewTaskPage newTaskPage;
+        NewItemPage newItemPage;
 
         public MainWindow()
         {
@@ -99,6 +100,11 @@ namespace DesignStudioCoursework
                     newTaskPage = new NewTaskPage(CloseFrame);
                     MainFrame.Content = newTaskPage;
                     break;
+                case 12:
+                    newItemPage = new NewItemPage(CloseFrame);
+                    MainFrame.Content = newItemPage;
+                    break;
+                    
             }
         }
 

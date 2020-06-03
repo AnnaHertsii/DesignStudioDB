@@ -1,0 +1,330 @@
+﻿<Page x:Class="DesignStudioCoursework.Management.TaskManagement.NewItemPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:DesignStudioCoursework.Management.TaskManagement"
+      xmlns:sys="clr-namespace:System;assembly=mscorlib"
+      mc:Ignorable="d" 
+      d:DesignHeight="620" d:DesignWidth="1170"
+      Title="Створити новий предмет">
+    <Page.Resources>
+        <Style x:Key="BlueButtonStyle" TargetType="{x:Type Button}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border>
+                            <Border.Style>
+                                <Style TargetType="{x:Type Border}">
+                                    <Setter Property="Background" Value="#99A2F1" />
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" Value="#8189cc" />
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Border.Style>
+                            <Grid Background="Transparent">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            </Grid>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
+
+    <Grid Height="620" VerticalAlignment="Top">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25" />
+            <RowDefinition Height="421*" />
+            <RowDefinition Height="100*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="333*" />
+            <ColumnDefinition Width="333*"/>
+        </Grid.ColumnDefinitions>
+        <Menu 
+            Grid.ColumnSpan="2"
+            Background="#99A2F1"
+            Foreground="White"
+            Grid.Row="0">
+            <MenuItem 
+                Header="Головна" 
+                FontSize="16"
+                Foreground="White">
+                <MenuItem 
+                    Background="#F2F2F2"
+                    Foreground="#99A2F1"
+                    Click="ExitClicked"
+                    Header="Вийти">
+                </MenuItem>
+            </MenuItem>
+            <MenuItem 
+                Header="Перегляд" 
+                FontSize="16" 
+                Foreground="White">
+                <MenuItem 
+                    Background="#F2F2F2"
+                    Foreground="#99A2F1"
+                    Header="Наші клієнти">
+                </MenuItem>
+                <MenuItem 
+                    Background="#F2F2F2"
+                    Foreground="#99A2F1"
+                    Header="Поточні замовлення">
+                </MenuItem>
+            </MenuItem>
+            <MenuItem 
+                Header="Управління" 
+                FontSize="16" 
+                Foreground="White">
+                <MenuItem 
+                    Background="#F2F2F2"
+                    Foreground="#99A2F1"
+                    Header="Управління проектами">
+                </MenuItem>
+                <MenuItem 
+                    Background="#F2F2F2"
+                    Foreground="#99A2F1"
+                    Header="Управління задачами">
+                </MenuItem>
+            </MenuItem>
+            <MenuItem 
+                Header="Адміністрація" 
+                FontSize="16" 
+                Foreground="White">
+                <MenuItem 
+                    Background="#F2F2F2"
+                    Foreground="#99A2F1"
+                    Header="Управління працівниками">
+                </MenuItem>
+            </MenuItem>
+        </Menu>
+        <Border 
+            Grid.Row="1"
+            Grid.ColumnSpan="2"
+            Grid.RowSpan="2"
+            Background="#BCC3FF" >
+        </Border>
+        <Button
+            Name="BackButton"
+            Height="38"
+            Cursor="Hand"
+            Margin="11,10,526,0"
+            VerticalAlignment="Top"
+            BorderThickness="0"
+            Style="{StaticResource BlueButtonStyle}"
+            Click="BackButton_Click"
+            Grid.Row="1" >
+            <Image HorizontalAlignment="Left" Source="/DesignStudioCoursework;component/Resources/back.png" Stretch="Uniform" Height="36" Width="34"/>
+        </Button>
+        <Label 
+            Grid.Row="1"
+            Grid.Column="0"
+            FontStyle ="Italic" 
+            Foreground="White" 
+            FontWeight="Bold"
+            Content="Оголошення нового предмету" 
+            HorizontalAlignment="Center" 
+            VerticalAlignment="Top"
+            FontSize="24"
+            Width="377" 
+            RenderTransformOrigin="0.507,0.441" Margin="139,10,69,0" Height="55"/>
+        <Label 
+            Grid.Row="1"
+            Grid.Column="0"
+            FontStyle ="Italic" 
+            Foreground="White" 
+            FontWeight="Bold"
+            Content="Задача" 
+            HorizontalAlignment="Left" 
+            VerticalAlignment="Top"
+            FontSize="20"
+            Width="184" 
+            RenderTransformOrigin="0.5,0.516" Margin="11,87,0,0"/>
+        <TextBox 
+            Padding="10,0,0,0"
+            Grid.Row="1"
+            Grid.Column="0"
+            MouseDoubleClick="task_Click"
+            Name="task"
+            FontStyle ="Italic" 
+            FontSize="20"
+            Foreground="#8787ed"
+            HorizontalAlignment="Center" 
+            TextWrapping="Wrap"
+            Text="" 
+            Width="336" Margin="226,87,23,357"/>
+        <Label 
+            Grid.Row="1"
+            Grid.Column="0"
+            FontStyle ="Italic" 
+            Foreground="White" 
+            FontWeight="Bold"
+            Content="Назва" 
+            HorizontalAlignment="Left" 
+            VerticalAlignment="Top"
+            FontSize="20"
+            Width="185" 
+            RenderTransformOrigin="0.5,0.516" Margin="11,153,0,0"/>
+        <TextBox 
+            Padding="10,0,0,0"
+            Grid.Row="1"
+            Grid.Column="0"
+            Name="price"
+            FontStyle ="Italic" 
+            FontSize="20"
+            Foreground="#8787ed"
+            HorizontalAlignment="Center" 
+            TextWrapping="Wrap"
+            Text="" 
+            Width="336" Margin="226,285,23,159"/>
+        <Label 
+            Grid.Row="1"
+            Grid.Column="0"
+            FontStyle ="Italic" 
+            Foreground="White" 
+            FontWeight="Bold"
+            Content="Кількість" 
+            HorizontalAlignment="Left" 
+            VerticalAlignment="Top"
+            FontSize="20"
+            Width="137" 
+            RenderTransformOrigin="0.5,0.516" Margin="11,219,0,0"/>
+        <ComboBox 
+            Grid.Row="1"
+            Grid.Column="0"
+            Name="customercombo"
+            ItemsSource="{Binding}"
+            SelectedValuePath="Customer_ID"
+            DisplayMemberPath="Name"
+            FontSize="20" 
+            FontStyle ="Italic"
+            Foreground="#8787ed"
+            Height="37" 
+            HorizontalAlignment="Center"
+            Margin="226,351,23,93" 
+            Width="336">
+        </ComboBox>
+        <Label 
+            Name="customer_error"
+            Content="Оберіть замовника зі списку клієнтів"
+            Foreground="Red"
+            FontSize="12"
+            FontStyle="Italic"
+            Visibility="Hidden"
+            HorizontalAlignment="Left" 
+            Height="30" 
+            Margin="226,386,0,0"
+            VerticalAlignment="Top"
+            Width="336" Grid.Row="1"/>
+        <Label 
+            Name="employee_error"
+            Content="Оберіть працівника, який оформлює замовлення"
+            Foreground="Red"
+            FontSize="12"
+            FontStyle="Italic"
+            Visibility="Hidden"
+            HorizontalAlignment="Left" 
+            Height="26" 
+            Margin="226,453,0,0"
+            VerticalAlignment="Top"
+            Width="336" Grid.Row="1"/>
+        <Button
+            Name="AddItemButton"
+            Height="56"
+            Cursor="Hand"
+            Margin="174,10,167,0"
+            VerticalAlignment="Top"
+            HorizontalAlignment="Center"
+            BorderThickness="0"
+            Style="{StaticResource BlueButtonStyle}"
+            Grid.Row="2" 
+            FontSize="24"
+            FontStyle="Italic"
+            Foreground="White"
+            Content="Оформити" Width="244">
+        </Button>
+        <Image 
+            Grid.Row="1"
+            Grid.Column="1"
+            HorizontalAlignment="Left" 
+            Source="/DesignStudioCoursework;component/Resources/shapes-icon.png" 
+            Stretch="Uniform"
+            Width="326" Margin="142,109,0,27"/>
+        <Label 
+            Grid.Row="1"
+            Grid.Column="0"
+            FontStyle ="Italic" 
+            Foreground="White" 
+            FontWeight="Bold"
+            Content="Тип предмету" 
+            HorizontalAlignment="Left" 
+            VerticalAlignment="Top"
+            FontSize="20"
+            Width="185" 
+            RenderTransformOrigin="0.5,0.516" Margin="10,351,0,0"/>
+        <Label 
+            Name="price_error"
+            Content="Введіть коректну суму"
+            Foreground="Red"
+            FontSize="12"
+            FontStyle="Italic"
+            Visibility="Hidden"
+            HorizontalAlignment="Left" 
+            Height="30" 
+            Margin="226,319,0,0"
+            VerticalAlignment="Top"
+            Width="336" Grid.Row="1"/>
+        <Label 
+            Name="enddate_error"
+            Content="Дата завершення має бути не раніше дати початку"
+            Foreground="Red"
+            FontSize="12"
+            FontStyle="Italic"
+            Visibility="Hidden"
+            HorizontalAlignment="Left" 
+            Height="30" 
+            Margin="226,252,0,0"
+            VerticalAlignment="Top"
+            Width="336" Grid.Row="1"/>
+        <Label 
+            Grid.Row="1"
+            Grid.Column="0"
+            FontStyle ="Italic" 
+            Foreground="White" 
+            FontWeight="Bold"
+            Content="Колір" 
+            HorizontalAlignment="Left" 
+            VerticalAlignment="Top"
+            FontSize="20"
+            Width="75" 
+            RenderTransformOrigin="0.5,0.516" Margin="10,285,0,0"/>
+        <TextBox 
+            Padding="10,0,0,0"
+            Grid.Row="1"
+            Grid.Column="0"
+            Name="name"
+            FontStyle ="Italic" 
+            FontSize="20"
+            Foreground="#8787ed"
+            HorizontalAlignment="Center" 
+            TextWrapping="Wrap"
+            Text="" 
+            Width="336" Margin="226,153,23,291"/>
+        <TextBox 
+            Padding="10,0,0,0"
+            Grid.Row="1"
+            Grid.Column="0"
+            x:Name="amount"
+            FontStyle ="Italic" 
+            FontSize="20"
+            Foreground="#8787ed"
+            HorizontalAlignment="Center" 
+            TextWrapping="Wrap"
+            Text="" 
+            Width="336" Margin="226,219,23,225"/>
+    </Grid>
+</Page>   
+

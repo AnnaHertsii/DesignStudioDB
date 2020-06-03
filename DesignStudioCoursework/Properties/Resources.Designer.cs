@@ -313,6 +313,16 @@ namespace DesignStudioCoursework.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap shapes_icon {
+            get {
+                object obj = ResourceManager.GetObject("shapes_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap taskicon {
             get {
                 object obj = ResourceManager.GetObject("taskicon", resourceCulture);

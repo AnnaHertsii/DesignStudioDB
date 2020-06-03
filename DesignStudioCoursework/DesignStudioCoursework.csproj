@@ -121,6 +121,9 @@
     <Compile Include="Management\ProjectManagement\UpdateProjectWindow.xaml.cs">
       <DependentUpon>UpdateProjectWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Management\TaskManagement\NewItemPage.xaml.cs">
+      <DependentUpon>NewItemPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Management\TaskManagement\NewTaskPage.xaml.cs">
       <DependentUpon>NewTaskPage.xaml</DependentUpon>
     </Compile>
@@ -129,6 +132,9 @@
     </Compile>
     <Compile Include="Management\TaskManagement\TasksPage.xaml.cs">
       <DependentUpon>TasksPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Management\TaskManagement\TasksWindow.xaml.cs">
+      <DependentUpon>TasksWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Management\TaskManagement\UpdateTaskWindow.xaml.cs">
       <DependentUpon>UpdateTaskWindow.xaml</DependentUpon>
@@ -269,6 +275,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Management\TaskManagement\NewItemPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Management\TaskManagement\NewTaskPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -278,6 +288,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Management\TaskManagement\TasksPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Management\TaskManagement\TasksWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -461,6 +475,7 @@
       <DependentUpon>DesignStudioModel.edmx</DependentUpon>
       <LastGenOutput>DesignStudioModel.cs</LastGenOutput>
     </Content>
+    <Resource Include="Resources\shapes-icon.png" />
     <Resource Include="Resources\newtask.png" />
     <Resource Include="Resources\taskicon.png" />
     <Resource Include="Resources\projecticon.png" />
