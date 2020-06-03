@@ -97,8 +97,6 @@ namespace DesignStudioCoursework.Management.TaskManagement
             connection.Open();
             string Name = GetSelectedCellValue(0);
             string Amount = GetSelectedCellValue(2);
-            MessageBox.Show(Name);
-            MessageBox.Show(Amount);
             SqlCommand command = new SqlCommand();
             string strSQL = string.Format("SELECT TOP 1 Item_ID FROM [Item] WHERE Item_name = '{0}' AND Item_amount = {1}", Name, Int32.Parse(Amount));
             SqlCommand myCommand = new SqlCommand(strSQL, connection);
@@ -106,7 +104,6 @@ namespace DesignStudioCoursework.Management.TaskManagement
             string st = null;
             if (reader.Read())
                 st = reader[0].ToString();
-            MessageBox.Show(st);
             return Int32.Parse(st);
         }
 
@@ -136,6 +133,125 @@ namespace DesignStudioCoursework.Management.TaskManagement
         private void ChooseItemButton_Copy_Click(object sender, RoutedEventArgs e)
         {
             currentId = CurrentID();
+        }
+
+        private void AddItemButton_Click(object sender, RoutedEventArgs e)
+        {
+            AddItem();
+            int task_ref = 0;
+            if (task_id.Text != "") task_ref = Int32.Parse(task_id.Text);
+            display.ShowItemsForTask(DataGridItem, task_ref);
+        }
+
+        public void AddItem()
+        {
+            try
+            {
+                int item_id = MaxID() + 1;
+                string connectionString = @"Data Source=DESKTOP-O22ROGE;Initial Catalog=DesignStudio;Integrated Security=True";
+                SqlConnection connection = new SqlConnection(connectionString);
+                connection.Open();
+                SqlCommand command = new SqlCommand();
+
+                int itemtypeid = getItemTypeID();
+                int amount1 = 0;
+                if (GetSelectedCellValue(2) != "")
+                {
+                    amount1 = Int32.Parse(GetSelectedCellValue(2));
+                }
+
+                string strSQL = string.Format("INSERT INTO [Item](Item_ID, Item_name, Item_amount, Item_type_Ref) VALUES ('{0}', '{1}', '{2}', '{3}')",
+                    item_id, GetSelectedCellValue(0), amount1, itemtypeid);
+
+                SqlCommand myCommand = new SqlCommand(strSQL, connection);
+                myCommand.ExecuteNonQuery();
+
+                int color_id;
+                color_id = MaxColorID() + 1;
+                strSQL = string.Format("INSERT INTO [Color](Color_ID, Color) VALUES ('{0}', '{1}')", color_id, GetSelectedCellValue(1));
+                myCommand = new SqlCommand(strSQL, connection);
+                myCommand.ExecuteNonQuery();
+
+                strSQL = string.Format("INSERT INTO [Item Color](Item_Ref, Color_Ref) VALUES ('{0}', '{1}')",
+                    item_id, color_id);
+
+                myCommand = new SqlCommand(strSQL, connection);
+                myCommand.ExecuteNonQuery();
+
+                int task_ref = Int32.Parse(task_id.Text);
+                strSQL = string.Format("INSERT INTO [Task Item](Task_Ref, Item_Ref) VALUES ('{0}', '{1}')",
+                    task_ref, item_id);
+
+                myCommand = new SqlCommand(strSQL, connection);
+                myCommand.ExecuteNonQuery();
+
+                MessageBox.Show("Новий предмет додано до задачі!");
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        public int getTaskID()
+        {
+            string connectionString = @"Data Source=DESKTOP-O22ROGE;Initial Catalog=DesignStudio;Integrated Security=True";
+            SqlConnection connection = new SqlConnection(connectionString);
+            connection.Open();
+            SqlCommand command = new SqlCommand();
+            string strSQL = string.Format("SELECT TOP 1 Task_ID FROM [Task] WHERE Task_name = '{0}'", task.Text);
+            SqlCommand myCommand = new SqlCommand(strSQL, connection);
+            SqlDataReader reader = myCommand.ExecuteReader();
+            string st = null;
+            if (reader.Read())
+                st = reader[0].ToString();
+            return Int32.Parse(st);
+        }
+
+        public int getItemTypeID()
+        {
+            string connectionString = @"Data Source=DESKTOP-O22ROGE;Initial Catalog=DesignStudio;Integrated Security=True";
+            SqlConnection connection = new SqlConnection(connectionString);
+            connection.Open();
+            SqlCommand command = new SqlCommand();
+            string strSQL = string.Format("SELECT TOP 1 Item_type_ID FROM [Item Type] WHERE Item_type = '{0}'", GetSelectedCellValue(3));
+            SqlCommand myCommand = new SqlCommand(strSQL, connection);
+            SqlDataReader reader = myCommand.ExecuteReader();
+            string st = null;
+            if (reader.Read())
+                st = reader[0].ToString();
+            return Int32.Parse(st);
+        }
+
+        public int MaxColorID()
+        {
+            string connectionString = @"Data Source=DESKTOP-O22ROGE;Initial Catalog=DesignStudio;Integrated Security=True";
+            SqlConnection connection = new SqlConnection(connectionString);
+            connection.Open();
+            SqlCommand command = new SqlCommand();
+            string strSQL = "SELECT MAX(Color_ID) FROM [Color]";
+            SqlCommand myCommand = new SqlCommand(strSQL, connection);
+            SqlDataReader reader = myCommand.ExecuteReader();
+            string st = null;
+            if (reader.Read())
+                st = reader[0].ToString();
+            return Int32.Parse(st);
+        }
+
+        public int MaxID()
+        {
+            string connectionString = @"Data Source=DESKTOP-O22ROGE;Initial Catalog=DesignStudio;Integrated Security=True";
+            SqlConnection connection = new SqlConnection(connectionString);
+            connection.Open();
+            SqlCommand command = new SqlCommand();
+            string strSQL = "SELECT MAX(Item_ID) FROM [Item]";
+            SqlCommand myCommand = new SqlCommand(strSQL, connection);
+            SqlDataReader reader = myCommand.ExecuteReader();
+            string st = null;
+            if (reader.Read())
+                st = reader[0].ToString();
+            return Int32.Parse(st);
         }
     }
 }

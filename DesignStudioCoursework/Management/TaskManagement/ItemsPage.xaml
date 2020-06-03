@@ -252,7 +252,7 @@
             FontSize="20"
             FontStyle="Italic"
             Foreground="White"
-            Content="Додати предмет" Width="229" Grid.Column="1"/>
+            Content="Додати предмет" Width="229" Grid.Column="1" Click="AddItemButton_Click"/>
         <Button
             x:Name="ChooseItemButton_Copy"
             Cursor="Hand"
