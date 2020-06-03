@@ -21,11 +21,14 @@ namespace DesignStudioCoursework.Management.TaskManagement
         DisplayTask display = new DisplayTask();
         SearchTask search = new SearchTask();
         TextBox task;
+        TextBox task_id;
 
-        public TasksWindow(TextBox task1)
+        public TasksWindow(TextBox task1, TextBox task2)
         {
             InitializeComponent();
             this.task = task1;
+            this.task_id = task2;
+            display.ShowTasks(DataGridTask);
         }
 
         private void ExitClicked(object sender, RoutedEventArgs e)
@@ -146,6 +149,7 @@ namespace DesignStudioCoursework.Management.TaskManagement
         {
             string Name = GetSelectedCellValue(0);
             task.Text = Name;
+            task_id.Text = CurrentID().ToString();
             this.Close();
         }
     }

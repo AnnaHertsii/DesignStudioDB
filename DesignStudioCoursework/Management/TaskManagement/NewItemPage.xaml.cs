@@ -38,7 +38,7 @@ namespace DesignStudioCoursework.Management.TaskManagement
 
         private void task_Click(object sender, RoutedEventArgs e)
         {
-            TasksWindow projects = new TasksWindow(task);
+            TasksWindow projects = new TasksWindow(task, task_id);
             projects.Show();
         }
 
@@ -56,7 +56,7 @@ namespace DesignStudioCoursework.Management.TaskManagement
                 SqlConnection connection = new SqlConnection(connectionString);
                 connection.Open();
                 SqlCommand command = new SqlCommand();
-                int color_id = 7;
+               
                 int itemtype_id = itemtypecombo.SelectedIndex + 1;
                 int amount1 = 0;
                 if (amount.Text != "")
@@ -70,7 +70,32 @@ namespace DesignStudioCoursework.Management.TaskManagement
                 SqlCommand myCommand = new SqlCommand(strSQL, connection);
                 myCommand.ExecuteNonQuery();
 
+                int color_id;
+                color_id = MaxColorID() + 1;
+                strSQL = string.Format("INSERT INTO [Color](Color_ID, Color) VALUES ('{0}', '{1}')", color_id, color.Text);
+                myCommand = new SqlCommand(strSQL, connection);
+                myCommand.ExecuteNonQuery();
+
+                strSQL = string.Format("INSERT INTO [Item Color](Item_Ref, Color_Ref) VALUES ('{0}', '{1}')",
+                    item_id, color_id);
+
+                myCommand = new SqlCommand(strSQL, connection);
+                myCommand.ExecuteNonQuery();
+
+                int task_ref = Int32.Parse(task_id.Text);
+                strSQL = string.Format("INSERT INTO [Task Item](Task_Ref, Item_Ref) VALUES ('{0}', '{1}')",
+                    task_ref, item_id);
+
+                myCommand = new SqlCommand(strSQL, connection);
+                myCommand.ExecuteNonQuery();
+
                 MessageBox.Show("Новий предмет додано до задачі!");
+                name.Text = "";
+                task.Text = "";
+                task_id.Text = "";
+                amount.Text = "";
+                color.Text = "";
+
             }
             catch (Exception ex)
             {
@@ -91,7 +116,23 @@ namespace DesignStudioCoursework.Management.TaskManagement
             if (reader.Read())
                 st = reader[0].ToString();
             return Int32.Parse(st);
-        } 
+        }
+
+
+        public int MaxColorID()
+        {
+            string connectionString = @"Data Source=DESKTOP-O22ROGE;Initial Catalog=DesignStudio;Integrated Security=True";
+            SqlConnection connection = new SqlConnection(connectionString);
+            connection.Open();
+            SqlCommand command = new SqlCommand();
+            string strSQL = "SELECT MAX(Color_ID) FROM [Color]";
+            SqlCommand myCommand = new SqlCommand(strSQL, connection);
+            SqlDataReader reader = myCommand.ExecuteReader();
+            string st = null;
+            if (reader.Read())
+                st = reader[0].ToString();
+            return Int32.Parse(st);
+        }
 
         public int MaxID()
         {

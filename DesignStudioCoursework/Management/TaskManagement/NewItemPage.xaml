@@ -168,7 +168,7 @@
             FontSize="20"
             Width="185" 
             RenderTransformOrigin="0.5,0.516" Margin="11,153,0,0"/>
-        
+
         <Label 
             Grid.Row="1"
             Grid.Column="0"
@@ -328,6 +328,20 @@
             TextWrapping="Wrap"
             Text="" 
             Width="336" Margin="226,285,23,159"/>
+        <TextBox 
+            Padding="10,0,0,0"
+            Grid.Row="1"
+            Grid.Column="1"
+            MouseDoubleClick="task_Click"
+            x:Name="task_id"
+            FontStyle ="Italic" 
+            Visibility="Hidden"
+            FontSize="20"
+            Foreground="#8787ed"
+            HorizontalAlignment="Center" 
+            TextWrapping="Wrap"
+            Text="" 
+            Width="53" Margin="20,87,512,357"/>
 
     </Grid>
 </Page>   
