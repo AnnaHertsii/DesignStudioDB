@@ -190,7 +190,7 @@
             FontSize="20"
             FontStyle="Italic"
             Foreground="White"
-            Content="Показати усі предмети" Width="299" Grid.Column="1" />
+            Content="Показати усі предмети" Width="299" Grid.Column="1" Click="ShowAllItemsButton_Click" />
         <Button
             Name="FindTaskButton"
             Cursor="Hand"

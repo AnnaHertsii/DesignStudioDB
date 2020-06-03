@@ -1,5 +1,8 @@
-﻿using System;
+﻿using DesignStudioCoursework.Structure;
+using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,6 +21,7 @@ namespace DesignStudioCoursework.Management.TaskManagement
     public partial class ItemsPage : Page
     {
         Action goBack;
+        DisplayItem display = new DisplayItem();
 
         public ItemsPage(Action goBack)
         {
@@ -33,6 +37,11 @@ namespace DesignStudioCoursework.Management.TaskManagement
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
             goBack();
+        }
+
+        private void ShowAllItemsButton_Click(object sender, RoutedEventArgs e)
+        {
+            display.ShowItems(DataGridItem);
         }
     }
 }

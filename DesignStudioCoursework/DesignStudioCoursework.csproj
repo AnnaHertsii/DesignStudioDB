@@ -178,6 +178,7 @@
     <Compile Include="Structure\Client.cs" />
     <Compile Include="Structure\DisplayClient.cs" />
     <Compile Include="Structure\DisplayEmployee.cs" />
+    <Compile Include="Structure\DisplayItem.cs" />
     <Compile Include="Structure\DisplayOrder.cs" />
     <Compile Include="Structure\DisplayProject.cs" />
     <Compile Include="Structure\DisplayTask.cs" />
