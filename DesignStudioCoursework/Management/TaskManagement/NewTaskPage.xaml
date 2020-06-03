@@ -341,7 +341,7 @@
             FontSize="24"
             FontStyle="Italic"
             Foreground="White"
-            Content="Створити" Width="244">
+            Content="Створити" Width="244" Click="AddTaskButton_Click">
         </Button>
         <Image 
             Grid.Row="1"
