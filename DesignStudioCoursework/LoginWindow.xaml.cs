@@ -21,7 +21,7 @@ namespace DesignStudioCoursework
             InitializeComponent();
         }
 
-        public int Worker_ID;
+        public int Employee_ID;
 
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
@@ -33,15 +33,15 @@ namespace DesignStudioCoursework
                 {
                     string login = LoginBox.Text;
 
-                    var q = (from q1 in Content.Workers
-                             where q1.Login == login
+                    var q = (from q1 in Content.Employee
+                             where q1.Phone == login
                              select q1).First();
-                    if (q.Password == PasswordBox.Password)
+                    if (q.Passport_number == PasswordBox.Password)
                     {
-                        Worker_ID = q.Worker_ID;
+                        Employee_ID = q.Employee_ID;
 
                         mainWwindow.Show();
-                        
+                        this.Close();
                     }
                     else MessageBox.Show("Логін користувача або пароль були введені невірно");
                 }
@@ -50,8 +50,6 @@ namespace DesignStudioCoursework
                     MessageBox.Show("Логін користувача або пароль були введені невірно");
                 }
             }
-
-            this.Close();
         }
 
     }
