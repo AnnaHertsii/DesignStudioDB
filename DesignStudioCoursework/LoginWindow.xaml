@@ -83,7 +83,7 @@
         <Image
             Grid.Row="0"
             Source="/DesignStudioCoursework;component/Resources/hello.png" 
-            Stretch="Uniform" Margin="272,10,281,0"/>
+            Stretch="Uniform" Margin="268,10,285,0"/>
         <TextBox 
             Name="LoginBox"
             FontStyle ="Italic" 
@@ -92,13 +92,13 @@
             VerticalAlignment="Center"
             HorizontalAlignment="Center"
             Padding="0"
-            Margin="205,58,151,168"
+            Margin="177,65,177,168"
             TextWrapping="Wrap" 
             Text=""
             HorizontalContentAlignment="Center"
             TextAlignment="Center"
-            Width="436"
-            Grid.Row="1" Height="37"/>
+            Width="338"
+            Grid.Row="1" Height="30"/>
         <PasswordBox 
             Name="PasswordBox" 
             FontStyle ="Italic" 
@@ -107,10 +107,10 @@
             Padding="0"
             Foreground="#8787ed"
             HorizontalAlignment="Center" 
-Margin="205,110,151,117" 
+Margin="177,115,177,118" 
             VerticalAlignment="Center" 
-            Width="436"
-            Grid.Row="1" Height="36"/>
+            Width="338"
+            Grid.Row="1" Height="30"/>
         <Label
             FontWeight="Bold"
             FontStyle ="Italic" 
@@ -118,7 +118,7 @@ Margin="205,110,151,117"
             Foreground="White"
             Content="Вхід в систему"
             HorizontalAlignment="Center" 
-            Margin="262,5,249,0"
+            Margin="257,5,254,0"
             Width="181" 
             Height="48" 
             VerticalAlignment="Top" 
@@ -130,7 +130,7 @@ Margin="205,110,151,117"
             Foreground="White"
             Content="Логін:"
             HorizontalAlignment="Center" 
-            Margin="95,58,513,0"
+            Margin="67,60,541,0"
             Width="84" 
             Height="35" 
             VerticalAlignment="Top"
@@ -142,7 +142,7 @@ Margin="205,110,151,117"
             Foreground="White"
             Content="Пароль:"
             HorizontalAlignment="Center" 
-            Margin="95,110,483,0"
+            Margin="67,110,511,0"
             Width="114" 
             Height="41" 
             VerticalAlignment="Top"
@@ -154,7 +154,7 @@ Margin="205,110,151,117"
             FontSize="20"
             Name="LoginButton" 
             Content="Увійти" 
-            Margin="272,172,267,49"  
+            Margin="268,174,272,47"  
             Click="LoginButton_Click" 
             Grid.Row="1"/>
     </Grid>
