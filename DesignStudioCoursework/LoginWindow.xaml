@@ -85,7 +85,7 @@
             Source="/DesignStudioCoursework;component/Resources/hello.png" 
             Stretch="Uniform" Margin="272,10,281,0"/>
         <TextBox 
-            Name="Login"
+            Name="LoginBox"
             FontStyle ="Italic" 
             FontSize="20"
             Foreground="#8787ed"

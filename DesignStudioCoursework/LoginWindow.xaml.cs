@@ -14,9 +14,6 @@ using System.Windows.Shapes;
 
 namespace DesignStudioCoursework
 {
-    /// <summary>
-    /// Логика взаимодействия для LoginWindow.xaml
-    /// </summary>
     public partial class LoginWindow : Window
     {
         public LoginWindow()
@@ -24,11 +21,38 @@ namespace DesignStudioCoursework
             InitializeComponent();
         }
 
+        public int Worker_ID;
+
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
             MainWindow mainWwindow = new MainWindow();
-            mainWwindow.Show();
+
+            using (var Content = new DesignStudioEntities())
+            {
+                try
+                {
+                    string login = LoginBox.Text;
+
+                    var q = (from q1 in Content.Workers
+                             where q1.Login == login
+                             select q1).First();
+                    if (q.Password == PasswordBox.Password)
+                    {
+                        Worker_ID = q.Worker_ID;
+
+                        mainWwindow.Show();
+                        
+                    }
+                    else MessageBox.Show("Логін користувача або пароль були введені невірно");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Логін користувача або пароль були введені невірно");
+                }
+            }
+
             this.Close();
         }
+
     }
 }
