@@ -118,6 +118,18 @@
                         <Image Source="/DesignStudioCoursework;component/Resources/exit.png"/>
                     </MenuItem.Icon>
                 </MenuItem>
+                <MenuItem 
+                Name="About"
+                Header="Про нас" 
+                FontSize="16" 
+                Cursor="Hand"
+                Background="#F2F2F2"
+                Foreground="#99A2F1"
+                Click="About_Click">
+                    <MenuItem.Icon>
+                        <Image Source="/DesignStudioCoursework;component/Resources/question.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
             </MenuItem>
             <MenuItem 
                 Header="Редагування" 
@@ -149,6 +161,7 @@
             </MenuItem>
             <MenuItem 
                 Header="Управління" 
+                Name="management"
                 FontSize="16" 
                 Foreground="White">
                 <MenuItem 
@@ -248,6 +261,7 @@
             <MenuItem 
                 Header="Адміністрація" 
                 FontSize="16" 
+                Name="administration"
                 Cursor="Hand"
                 Foreground="White">
                 <MenuItem 
@@ -272,13 +286,6 @@
                     </MenuItem>
                 </MenuItem>
             </MenuItem>
-            <MenuItem 
-                Name="About"
-                Header="Про нас" 
-                FontSize="16" 
-                Cursor="Hand"
-                Foreground="White" 
-                Click="About_Click"/>
         </Menu>
 
         <Border           

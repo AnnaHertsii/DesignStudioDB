@@ -27,6 +27,16 @@ namespace DesignStudioCoursework
             this.pageChanged = pageChanged;
             InitializeComponent();
             right.Content = access;
+            if(access == "Секретар")
+            {
+                management.Visibility = Visibility.Hidden;
+                administration.Visibility = Visibility.Hidden;
+            }
+            else if (access == "Менеджер")
+            {
+                management.Visibility = Visibility.Hidden;
+            }
+
             employeeName.Content = emp+",";
         }
 

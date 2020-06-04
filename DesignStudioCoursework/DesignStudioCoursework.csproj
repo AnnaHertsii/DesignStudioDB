@@ -483,6 +483,7 @@
       <DependentUpon>DesignStudioModel.edmx</DependentUpon>
       <LastGenOutput>DesignStudioModel.cs</LastGenOutput>
     </Content>
+    <Resource Include="Resources\question.png" />
     <Resource Include="Resources\shapes-icon.png" />
     <Resource Include="Resources\newtask.png" />
     <Resource Include="Resources\taskicon.png" />
