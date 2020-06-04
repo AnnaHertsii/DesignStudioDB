@@ -19,14 +19,13 @@ namespace DesignStudioCoursework
         public LoginWindow()
         {
             InitializeComponent();
+            App.Current.Properties["AccessRight"] = "Немає прав";
         }
 
-        public int Employee_ID;
+       // public int Employee_ID;
 
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow mainWwindow = new MainWindow();
-
             using (var Content = new DesignStudioEntities())
             {
                 try
@@ -38,9 +37,22 @@ namespace DesignStudioCoursework
                              select q1).First();
                     if (q.Passport_number == PasswordBox.Password)
                     {
-                        Employee_ID = q.Employee_ID;
+                        //Employee_ID = q.Employee_ID;
+                        if (q.Position_Ref == 5)
+                        {
+                            App.Current.Properties["AccessRight"] = "Директор";
+                        }
+                        else if (q.Position_Ref == 4)
+                        {
+                            App.Current.Properties["AccessRight"] = "Секретар";
+                        }
+                        else 
+                        {
+                            App.Current.Properties["AccessRight"] = "Менеджер";
+                        }
 
-                        mainWwindow.Show();
+                        MainWindow mainWindow = new MainWindow();
+                        mainWindow.Show();
                         this.Close();
                     }
                     else MessageBox.Show("Логін користувача або пароль були введені невірно");

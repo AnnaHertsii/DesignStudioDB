@@ -1,4 +1,4 @@
-﻿ <Page x:Class="DesignStudioCoursework.MainPage"
+﻿<Page x:Class="DesignStudioCoursework.MainPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -280,6 +280,7 @@
                 Foreground="White" 
                 Click="About_Click"/>
         </Menu>
+
         <Border           
             Grid.ColumnSpan="3" 
             Background="#BCC3FF" 
@@ -397,5 +398,19 @@
             <Run Text="Створити"></Run><LineBreak/>
             <Run Text="проект"></Run>
         </TextBlock>
+        <Border BorderThickness="1"
+            BorderBrush="GhostWhite" 
+            Opacity="100"
+            Margin="218,10,10,378" Grid.Column="2" Grid.Row="1">
+            <Border.Background>
+                <SolidColorBrush Color="#99A2F1" Opacity="0.7"/>
+            </Border.Background>
+            <Label Name="right" 
+            FontStyle ="Italic" 
+            FontSize="18"
+            HorizontalAlignment="Center"
+            Foreground="White"
+            Content="" Margin="-1" Width="162"></Label>
+        </Border>
     </Grid>
 </Page>

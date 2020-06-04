@@ -19,11 +19,13 @@ namespace DesignStudioCoursework
     public partial class MainPage : Page
     {
         private Action<int> pageChanged;
+        string myProperty = App.Current.Properties["AccessRight"].ToString();
 
         public MainPage(Action<int> pageChanged)
         {
             this.pageChanged = pageChanged;
             InitializeComponent();
+            right.Content = myProperty;
         }
 
         private void ExitClicked(object sender, RoutedEventArgs e)
