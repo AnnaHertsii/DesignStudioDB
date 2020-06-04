@@ -409,8 +409,21 @@
             FontStyle ="Italic" 
             FontSize="18"
             HorizontalAlignment="Center"
+            VerticalAlignment="Center"
             Foreground="White"
-            Content="" Margin="-1" Width="162"></Label>
+            HorizontalContentAlignment="Center"
+            Content="" Margin="-1" Width="162"/>
         </Border>
+        <Label 
+            Content=""
+            Name="employeeName"
+            FontStyle ="Italic" 
+            FontWeight="DemiBold"
+            FontSize="25"
+            HorizontalContentAlignment="Center"
+            HorizontalAlignment="Center"
+            Foreground="White"
+            Margin="0,21,0,349"
+            Grid.Row="1" Grid.Column="1" Width="390"/>
     </Grid>
 </Page>

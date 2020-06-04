@@ -20,9 +20,8 @@ namespace DesignStudioCoursework
         {
             InitializeComponent();
             App.Current.Properties["AccessRight"] = "Немає прав";
+            App.Current.Properties["EmployeeName"] = "Невідомий";
         }
-
-       // public int Employee_ID;
 
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
@@ -37,7 +36,7 @@ namespace DesignStudioCoursework
                              select q1).First();
                     if (q.Passport_number == PasswordBox.Password)
                     {
-                        //Employee_ID = q.Employee_ID;
+                        App.Current.Properties["EmployeeName"] = q.Name;
                         if (q.Position_Ref == 5)
                         {
                             App.Current.Properties["AccessRight"] = "Директор";
