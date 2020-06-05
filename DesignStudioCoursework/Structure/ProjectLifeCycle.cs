@@ -28,8 +28,6 @@ namespace DesignStudioCoursework.Structure
 
         public void ShowFutureProjects(DataGrid dataGrid_Project)
         {
-            //string formatted = DateTime.Today.ToString("yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture);
-            //DateTime curdate = DateTime.Parse(formatted);
             using (var db = new DesignStudioEntities())
             {
                 var projects = from project in db.Design_Project

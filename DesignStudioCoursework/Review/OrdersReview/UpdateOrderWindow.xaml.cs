@@ -16,9 +16,6 @@ using System.Windows.Shapes;
 
 namespace DesignStudioCoursework.Review.OrdersReview
 {
-    /// <summary>
-    /// Логика взаимодействия для UpdateOrderWindow.xaml
-    /// </summary>
     public partial class UpdateOrderWindow : Window
     {   
         public List<Customer> Customers { get; set; }

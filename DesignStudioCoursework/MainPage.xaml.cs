@@ -34,7 +34,7 @@ namespace DesignStudioCoursework
             }
             else if (access == "Менеджер")
             {
-                management.Visibility = Visibility.Hidden;
+                administration.Visibility = Visibility.Hidden;
             }
 
             employeeName.Content = emp+",";
