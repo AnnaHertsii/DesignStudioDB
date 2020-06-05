@@ -269,6 +269,9 @@
                     Foreground="#99A2F1"
                     Cursor="Hand"
                     Header="Управління працівниками">
+                    <MenuItem.Icon>
+                        <Image Source="/DesignStudioCoursework;component/Resources/manager.png"/>
+                    </MenuItem.Icon>
                     <MenuItem    
                     Name="AddNewEmployee"
                     Background="#F2F2F2"
@@ -286,6 +289,9 @@
                     Cursor="Hand"
                     Header="Редагувати інформацію працівників"
                     Click="EditEmployees_Click">
+                        <MenuItem.Icon>
+                            <Image Source="/DesignStudioCoursework;component/Resources/update-icon.png"/>
+                        </MenuItem.Icon>
                     </MenuItem>
                 </MenuItem>
             </MenuItem>
