@@ -4,21 +4,21 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="2f511f43a6a447829f17a1a82d82835b" Name="Diagram1">
+      <Diagram DiagramId="2f511f43a6a447829f17a1a82d82835b" Name="Diagram1" ZoomLevel="71">
         <EntityTypeShape EntityType="DesignStudioModel.Attachment" Width="1.5" PointX="5.25" PointY="3.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="DesignStudioModel.Color" Width="1.5" PointX="3.75" PointY="8.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="DesignStudioModel.Customer" Width="1.5" PointX="1.5" PointY="22.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="DesignStudioModel.Customer_Type" Width="1.5" PointX="1.5" PointY="25.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DesignStudioModel.Color" Width="1.5" PointX="8.25" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DesignStudioModel.Customer" Width="1.5" PointX="13" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DesignStudioModel.Customer_Type" Width="1.5" PointX="16" PointY="2.125" IsExpanded="true" />
         <EntityTypeShape EntityType="DesignStudioModel.Design_Project" Width="1.5" PointX="3" PointY="2.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="DesignStudioModel.Employee" Width="1.5" PointX="0.75" PointY="7.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="DesignStudioModel.Interior_Type" Width="1.5" PointX="0.75" PointY="15.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="DesignStudioModel.Item" Width="1.5" PointX="6" PointY="8.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="DesignStudioModel.Item_Type" Width="1.5" PointX="3.75" PointY="10.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="DesignStudioModel.Order" Width="1.5" PointX="0.75" PointY="18.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="DesignStudioModel.Position" Width="1.5" PointX="1.5" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DesignStudioModel.Employee" Width="1.5" PointX="5.25" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DesignStudioModel.Interior_Type" Width="1.5" PointX="2.75" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DesignStudioModel.Item" Width="1.5" PointX="10.5" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DesignStudioModel.Item_Type" Width="1.5" PointX="16" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DesignStudioModel.Order" Width="1.5" PointX="13" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DesignStudioModel.Position" Width="1.5" PointX="0.75" PointY="6" IsExpanded="true" />
         <EntityTypeShape EntityType="DesignStudioModel.Status" Width="1.5" PointX="0.75" PointY="3.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="DesignStudioModel.Style" Width="1.5" PointX="0.75" PointY="28.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="DesignStudioModel.sysdiagrams" Width="1.5" PointX="8.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DesignStudioModel.Style" Width="1.5" PointX="15.875" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DesignStudioModel.sysdiagrams" Width="1.5" PointX="10.5" PointY="2.25" IsExpanded="true" />
         <EntityTypeShape EntityType="DesignStudioModel.Task" Width="1.5" PointX="8.25" PointY="2.375" IsExpanded="true" />
         <AssociationConnector Association="DesignStudioModel.FK_Attachment_Design_Project" ManuallyRouted="false" />
         <AssociationConnector Association="DesignStudioModel.FK_Customer_Customer_Type" ManuallyRouted="false" />

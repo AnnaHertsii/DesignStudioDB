@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:DesignStudioCoursework"
         mc:Ignorable="d"
         Icon="/DesignStudioCoursework;component/Resources/logo.png"
-        Title="Вхід" Height="450" Width="700">
+        Title="Авторизація" Height="450" Width="700">
     <Window.Resources>
         <Style x:Key="CoralButton" TargetType="Button">
             <Setter Property="Foreground" Value="White"/>
