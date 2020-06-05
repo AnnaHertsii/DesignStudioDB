@@ -41,8 +41,8 @@ namespace DesignStudioCoursework.Structure
                                        customer.Name,
                                        customer.Phone,
                                        customer.Adress,
-                                       customer.Mail_adress,
-                                       type.Customer_type1
+                                       Mail = customer.Mail_adress,
+                                       Type = type.Customer_type1
                                    };
                 dataGrid_Client.ItemsSource = clientQuery.ToList();
             }
@@ -60,8 +60,8 @@ namespace DesignStudioCoursework.Structure
                                       customer.Name,
                                       customer.Phone,
                                       customer.Adress,
-                                      customer.Mail_adress,
-                                      type.Customer_type1
+                                      Mail = customer.Mail_adress,
+                                      Type = type.Customer_type1
                                   };
                 dataGrid_Client.ItemsSource = clientQuery.ToList();
             }
@@ -79,8 +79,8 @@ namespace DesignStudioCoursework.Structure
                                       customer.Name,
                                       customer.Phone,
                                       customer.Adress,
-                                      customer.Mail_adress,
-                                      type.Customer_type1
+                                      Mail = customer.Mail_adress,
+                                      Type = type.Customer_type1
                                   };
                 dataGrid_Client.ItemsSource = clientQuery.ToList();
             }
@@ -98,8 +98,8 @@ namespace DesignStudioCoursework.Structure
                                       customer.Name,
                                       customer.Phone,
                                       customer.Adress,
-                                      customer.Mail_adress,
-                                      type.Customer_type1
+                                      Mail = customer.Mail_adress,
+                                      Type = type.Customer_type1
                                   };
                 dataGrid_Client.ItemsSource = clientQuery.ToList();
             }
