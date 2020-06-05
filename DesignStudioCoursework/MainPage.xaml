@@ -276,6 +276,9 @@
                     Cursor="Hand"
                     Header="Додати нового працівника"
                     Click="AddNewEmployee_Click">
+                        <MenuItem.Icon>
+                            <Image Source="/DesignStudioCoursework;component/Resources/worker.png"/>
+                        </MenuItem.Icon>
                     </MenuItem>
                     <MenuItem 
                     Background="#F2F2F2"
