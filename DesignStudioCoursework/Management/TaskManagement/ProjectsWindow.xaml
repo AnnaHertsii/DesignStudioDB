@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:DesignStudioCoursework.Management.TaskManagement"
         mc:Ignorable="d"
         xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        Icon="/DesignStudioCoursework;component/Resources/logo.png"
         Title="Вибір проекту для замовлення" Height="450" Width="800">
     <Grid>
 

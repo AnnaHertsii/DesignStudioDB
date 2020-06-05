@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:DesignStudioCoursework.NewProject"
         mc:Ignorable="d"
         xmlns:sys="clr-namespace:System;assembly=mscorlib"
-        Title="Вибір відповідального проекту" Height="450" Width="800">
+        Icon="/DesignStudioCoursework;component/Resources/logo.png"
+        Title="Вибір керівника проекту" Height="450" Width="800">
 
     <Grid>
         <Border 

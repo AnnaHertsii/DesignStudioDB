@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DesignStudioCoursework.NewProject"
         mc:Ignorable="d"
+        Icon="/DesignStudioCoursework;component/Resources/logo.png"
         xmlns:sys="clr-namespace:System;assembly=mscorlib"
         Title="Вибір замовлення для проекту" Height="450" Width="800">
     <Grid>
